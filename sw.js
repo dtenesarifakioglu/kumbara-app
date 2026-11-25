@@ -1,5 +1,5 @@
-/* Kumbara önizleme service worker. build.py 391f956c28c4 ve ["./", "icon-192.png", "icon-512.png", "icon-maskable-512.png", "index.html", "manifest.webmanifest", "ornek-veri.js", "pdf.min.mjs", "pdf.worker.min.mjs", "runtime.js"] yerlerini doldurur. */
-const SURUM = '391f956c28c4';
+/* Kumbara önizleme service worker. build.py 6ee5ea6a079f ve ["./", "icon-192.png", "icon-512.png", "icon-maskable-512.png", "index.html", "manifest.webmanifest", "ornek-veri.js", "pdf.min.mjs", "pdf.worker.min.mjs", "runtime.js"] yerlerini doldurur. */
+const SURUM = '6ee5ea6a079f';
 const KABUK_ONBELLEK = 'kumbara-kabuk-' + SURUM;
 const FONT_ONBELLEK = 'kumbara-font-v1';
 const KABUK = ["./", "icon-192.png", "icon-512.png", "icon-maskable-512.png", "index.html", "manifest.webmanifest", "ornek-veri.js", "pdf.min.mjs", "pdf.worker.min.mjs", "runtime.js"];

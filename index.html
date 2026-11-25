@@ -1846,15 +1846,16 @@ textarea.inp{min-height:44px}
   <div class="aci-yazi">Kumbara</div>
 </div></div>
 <script>
-/* Açılış kapatma: uygulama ilk ekranı çizince render() kumbaraAcilisKapat() çağırır (bekleme yok, 180 ms solarak kapanır).
-   Emniyet: en geç 3 sn sonra her durumda kapanır. Yalnız bir kez çalışır. Hareketi azalt: anında kaldırılır. */
-(function(){ var el = document.getElementById('acilis'); if (!el) return; var done = false, safety;
+/* Açılış kapatma: animasyon (860 ms) her soğuk açılışta tam oynar. Kapanma = max(uygulama hazır, animasyon bitişi) + 180 ms solma.
+   Uygulama hazır olunca render() kumbaraAcilisKapat() çağırır; erken gelirse animasyon bitene kadar beklenir, geç gelirse logo sabit kalır.
+   Emniyet: en geç 3 sn sonra her durumda kapanır. Yalnız sayfa yüklenişinde, bir kez. Hareketi azalt: animasyonsuz, hazır olunca anında kaldırılır. */
+(function(){ var el = document.getElementById('acilis'); if (!el) return; var done = false, safety, t0 = performance.now(), ANIM = 900;
   var rm = false; try { rm = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e) {}
   var rem = function(){ try { el.remove(); } catch(e) { el.style.display = 'none'; } };
+  var kapat = function(){ if (rm) { rem(); return; } el.classList.add('kapan'); setTimeout(rem, 220); };
   window.kumbaraAcilisKapat = function(){ if (done) return; done = true; clearTimeout(safety);
-    if (rm) { rem(); return; }
-    el.classList.add('kapan'); setTimeout(rem, 220); };
-  safety = setTimeout(window.kumbaraAcilisKapat, 3000); })();
+    var bekle = rm ? 0 : Math.max(0, ANIM - (performance.now() - t0)); if (bekle > 0) setTimeout(kapat, bekle); else kapat(); };
+  safety = setTimeout(function(){ if (done) return; done = true; kapat(); }, 3000); })();
 </script>
 
 <div id="top"></div>
