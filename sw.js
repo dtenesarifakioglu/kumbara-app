@@ -1,8 +1,8 @@
-/* Kumbara önizleme service worker. build.py 95f213556fa2 ve ["./", "icon-192.png", "icon-512.png", "index.html", "manifest.webmanifest", "ornek-veri.js", "pdf.min.mjs", "pdf.worker.min.mjs", "runtime.js"] yerlerini doldurur. */
-const SURUM = '95f213556fa2';
+/* Kumbara önizleme service worker. build.py 391f956c28c4 ve ["./", "icon-192.png", "icon-512.png", "icon-maskable-512.png", "index.html", "manifest.webmanifest", "ornek-veri.js", "pdf.min.mjs", "pdf.worker.min.mjs", "runtime.js"] yerlerini doldurur. */
+const SURUM = '391f956c28c4';
 const KABUK_ONBELLEK = 'kumbara-kabuk-' + SURUM;
 const FONT_ONBELLEK = 'kumbara-font-v1';
-const KABUK = ["./", "icon-192.png", "icon-512.png", "index.html", "manifest.webmanifest", "ornek-veri.js", "pdf.min.mjs", "pdf.worker.min.mjs", "runtime.js"];
+const KABUK = ["./", "icon-192.png", "icon-512.png", "icon-maskable-512.png", "index.html", "manifest.webmanifest", "ornek-veri.js", "pdf.min.mjs", "pdf.worker.min.mjs", "runtime.js"];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(KABUK_ONBELLEK).then((c) => c.addAll(KABUK)).then(() => self.skipWaiting()));

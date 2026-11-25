@@ -6,13 +6,40 @@
 <script src="ornek-veri.js"></script>
 <script src="runtime.js"></script>
 <title>Kumbara</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0iIzFEMjgzOCIvPjxyZWN0IHg9IjE1MCIgeT0iMTI0IiB3aWR0aD0iNDgiIGhlaWdodD0iMjY0IiByeD0iMjQuMCIgZmlsbD0iI0VERTdEQSIvPjxwYXRoIGQ9Ik0xOTggMjcyIEwzMzQgMTM2IiBzdHJva2U9IiNFREU3REEiIHN0cm9rZS13aWR0aD0iNDgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjMyMiIgY3k9IjMzNCIgcj0iNjQiIGZpbGw9IiNEMkFBNjYiLz48L3N2Zz4=">
-<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0iIzFEMjgzOCIvPjxyZWN0IHg9IjE0MiIgeT0iMTIwIiB3aWR0aD0iNTYiIGhlaWdodD0iMjg4IiByeD0iMjgiIGZpbGw9IiNFREU3REEiLz48cGF0aCBkPSJNMTc4IDI4MUwzMjggMTMxIiBmaWxsPSJub25lIiBzdHJva2U9IiNFREU3REEiIHN0cm9rZS13aWR0aD0iNTYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjMwMiIgY3k9IjMzOCIgcj0iNzAiIGZpbGw9IiNGMEI0NEMiLz48L3N2Zz4=">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#1D2838">
 <meta name="apple-mobile-web-app-title" content="Kumbara">
 <meta name="application-name" content="Kumbara">
 <script>document.documentElement.lang='tr';</script>
+<style>
+/* === Açılış ekranı (Paket C): CSS satır içi, font beklemez. Toplam 860 ms: gövde 0-260, kol 180-440, sikke 380-720, yazı 560-860 === */
+#acilis{position:fixed;inset:0;z-index:100000;display:grid;place-items:center;background:var(--bg,#0E1116);color:var(--fg,#ECEEF3);transition:opacity .18s ease-out}
+#acilis.kapan{opacity:0;pointer-events:none}
+#acilis .aci-kutu{display:flex;flex-direction:column;align-items:center;gap:20px;transform:translateY(-4vh)}
+#acilis .aci-ikon{width:112px;height:112px;display:block;overflow:visible}
+#acilis .aci-yazi{font-family:"Sora","Figtree",system-ui,sans-serif;font-weight:600;font-size:22px;letter-spacing:-.01em;color:var(--fg,#ECEEF3);animation:aci-yazi .3s cubic-bezier(.2,.8,.2,1) .56s both}
+#acilis .aci-govde{stroke-dasharray:1 2;animation:aci-ciz .26s cubic-bezier(.4,0,.2,1) both}
+#acilis .aci-kol{stroke-dasharray:1 2;animation:aci-ciz .26s cubic-bezier(.4,0,.2,1) .18s both}
+#acilis .aci-sikke{transform-box:fill-box;transform-origin:center;animation:aci-sikke .34s cubic-bezier(.3,1.5,.5,1) .38s both}
+@keyframes aci-ciz{0%{stroke-dashoffset:1;opacity:0}1%{opacity:1}100%{stroke-dashoffset:0;opacity:1}}
+@keyframes aci-sikke{from{opacity:0;transform:translateY(-36px) scale(.4)}to{opacity:1;transform:none}}
+@keyframes aci-yazi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){#acilis,#acilis *{animation:none!important;transition:none!important}}
+</style>
+<script>
+/* Açılış zemini uygulamanın tema ayarıyla aynı kaynaktan (localStorage kasa.*) okunur; okunamazsa prefers-color-scheme.
+   Mantık, aşağıdaki themeMode/skinD/skinL/curSkin ile birebir aynı tutulmalı. */
+(function(){ var r = document.documentElement, g = function(k){ try { return localStorage.getItem(k); } catch(e) { return null; } };
+  var LI = ['light','cloud','sand','mint','lilac','blush','stone'], DK = ['amoled','night','navy','forest','graphite','espresso','wine','plum','indigo','petrol','olive'];
+  var sysDark = true; try { sysDark = !window.matchMedia || matchMedia('(prefers-color-scheme: dark)').matches; } catch(e) {}
+  var m = g('kasa.mode') || 'auto', light = m === 'light' || (m === 'auto' && !sysDark), sk;
+  if (light) { sk = g('kasa.skinL') || g('kasa.skin'); sk = sk && LI.indexOf(sk) >= 0 ? sk : 'light'; }
+  else { sk = g('kasa.skinD') || g('kasa.skin'); sk = sk && DK.indexOf(sk) >= 0 ? sk : 'amoled'; }
+  if (light) r.setAttribute('data-tone','light'); else r.removeAttribute('data-tone');
+  if (sk === 'night') r.removeAttribute('data-skin'); else r.setAttribute('data-skin', sk); })();
+</script>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap">
@@ -1138,7 +1165,11 @@ textarea.dein{resize:none;overflow:hidden;line-height:1.3;padding:11px 0;height:
 #top.mini .hero>*{animation:hzIn .28s ease both}
 @keyframes hzIn{from{opacity:.4}to{opacity:1}}
 .ic.icm{background:color-mix(in srgb,var(--accent) 13%,transparent);color:var(--accent)}
+/* Kategori ikonu zemini. Açık tema: krem. Koyu tema: kategori renginin (--cc, icoC verir) düşük doygun, koyu tonu; svg'nin geniş gölgesi
+   yuvarlatılmış .ic kutusuna kırpılarak zemin olur, böylece her bağlamdaki ikon boyutu kuralları aynen çalışır. */
 .ic:has(>.cic){background:#F4EDE2!important;box-shadow:inset 0 0 0 1px rgba(35,32,43,.06)}.ic>.cic{width:70%!important;height:70%!important}
+:root:not([data-tone="light"]) .ic:has(>.cic){background:transparent!important;box-shadow:none;overflow:hidden}
+:root:not([data-tone="light"]) .ic>.cic{background:color-mix(in srgb,var(--cc,#A3AAB8) 26%,var(--surface2));box-shadow:0 0 0 90px color-mix(in srgb,var(--cc,#A3AAB8) 26%,var(--surface2))}
 .ic.icm .du,.du{fill:currentColor;fill-opacity:.24;stroke:none}
 .okb{display:inline-grid;place-items:center;width:15px;height:15px;margin-left:6px;vertical-align:1px;border-radius:50%;background:color-mix(in srgb,var(--inc) 20%,transparent);color:var(--inc)}
 .okb svg{width:10px;height:10px;stroke-width:3.2}
@@ -1805,6 +1836,27 @@ textarea.inp{min-height:44px}
 /* === /Paket 3 === */
 </style>
 
+<div id="acilis" aria-hidden="true"><div class="aci-kutu">
+  <svg class="aci-ikon" viewBox="0 0 512 512" focusable="false">
+    <rect width="512" height="512" rx="112" fill="#1D2838"/>
+    <path class="aci-govde" pathLength="1" d="M170 148V380" fill="none" stroke="#EDE7DA" stroke-width="56" stroke-linecap="round"/>
+    <path class="aci-kol" pathLength="1" d="M178 281L328 131" fill="none" stroke="#EDE7DA" stroke-width="56" stroke-linecap="round"/>
+    <circle class="aci-sikke" cx="302" cy="338" r="70" fill="#F0B44C"/>
+  </svg>
+  <div class="aci-yazi">Kumbara</div>
+</div></div>
+<script>
+/* Açılış kapatma: uygulama ilk ekranı çizince render() kumbaraAcilisKapat() çağırır (bekleme yok, 180 ms solarak kapanır).
+   Emniyet: en geç 3 sn sonra her durumda kapanır. Yalnız bir kez çalışır. Hareketi azalt: anında kaldırılır. */
+(function(){ var el = document.getElementById('acilis'); if (!el) return; var done = false, safety;
+  var rm = false; try { rm = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e) {}
+  var rem = function(){ try { el.remove(); } catch(e) { el.style.display = 'none'; } };
+  window.kumbaraAcilisKapat = function(){ if (done) return; done = true; clearTimeout(safety);
+    if (rm) { rem(); return; }
+    el.classList.add('kapan'); setTimeout(rem, 220); };
+  safety = setTimeout(window.kumbaraAcilisKapat, 3000); })();
+</script>
+
 <div id="top"></div>
 <div class="wrap" id="search" hidden></div>
 <main class="wrap" id="main"></main>
@@ -1934,7 +1986,9 @@ const CI = (() => {
   };
 })();
 
-const icoC = (k, cls) => { const c = CI[k] || (typeof CATIC !== 'undefined' && CATIC[k] && CI[CATIC[k]]); return c ? `<svg class="${cls} cic" viewBox="0 0 48 48" fill="none" aria-hidden="true">${c}</svg>` : ''; };
+const SUBPAR = { kafe:'yiyecek', restoran:'yiyecek', paket:'yiyecek', kiyafet:'giyim', ayakkabi:'giyim', otobus:'ulasim', taksi:'ulasim', 'otobus-bileti':'ulasim', konaklama:'seyahat', ilac:'saglik', gss:'saglik', 'dogum-gunu':'hediye', 'ozel-gun':'hediye', iade:'diger' };
+const catCol = k => { k = String(k); const p = k.startsWith('s_') ? SUBPAR[k.slice(2)] : k, c = (typeof CAT !== 'undefined' && CAT[p] && CAT[p].c) || ''; return /^#[0-9a-fA-F]{3,8}$/.test(c) ? c : '#A3AAB8'; };
+const icoC = (k, cls) => { const c = CI[k] || (typeof CATIC !== 'undefined' && CATIC[k] && CI[CATIC[k]]); return c ? `<svg class="${cls} cic" style="--cc:${catCol(k)}" viewBox="0 0 48 48" fill="none" aria-hidden="true">${c}</svg>` : ''; };
 const ico0 = (k, cls='i') => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[k]||P[CATIC&&CATIC[k]]||P.diger}</svg>`;
 const ico = (k, cls='i') => icoC(k, cls) || ico0(k, cls);
 
@@ -2093,7 +2147,7 @@ const subName = (k,id) => (subsOf(k).find(x=>x.id===id)||{}).n || '';
 const invValue = h => invStats(h).val;
 
 /* ---------- Çizim ---------- */
-function render(){ applyCatm(); const kv = S.view==='kayit', kc = document.body.classList.contains('kv') !== kv; document.body.classList.toggle('kv', kv); const tc = renderTop(); if (tc) titleize($('#top')); renderNav(); renderMain(); if (tc) { fitTop(); fitNums(); } miniChk(tc); if (tc || kc) stickOff(); topAnim(); stuckChk(); }
+function render(){ applyCatm(); const kv = S.view==='kayit', kc = document.body.classList.contains('kv') !== kv; document.body.classList.toggle('kv', kv); const tc = renderTop(); if (tc) titleize($('#top')); renderNav(); renderMain(); if (tc) { fitTop(); fitNums(); } miniChk(tc); if (tc || kc) stickOff(); topAnim(); stuckChk(); if (S.status !== 'loading' && window.kumbaraAcilisKapat) window.kumbaraAcilisKapat(); }
 function fitTop(){ const tl = document.querySelector('#top .topline'); if (!tl) return; const over = () => { if (tl.scrollWidth > tl.clientWidth + .5) return true; const R = tl.getBoundingClientRect().right + .5; return [...tl.children].some(c => c.getBoundingClientRect().right > R); };
   if (over()) tl.classList.add('tight'); if (over()) { const b = tl.querySelector('.mbtn b'); if (b) b.textContent = b.dataset.short; } }
 function stickOff(){ const tl = document.querySelector('#top .topline'); if (tl) document.documentElement.style.setProperty('--stk', -(tl.offsetTop - 8) + 'px'); }
