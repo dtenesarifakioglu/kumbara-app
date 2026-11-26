@@ -14,15 +14,15 @@
 <meta name="application-name" content="Kumbara">
 <script>document.documentElement.lang='tr';</script>
 <style>
-/* === Açılış ekranı (Paket C): CSS satır içi, font beklemez. Toplam 860 ms: gövde 0-260, kol 180-440, sikke 380-720, yazı 560-860 === */
-#acilis{position:fixed;inset:0;z-index:100000;display:grid;place-items:center;background:var(--bg,#0E1116);color:var(--fg,#ECEEF3);transition:opacity .18s ease-out}
+/* === Açılış ekranı (Paket C): CSS satır içi, font beklemez. Hareket 1200 ms: gövde 0-360, kol 250-610, sikke 530-1010, yazı 780-1200; logo 300 ms durur (1500), sonra 260 ms solma (~1,76 sn) === */
+#acilis{position:fixed;inset:0;z-index:100000;display:grid;place-items:center;background:var(--bg,#0E1116);color:var(--fg,#ECEEF3);transition:opacity .26s ease-out}
 #acilis.kapan{opacity:0;pointer-events:none}
 #acilis .aci-kutu{display:flex;flex-direction:column;align-items:center;gap:20px;transform:translateY(-4vh)}
 #acilis .aci-ikon{width:112px;height:112px;display:block;overflow:visible}
-#acilis .aci-yazi{font-family:"Sora","Figtree",system-ui,sans-serif;font-weight:600;font-size:22px;letter-spacing:-.01em;color:var(--fg,#ECEEF3);animation:aci-yazi .3s cubic-bezier(.2,.8,.2,1) .56s both}
-#acilis .aci-govde{stroke-dasharray:1 2;animation:aci-ciz .26s cubic-bezier(.4,0,.2,1) both}
-#acilis .aci-kol{stroke-dasharray:1 2;animation:aci-ciz .26s cubic-bezier(.4,0,.2,1) .18s both}
-#acilis .aci-sikke{transform-box:fill-box;transform-origin:center;animation:aci-sikke .34s cubic-bezier(.3,1.5,.5,1) .38s both}
+#acilis .aci-yazi{font-family:"Sora","Figtree",system-ui,sans-serif;font-weight:600;font-size:22px;letter-spacing:-.01em;color:var(--fg,#ECEEF3);animation:aci-yazi .42s cubic-bezier(.2,.8,.2,1) .78s both}
+#acilis .aci-govde{stroke-dasharray:1 2;animation:aci-ciz .36s cubic-bezier(.4,0,.2,1) both}
+#acilis .aci-kol{stroke-dasharray:1 2;animation:aci-ciz .36s cubic-bezier(.4,0,.2,1) .25s both}
+#acilis .aci-sikke{transform-box:fill-box;transform-origin:center;animation:aci-sikke .48s cubic-bezier(.3,1.5,.5,1) .53s both}
 @keyframes aci-ciz{0%{stroke-dashoffset:1;opacity:0}1%{opacity:1}100%{stroke-dashoffset:0;opacity:1}}
 @keyframes aci-sikke{from{opacity:0;transform:translateY(-36px) scale(.4)}to{opacity:1;transform:none}}
 @keyframes aci-yazi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -1434,28 +1434,39 @@ nav{transition:transform .28s cubic-bezier(.2,.8,.2,1),opacity .2s}
 .vgbest{font-style:normal;font-size:11px;color:var(--gold)}
 .vgn{margin:12px 0 0;font-size:11.5px;color:var(--faint);line-height:1.4}
 @media (prefers-reduced-motion:reduce){.vgr,.vgb i{animation:none}}
-/* takvim */
+/* takvim (T06 v2): ısı haritası (yeşil = artı, kırmızı = eksi, koyuluk = büyüklük, sıfır nötr) + üstte ay boyunca birikim çizgisi. T17: eksi tutar YAZISI kırmızı değil (renk zeminde ve çizgide) */
 .vcal{padding:16px 16px 14px}
 .vcn{display:inline-flex;align-items:center;gap:4px;font-size:13px}.vcn b{font-weight:600;min-width:52px;text-align:center}.vcn button{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;color:var(--muted);background:color-mix(in srgb,var(--fg) 6%,transparent)}.vcn svg{width:13px;height:13px}
-.vcr{display:flex;align-items:baseline;gap:10px;margin-top:10px;min-height:26px;line-height:1}.vcr b{font-size:22px;font-weight:700;letter-spacing:-.03em;white-space:nowrap}.vcr span{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.vcw,.vcg{display:grid;grid-template-columns:repeat(7,1fr) 38px;gap:5px}
-.vcw{margin-top:14px}.vcw em{font-style:normal;font-size:10px;font-weight:600;color:var(--faint);text-align:center}
-.vcg{margin-top:6px}
-.vcg>*{border-radius:9px;font-size:11px;font-weight:600;font-style:normal;font-variant-numeric:tabular-nums}
-.vcg .e{visibility:hidden}.vcg .z{color:var(--faint);background:color-mix(in srgb,var(--fg) 3.5%,transparent)}.vcg .f{color:color-mix(in srgb,var(--faint) 55%,transparent);border:1px dashed color-mix(in srgb,var(--fg) 9%,transparent)}
-.vcg>button,.vcg>i:not(.e):not(.vcwk){height:58px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:4px 0 4px}
-.vcg>.e{height:58px}
-.vcg>button{background:color-mix(in srgb,var(--fg) 5%,transparent);color:var(--fg)}.vcg .vcd{font-size:10.5px;font-weight:600;color:var(--muted);line-height:1}
-.vcg .vcz{position:relative;flex:1;align-self:stretch;margin:2px 0}.vcg .vcz::before{content:"";position:absolute;left:5px;right:5px;top:50%;height:1px;background:color-mix(in srgb,var(--fg) 22%,transparent)}
-.vcg .vcz i{position:absolute;left:50%;width:9px;margin-left:-4.5px;border-radius:2px;height:calc((50% - 1px)*var(--h));min-height:2px}
-.vcg .p .vcz i{bottom:50%;background:var(--inc)}.vcg .n .vcz i{top:50%;background:var(--exp)}.vcg .z0 .vcz i{display:none}
-.vcg>button small{font-size:9.5px;font-weight:600;line-height:1;color:var(--fg);letter-spacing:-.02em}.vcg .p small{color:var(--inc)}
-.vcg .vcwk{display:grid;place-items:center;font-size:11.5px;font-weight:700;color:var(--fg);background:none}.vcg .vcwk.p{color:var(--inc)}.vcg .vcwk.z{color:var(--faint);font-weight:500}
-.vcs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.vcs>div{padding:9px 11px;border-radius:12px;background:color-mix(in srgb,var(--fg) 5%,transparent);display:flex;flex-direction:column;gap:3px}.vcs small{font-size:11px;color:var(--muted)}.vcs b{font-size:16px;font-weight:700}
-.vcnote{margin:10px 2px 0;font-size:12px;line-height:1.45;color:var(--muted)}
+.vcr{display:flex;align-items:baseline;gap:10px;margin-top:10px;min-height:26px;line-height:1}.vcr b{font-size:22px;font-weight:700;letter-spacing:-.03em;white-space:nowrap}.vcr span{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .vcal .vcr .neg{color:var(--fg)}
-.vcg .t{box-shadow:inset 0 0 0 1.5px var(--fg)}.vcg .z .vcd,.vcg .f .vcd{color:inherit}.vcg button.sel{box-shadow:inset 0 0 0 2px var(--accent);transform:scale(1.06)}.vcg button{transition:transform .15s}
+.vcc{position:relative;height:52px;margin:12px 0 0}
+.vcc svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.vcc .z{stroke:color-mix(in srgb,var(--fg) 22%,transparent);stroke-width:1;stroke-dasharray:3 3}
+.vcc .ap{fill:color-mix(in srgb,var(--inc) 16%,transparent)}.vcc .an{fill:color-mix(in srgb,var(--exp) 16%,transparent)}
+.vcc .lp,.vcc .ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}.vcc .lp{stroke:var(--inc)}.vcc .ln{stroke:var(--exp)}
+.vcc .vce{position:absolute;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:var(--inc);box-shadow:0 0 0 2.5px var(--surface)}.vcc .vce.neg{background:var(--exp)}
+.vcc .vcm{display:none;position:absolute;top:0;bottom:0;width:1px;margin-left:-.5px;background:color-mix(in srgb,var(--accent) 60%,transparent)}.vcc .vcm.on{display:block}
+.vcc .vcm b{position:absolute;left:-4px;top:var(--y,50%);width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 2.5px var(--surface)}
+.vccx{display:flex;justify-content:space-between;margin-top:5px;font-size:10.5px;line-height:1;color:var(--muted)}
+.vcw,.vcg{display:grid;grid-template-columns:repeat(7,1fr) 40px;gap:4px}
+.vcw{margin-top:12px}.vcw em{font-style:normal;font-size:10.5px;font-weight:600;color:var(--muted);text-align:center}
+.vcg{margin-top:6px}
+.vcg>*{border-radius:8px;font-style:normal;font-variant-numeric:tabular-nums}
+.vcg>button,.vcg>i{height:44px;display:flex;flex-direction:column;justify-content:space-between;align-items:stretch;padding:4px 0 6px;min-width:0;overflow:hidden}
+.vcg .e{visibility:hidden}
+.vcg .vcd{font-size:9.5px;font-weight:500;line-height:1;text-align:left;padding-left:5px;color:inherit}
+.vcg>button{color:var(--fg);background:color-mix(in srgb,var(--fg) 5%,transparent)}
+.vcg>button.p{background:color-mix(in srgb,var(--inc) var(--a),transparent)}.vcg>button.n{background:color-mix(in srgb,var(--exp) var(--a),transparent)}
+.vcg>button small{font-size:clamp(10px,2.9vw,11.5px);font-weight:700;line-height:1;text-align:center;letter-spacing:-.02em;white-space:nowrap}
+.vcg>button.z0 small{color:var(--muted);font-weight:600}
+.vcg>i.z{background:color-mix(in srgb,var(--fg) 3%,transparent);color:var(--muted)}.vcg>i.f{color:var(--muted)}
+.vcg .vcwk{display:grid;place-items:center;font-size:11.5px;font-weight:700;color:var(--muted);background:none}.vcg .vcwk.p{color:var(--inc)}.vcg .vcwk.n{color:var(--fg)}
+.vcg .t{box-shadow:inset 0 0 0 1.5px var(--fg)}.vcg button.sel{box-shadow:inset 0 0 0 2px var(--accent);transform:scale(1.06)}.vcg button{transition:transform .15s}
+.vcs{display:flex;flex-wrap:wrap;gap:4px 14px;margin:12px 2px 0;font-size:12.5px;color:var(--muted);line-height:1.3}.vcs b{color:var(--fg);font-weight:700}
+.vcnote{margin:4px 2px 0;font-size:12px;line-height:1.4;color:var(--muted)}
 .anim .vcg button{animation:vCell .4s cubic-bezier(.3,1.4,.5,1) var(--d) both}@keyframes vCell{from{transform:scale(.4);opacity:0}}
+.anim .vcc .lp,.anim .vcc .ln{stroke-dasharray:1;animation:vcDraw .7s cubic-bezier(.3,.8,.3,1) both}@keyframes vcDraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.anim .vcc .ap,.anim .vcc .an,.anim .vcc .vce{animation:gFade .5s ease .45s both}
 /* gelecek */
 .vfut{padding:16px 16px 14px}
 .vfx{display:flex;align-items:baseline;gap:7px;margin-top:12px;font-size:13px;color:var(--muted);line-height:1}.vfx b{font-size:24px;font-weight:700;letter-spacing:-.03em;color:var(--accent)}
@@ -1474,7 +1485,7 @@ nav{transition:transform .28s cubic-bezier(.2,.8,.2,1),opacity .2s}
 .vconf{position:fixed;inset:0;pointer-events:none;z-index:999;overflow:hidden}
 .vconf i{position:absolute;top:-12px;left:var(--l);width:8px;height:13px;border-radius:2px;animation:vConf var(--t) cubic-bezier(.2,.6,.4,1) forwards}
 @keyframes vConf{to{transform:translate(calc(var(--x)*.25),105vh) rotate(var(--r));opacity:.2}}
-@media (prefers-reduced-motion:reduce){.vle::after,.anim .vlp,.anim .vla,.anim .vcg button{animation:none}}
+@media (prefers-reduced-motion:reduce){.vle::after,.anim .vlp,.anim .vla,.anim .vcg button,.anim .vcc .lp,.anim .vcc .ln,.anim .vcc .ap,.anim .vcc .an,.anim .vcc .vce{animation:none}}
 /* ===== v3 dil: etiketler küçük harf, sakin; büyük harf ve harf aralığı yok ===== */
 .eyebrow,.lgday,.subnext>span:first-child,.sdg span,.ldh>div>span,.ihm,.krtl span,.srsh span,.srmh,.ded small,.detot small,.mscap,.txf .field>label,.w3tot span,.vdk small,.vlab,.dkg small,.vh2s small,.hzl,.hnk,.srs>span,.stmdial span,.stmsum span,.vfv small,.msl .eyebrow,.w3xh .eyebrow,.subcard .subgrp .eyebrow{text-transform:none;letter-spacing:0;font-size:12.5px;font-weight:600}
 .vh2s small,.dkg small,.stmsum span,.vdk small,.vfv small,.sdg span,.ldh>div>span{font-size:11.5px}
@@ -1911,15 +1922,25 @@ textarea.inp{min-height:44px}
   <div class="aci-yazi">Kumbara</div>
 </div></div>
 <script>
-/* Açılış kapatma: animasyon (860 ms) her soğuk açılışta tam oynar. Kapanma = max(uygulama hazır, animasyon bitişi) + 180 ms solma.
+/* Açılış kapatma: animasyon (hareket 1200 ms + 300 ms duruş = 1500 ms) her soğuk açılışta tam oynar. Kapanma = max(uygulama hazır, 1500 ms) + 260 ms solma.
    Uygulama hazır olunca render() kumbaraAcilisKapat() çağırır; erken gelirse animasyon bitene kadar beklenir, geç gelirse logo sabit kalır.
-   Emniyet: en geç 3 sn sonra her durumda kapanır. Yalnız sayfa yüklenişinde, bir kez. Hareketi azalt: animasyonsuz, hazır olunca anında kaldırılır. */
-(function(){ var el = document.getElementById('acilis'); if (!el) return; var done = false, safety, t0 = performance.now(), ANIM = 900;
+   Emniyet: en geç 3 sn sonra her durumda kapanır. Yalnız sayfa yüklenişinde, bir kez. Hareketi azalt: animasyonsuz, hazır olunca anında kaldırılır.
+   kumbaraAcilisSonra(fn): fn açılış katmanı kalkınca çalışır (katman yoksa hemen); T15 kısayol formu bunu bekler. */
+(function(){ var q = [], gitti = false;
+  window.kumbaraAcilisSonra = function(fn){ if (gitti) { try { fn(); } catch(e) { console.error(e); } } else q.push(fn); };
+  var bitti = function(){ if (gitti) return; gitti = true; var f = q; q = []; f.forEach(function(fn){ try { fn(); } catch(e) { console.error(e); } }); };
+  var el = document.getElementById('acilis'); if (!el) { bitti(); return; } var done = false, safety, t0 = performance.now(), ANIM = 1500, DUR = 300, SOL = 260;
   var rm = false; try { rm = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e) {}
-  var rem = function(){ try { el.remove(); } catch(e) { el.style.display = 'none'; } };
-  var kapat = function(){ if (rm) { rem(); return; } el.classList.add('kapan'); setTimeout(rem, 220); };
+  var rem = function(){ try { el.remove(); } catch(e) { el.style.display = 'none'; } bitti(); };
+  var kapat = function(){ if (rm) { rem(); return; } el.classList.add('kapan'); setTimeout(rem, SOL + 40); };
+  /* Kalan süre gerçek animasyon saatinden ölçülür (ilk kare geç çizilirse duruş kısalmaz): en son biten hareket + 300 ms duruş.
+     Hareketler bittiyse son bitişten (animationend) bu yana geçen süre düşülür; ölçülemezse t0'dan 1500 ms. */
+  var son = null; el.addEventListener('animationend', function(){ son = performance.now(); });
+  var kalan = function(){ var r = ANIM - (performance.now() - t0); try { var an = el.getAnimations({ subtree: true }).filter(function(a){ return !window.CSSTransition || !(a instanceof CSSTransition); });
+      var m = -Infinity; an.forEach(function(a){ if (a.playState === 'finished') return; var c = a.currentTime == null ? 0 : a.currentTime; m = Math.max(m, a.effect.getComputedTiming().endTime - c); });
+      if (m > -Infinity) r = m + DUR; else if (son !== null) r = DUR - (performance.now() - son); } catch(e) {} return Math.max(0, r); };
   window.kumbaraAcilisKapat = function(){ if (done) return; done = true; clearTimeout(safety);
-    var bekle = rm ? 0 : Math.max(0, ANIM - (performance.now() - t0)); if (bekle > 0) setTimeout(kapat, bekle); else kapat(); };
+    var bekle = rm ? 0 : kalan(); if (bekle > 0) setTimeout(kapat, bekle); else kapat(); };
   safety = setTimeout(function(){ if (done) return; done = true; kapat(); }, 3000); })();
 </script>
 
@@ -2241,7 +2262,7 @@ function applyTheme(){ const r = document.documentElement;
 
 /* ---------- Durum ---------- */
 const now = new Date();
-const S = {
+const S = { pendDel:new Set(),
   view: ['kayit','grafik','varlik','ayar'].includes(location.hash.slice(1)) ? location.hash.slice(1) : (['kayit','grafik','varlik','ayar'].includes(lsGet('kasa.startv')) ? lsGet('kasa.startv') : 'kayit'),
   y: now.getFullYear(), m: now.getMonth(), filter:'all',
   tx:[], inv:[], rec:[], ext:[],
@@ -3476,8 +3497,8 @@ async function undoLog(id){ const L = S.log.find(x=>x.id===id); if (!L || L.undo
     if (L.act==='add') for (const y of L.after||[]) await S.db.doc('tx/'+y.id).delete();
     else { for (const y of L.before||[]) await S.db.doc('tx/'+y.id).set(y.d);
       if (L.act==='del' && L.side) { for (const y of L.side.led||[]) await S.db.doc('led/'+y.id).set(y.d); for (const y of L.side.inv||[]) await restoreInv(y); } }
-    await S.db.doc('log/'+id).update({ undone:true, undoneBy:S.me, undoneAt:Date.now() });
-    L.undone = true; renderMain(); toast('Geri alındı'); });
+    let marked = true; try { await S.db.doc('log/'+id).update({ undone:true, undoneBy:S.me, undoneAt:Date.now() }); L.undone = true; } catch(e){ console.error(e); marked = false; }
+    renderMain(); toast(marked ? 'Geri alındı' : 'Geri alındı, ama değişiklik günlüğü güncellenemedi'); });
 }
 /* ---------- Borç / alacak defteri ---------- */
 function ledSum(){ const L = S.led || [], open = L.filter(e=>!e.paid);
@@ -4478,8 +4499,8 @@ async function saveTx(){
     } else { const nid = 'n_' + opId(), nd = noNull({ ...base, created:Date.now() }); await S.db.doc('tx/'+nid).set(nd);
       try { await spLed(nid); } catch(e){ console.error(e); throw rollMsg(e, await undoWrites(['tx/'+nid, ...(spOn ? ['led/sp_'+nid] : [])]), 'Kayıt'); }
       logAct('add', [], [{ ...nd, id:nid }]); flashNew([nid]); toast('Eklendi'); }
-    if (sugKey) saveCfg(c => ({ sugOk:[...new Set([...(c.sugOk||[]), sugKey])].slice(-300) })).catch(()=>{});
-    closeSheet();
+    const sugBad = sugKey ? !(await saveCfg(c => ({ sugOk:[...new Set([...(c.sugOk||[]), sugKey])].slice(-300) }), true)) : false; // kayıt eklendi; yalnız öneri ayarı yazılamadıysa "Kaydedilemedi" denmez
+    closeSheet(); if (sugBad) toast('Kaydedildi; yalnız öneri ayarı kaydedilemedi. Kaydı tekrar girme.');
   });
 }
 async function saveRec(){
@@ -4553,10 +4574,10 @@ function invUndoPlan(t, cur){ const x = cur[t.invId]; if (!x || !(x.lots||[]).le
   return { id:x.id, before:{ units:x.units, cost:x.cost, lots:x.lots }, after:{ units:Math.max(0, Math.round(((+x.units||0) - +l.units)*1e6)/1e6), cost:Math.max(0, r2((+x.cost||0) - tot)), lots:x.lots.filter((_, i) => i !== ix) } }; }
 async function delRecords(L){
   const done = [], failed = [], sideFailed = [], side = { led:[], inv:[] }, cur = {}, invBefore = {};
-  S.inv.forEach(x => { cur[x.id] = x; });
   for (const x of L) {
     const lid = x.split && x.split.ledId && !x.split.paid ? x.split.ledId : null, ledDoc = lid ? (S.led||[]).find(e => e.id === lid) : null;
-    const ip = isSav(x) && x.invId ? invUndoPlan(x, cur) : null;
+    let ip = null; // yatırım etkisi taze belgeden hesaplanır (bayat yerel kopya yazılmaz); taze okuma olmazsa silme yapılmaz
+    if (isSav(x) && x.invId) { try { const f = await freshDoc('inv/'+x.invId); if (f) { cur[x.invId] = { ...f, id:x.invId }; ip = invUndoPlan(x, cur); } } catch(e){ console.error(e); failed.push(x); continue; } }
     try { await S.db.doc('tx/'+x.id).delete(); done.push(x); } catch(e){ console.error(e); failed.push(x); continue; }
     let bad = false;
     if (ip) { try { await S.db.doc('inv/'+ip.id).update(ip.after); cur[ip.id] = { ...cur[ip.id], ...ip.after }; if (!invBefore[ip.id]) invBefore[ip.id] = ip.before; } catch(e){ console.error(e); bad = true; } }
@@ -4571,30 +4592,46 @@ async function delRecords(L){
 async function restoreInv(y){
   const f = await freshDoc('inv/'+y.id); if (!f) throw userErr('Yatırım artık yok; bağlı yatırım etkisi geri alınamadı.');
   const b = y.d, a = y.after; if (!a) throw userErr('Yatırım etkisi için eski bilgi yok; yatırımı elle düzelt.');
-  const key = l => JSON.stringify(l), had = new Set((a.lots||[]).map(key)), now = new Set((f.lots||[]).map(key));
-  const back = (b.lots||[]).filter(l => !had.has(key(l)) && !now.has(key(l)));
-  await S.db.doc('inv/'+y.id).update({ units:Math.max(0, Math.round(((+f.units||0) + (+b.units||0) - (+a.units||0))*1e6)/1e6), cost:Math.max(0, r2((+f.cost||0) + (+b.cost||0) - (+a.cost||0))), lots:[...(f.lots||[]), ...back] }); }
+  const key = l => JSON.stringify(l), cnt = L => { const m = new Map(); (L||[]).forEach(l => m.set(key(l), (m.get(key(l))||0) + 1)); return m; };
+  const cA = cnt(a.lots), cB = cnt(b.lots), cF = cnt(f.lots), back = []; let exp = 0;
+  cB.forEach((nb, k) => { const na = cA.get(k)||0, e = nb - na; if (e <= 0) return; exp += e; // silmeyle giden lot sayısı
+    const miss = e - Math.max(0, (cF.get(k)||0) - na); // şimdiki belgede zaten geri gelmiş olanlar düşülür (aynı lottan birden çok olabilir)
+    const lot = (b.lots||[]).find(l => key(l) === k); for (let n = 0; n < miss; n++) back.push(lot); });
+  if (!back.length) return; // eksik toplamı 0: idempotent, belgeye yazılmaz (adet/maliyet ikinci kez eklenmez)
+  const lt = l => l.total != null ? +l.total : +l.units * +l.price, full = back.length === exp; // kısmen gelmişse yalnız gerçekten eklenen lotlardan hesapla
+  const dU = full ? (+b.units||0) - (+a.units||0) : back.reduce((n, l) => n + (+l.units||0), 0), dC = full ? (+b.cost||0) - (+a.cost||0) : back.reduce((n, l) => n + lt(l), 0);
+  await S.db.doc('inv/'+y.id).update({ units:Math.max(0, Math.round(((+f.units||0) + dU)*1e6)/1e6), cost:Math.max(0, r2((+f.cost||0) + dC)), lots:[...(f.lots||[]), ...back] }); }
 async function restoreDeleted(items, side){
   for (const { id, ...d } of items) await S.db.doc('tx/'+id).set(d);
   for (const y of (side && side.led) || []) await S.db.doc('led/'+y.id).set(y.d);
   for (const y of (side && side.inv) || []) await restoreInv(y); }
 /* T21: her silme yolunun ortak sayfa içi onayı: ilk dokunuş düğmeyi "Emin misin?" yapar (4 sn sonra geri döner), ikinci dokunuş silmeyi yürütür. Kaydırma, form, ayrıntı, taksit ve "fazla kayıt" aynı bileşeni kullanır. */
-function armSure(b){ if (b.dataset.sure) return true; const sp = b.querySelector('span') || b; b.dataset.sure = '1'; b._t0 = sp.textContent; sp.textContent = 'Emin misin?'; b.classList.add('sure'); buzz();
+const delBusy = b => { b.dataset.busy = '1'; clearTimeout(b._st); b.classList.add('sure'); b.disabled = true; const sp = b.querySelector('span') || b; sp.textContent = 'Siliniyor…'; }; // onaydan sonra anında geri bildirim; ikinci dokunuş yok sayılır
+function armSure(b){ if (b.dataset.busy) return false; if (b.dataset.sure) return true; const sp = b.querySelector('span') || b; b.dataset.sure = '1'; b._t0 = sp.textContent; sp.textContent = 'Emin misin?'; b.classList.add('sure'); buzz();
   clearTimeout(b._st); b._st = setTimeout(() => { delete b.dataset.sure; sp.textContent = b._t0; b.classList.remove('sure'); }, 4000); return false; }
 const delLabel = t => `“${t.note || subName(t.cat,t.sub) || CAT[t.cat]?.n || 'Kayıt'}” silindi`; // her silme yolunda aynı ileti
 async function deleteRecords(L, label){ // toast + log + geri al; başarı sayısını döner
-  const r = await delRecords(L);
-  if (r.done.length) { const logId = await logAct('del', r.done, [], r.side);
+  // iyimser arayüz: satırlar hemen gizlenir; ağ işleri sürerken onSnapshot silinenleri geri getirmez (S.pendDel). Başarısız olanlar geri gelir.
+  L.forEach(x => S.pendDel.add(x.id)); S.tx = S.tx.filter(x => !S.pendDel.has(x.id)); softRender();
+  let r; try { r = await delRecords(L); } catch(e){ console.error(e); r = { done:[], failed:L.slice(), sideFailed:[], side:{ led:[], inv:[] } }; }
+  L.forEach(x => S.pendDel.delete(x.id));
+  if (r.failed.length) { r.failed.forEach(x => { if (!S.tx.some(y => y.id === x.id)) S.tx.push((S.txRaw || []).find(y => y.id === x.id) || x); }); softRender(); }
+  if (r.done.length) { const logP = logAct('del', r.done, [], r.side); // günlük yazımı beklenmez; geri alma gerektiğinde bekler
     const msg = r.sideFailed.length ? 'Kayıt silindi ama bağlı yatırım/borç güncellenemedi; kontrol et.' : r.failed.length ? `${r.done.length} kayıt silindi, ${r.failed.length} silinemedi` : (label || (r.done.length > 1 ? `${r.done.length} kayıt silindi` : 'Silindi'));
+    let used = false;
     toast(msg, 'Geri al', () => guard(async () => {
+      if (used) return; used = true;
+      const logId = await logP.catch(() => null);
       if (logId && (S.log.find(x => x.id === logId) || {}).undone) { toast('Bu silme zaten geri alınmış.'); return; }
-      await restoreDeleted(r.done, r.side);
-      if (logId) { try { await S.db.doc('log/'+logId).update({ undone:true, undoneBy:S.me, undoneAt:Date.now() }); const L0 = S.log.find(x => x.id === logId); if (L0) L0.undone = true; } catch(e){ console.error(e); } }
-      toast('Geri alındı'); })); }
+      try { await restoreDeleted(r.done, r.side); } catch(e){ used = false; throw e; }
+      let marked = true; if (logId) { try { await S.db.doc('log/'+logId).update({ undone:true, undoneBy:S.me, undoneAt:Date.now() }); const L0 = S.log.find(x => x.id === logId); if (L0) L0.undone = true; } catch(e){ console.error(e); marked = false; } }
+      else marked = false;
+      toast(marked ? 'Geri alındı' : 'Geri alındı, ama değişiklik günlüğü güncellenemedi'); })); }
   else toast('Silinemedi, bağlantını kontrol edip tekrar dene.');
   return r; }
 /* patch: nesne ya da (tazeBelge) => nesne. Başarıda true, başarısızlıkta false (toast gösterilmiş olur). */
-async function saveCfg(patch){
+async function saveCfg(patch, quiet){
+  if (quiet) { try { if (!S.db || !S.loaded.cfg) return false; const next = await mergeDoc('cfg/main', cur => { const b = cur || S.cfg; return { ...b, ...(typeof patch === 'function' ? patch(b) : patch) }; }, S.cfg); if (next) S.cfg = { ...next, cancelled:{ ...(next.cancelled||{}) }, subsMeta:{ ...(next.subsMeta||{}) } }; return true; } catch(e){ console.error(e); return false; } }
   if (!S.db || !S.loaded.cfg) { toast('Ayarlar henüz yüklenmedi, birkaç saniye sonra tekrar dene.'); return false; }
   return guard(async () => { const next = await mergeDoc('cfg/main', cur => { const b = cur || S.cfg; return { ...b, ...(typeof patch === 'function' ? patch(b) : patch) }; }, S.cfg);
     if (next) S.cfg = { ...next, cancelled:{ ...(next.cancelled||{}) }, subsMeta:{ ...(next.subsMeta||{}) } }; }); }
@@ -4751,7 +4788,7 @@ document.addEventListener('click', async e => {
     case 'setekg': lsSet('kasa.ekstre.gun', ['1','2','3'].includes(val) ? val : '1'); renderMain(); break;
     case 'ekok': lsSet('kasa.ekstre.ok', JSON.stringify([...new Set([...ekOkList(), val])].slice(-24))); renderMain(); break;
     case 'setcat': S.catFromSet = true; S.catmT = 'gider'; S.catBackT = 'gider'; openSheet({ kind:'catmsh' }); break;
-    case 'sgdel': { const t = S.tx.find(x=>x.id===id); if (!t) return; if (!armSure(b)) break;
+    case 'sgdel': { const t = S.tx.find(x=>x.id===id); if (!t) return; if (!armSure(b)) break; delBusy(b);
       await deleteRecords([{ ...t }], delLabel(t)); break; }
     case 'sgcat': { const [tid, cat] = val.split('|'), t = S.tx.find(x=>x.id===tid); if (!t) return; const old = { cat:t.cat, sub:t.sub||'' };
       await guard(async()=>{ await S.db.doc('tx/'+tid).update({ cat, sub:'' }); logAct('edit', [t], [{ ...t, cat, sub:'' }]); toast(`${CAT[cat]?.n||cat} kategorisine taşındı`, 'Geri al', () => guard(async()=>{ await S.db.doc('tx/'+tid).update(old); })); }); break; }
@@ -4856,6 +4893,7 @@ document.addEventListener('click', async e => {
     case 'vfutn': S.vFutN = +val; renderMain(); break;
     case 'vcalm': S.vCalM = val; renderMain(); break;
     case 'vcday': { const [d, g] = val.split('|'), r = document.getElementById('vcr'), b = e.target.closest('button'), was = b.classList.contains('sel'); document.querySelectorAll('.vcg .sel').forEach(x => x.classList.remove('sel'));
+      { const mk = document.getElementById('vcm'), c = (b.dataset.c || '').split('|'), on = !was && c.length === 2; if (mk) { mk.classList.toggle('on', on); if (on) { mk.style.left = c[0]; mk.style.setProperty('--y', c[1]); } } }
       if (was) r.innerHTML = r.dataset.def; else { b.classList.add('sel'); r.innerHTML = `<b class="num ${+g < 0 ? 'neg' : 'pos'}">${vSg(+g)}</b><span>${+d.slice(8)} ${MON[+d.slice(5,7)-1]} · fiyat değişimi</span>`; } buzz(); break; }
     case 'vdist': openSheet({ kind:'vdist' }); break;
     case 'w3m': S.w3m = val; renderMain(); break;
@@ -4870,16 +4908,17 @@ document.addEventListener('click', async e => {
       toast(`${t.note || subName(t.cat,t.sub) || CAT[t.cat]?.n || 'Kayıt'} bugüne eklendi`, 'Geri al', async () => { await guard(async()=>{ await S.db.doc('tx/'+ref.id).delete(); }); });
       if (S.y!==new Date().getFullYear() || S.m!==new Date().getMonth()) { const T = new Date(); S.y=T.getFullYear(); S.m=T.getMonth(); render(); }
       setTimeout(() => { if (S.view==='kayit') goToday(); }, 250); break; }
-    case 'swdel': { const t = S.tx.find(x=>x.id===id); if (!t) return; if (!armSure(b)) break; const sw = b.closest('.sw'); openSw = null;
+    case 'swdel': { const t = S.tx.find(x=>x.id===id); if (!t) return; if (!armSure(b)) break; delBusy(b); const sw = b.closest('.sw'); openSw = null;
       sw.style.height = sw.offsetHeight+'px'; sw.classList.add('gone'); requestAnimationFrame(()=>requestAnimationFrame(()=>{ sw.style.height='0px'; }));
       lsSet('kasa.swiped','1');
       const { id:_i, ...data } = t;
       await new Promise(r=>setTimeout(r,280));
       const r = await deleteRecords([t], delLabel(t)); if (!r.done.length) renderMain();
       break; }
-    case 'deltx': if (b.dataset.sure) { const mode = val||'one';
+    case 'deltx': if (b.dataset.busy) break; if (b.dataset.sure) { const mode = val||'one';
         const L = mode==='one' ? [SH.orig] : groupOf(SH.orig).filter(x => mode==='all' || x.inst.i>=SH.orig.inst.i);
-        { const r = await deleteRecords(L.map(x => ({ ...x })), L.length>1 ? `${L.length} taksit silindi` : delLabel(L[0])); if (r.done.length) closeSheet(); } }
+        delBusy(b); const sh0 = SH; closeSheet(); // form hemen kapanır; silme başarısızsa geri açılır
+        { const r = await deleteRecords(L.map(x => ({ ...x })), L.length>1 ? `${L.length} taksit silindi` : delLabel(L[0])); if (r.failed.length && !SH) { SH = sh0; SH._fresh = true; drawSheet(); } } }
       else armSure(b); break;
     case 'saveinst': SH.d.applyAll = val==='rest'; SH.askDone = true; SH.askApply = false; await saveTx(); if (SH) SH.askDone = false; break;
     case 'saveinstx': SH.askApply = false; drawSheet(); break;
@@ -5125,7 +5164,7 @@ function loadCache(){ try { const c = JSON.parse(localStorage.getItem(CK) || 'nu
 function softRender(){ if (softRender.q) return; softRender.q = requestAnimationFrame(() => { softRender.q = 0; render(); if (SH) { if (SH.kind==='dedit') dRead(); drawSheet(); } if (S.searchOpen) drawSrBody(); saveCache(); }); }
 function firstScroll(){ if (S.autoScrolled || S.status!=='ready' || S.view!=='kayit') return; S.autoScrolled = true; goToday(true); }
 S.boot = true;
-/* T15: telefon ana ekranı kısayolları (manifest shortcuts): ?k=gider -> Hızlı ekle, ?k=yatirim -> yatırım ekleme formu. Parametre yoksa hiçbir şey değişmez. */
+/* T15: telefon ana ekranı kısayolları (manifest shortcuts): ?k=gider -> Hızlı ekle, ?k=yatirim -> yatırım ekleme formu. Parametre yoksa hiçbir şey değişmez. Form, açılış katmanı kalktıktan sonra açılır (kumbaraAcilisSonra). */
 const KISAYOL = (() => { try { const k = new URLSearchParams(location.search).get('k'); return k === 'gider' || k === 'yatirim' ? k : ''; } catch(_) { return ''; } })();
 function kisayolAc(){ if (!KISAYOL || S.kisayolDone) return; S.kisayolDone = true;
   try { history.replaceState(null, '', location.pathname + location.hash); } catch(_) {}
@@ -5155,9 +5194,9 @@ document.fonts && document.fonts.ready.then(() => { fitTop(); fitNums(); stickOf
   const ready = () => { if (!live.tx || !live.inv || !live.cfg) return false;
     if (S.status!=='ready' || S.fromCache) { S.status = 'ready'; S.fromCache = false; document.body.classList.remove('booting'); }
     return true; };
-  const changed = () => { if (!ready()) return; softRender(); setTimeout(runRecurring, 1500); setTimeout(runSubs, 2500); setTimeout(runLedger, 1800); saveSnap(); setTimeout(pruneLog, 7000); requestAnimationFrame(firstScroll); setTimeout(() => { S.boot = false; }, 1200); if (KISAYOL && !S.kisayolDone && !S.kisayolT) S.kisayolT = setTimeout(kisayolAc, 1400); if (!S.sheenDone) { S.sheenDone = true; setTimeout(() => { document.body.classList.add('sheen1'); setTimeout(() => document.body.classList.remove('sheen1'), 3000); }, 1300); } };
+  const changed = () => { if (!ready()) return; softRender(); setTimeout(runRecurring, 1500); setTimeout(runSubs, 2500); setTimeout(runLedger, 1800); saveSnap(); setTimeout(pruneLog, 7000); requestAnimationFrame(firstScroll); setTimeout(() => { S.boot = false; }, 1200); if (KISAYOL && !S.kisayolDone && !S.kisayolT) S.kisayolT = setTimeout(() => (window.kumbaraAcilisSonra || (f => f()))(() => setTimeout(kisayolAc, 120)), 1400); if (!S.sheenDone) { S.sheenDone = true; setTimeout(() => { document.body.classList.add('sheen1'); setTimeout(() => document.body.classList.remove('sheen1'), 3000); }, 1300); } };
   const set = (k, v) => { const was = live[k]; live[k] = true; S.loaded[k] = true; delete S.lerr[k]; if (was && sameJ(S[k], v)) return; if (!was && S.fromCache && sameJ(S[k], v)) { changed(); return; } S[k] = v; changed(); };
-  S.lerr = {}; S.txTrunc = {}; S.absent = {};
+  S.lerr = {}; S.txTrunc = {}; S.absent = {}; S.pendDel = S.pendDel || new Set();
   const errFor = key => e => { console.error(e);
     if (e?.code==='revoked'||e?.code==='not_granted') { S.status='offline'; document.body.classList.remove('booting'); render(); return; }
     S.lerr[key] = 1;
@@ -5171,7 +5210,7 @@ document.fonts && document.fonts.ready.then(() => { fitTop(); fitNums(); stickOf
       q.limit(LIM).onSnapshot(s => {
         parts[id] = s.docs.map(d=>({ ...d.data(), id:d.id }));
         const tr = s.docs.length >= LIM; if (tr !== !!S.txTrunc[id]) { if (tr) S.txTrunc[id] = 1; else delete S.txTrunc[id]; if (!first) softRender(); }
-        if (first) { first = false; pending--; } if (pending <= 0) set('tx', Object.values(parts).flat()); }, errFor('tx:' + id)); };
+        if (first) { first = false; pending--; } if (pending <= 0) { S.txRaw = Object.values(parts).flat(); set('tx', S.txRaw.filter(x => !S.pendDel.has(x.id))); } }, errFor('tx:' + id)); };
     win('old', db.collection('tx').where('date','<','2025-01-01'));
     for (let y = 2025; y <= endY; y++) for (const h of [0,1]) {
       const a = `${y}-${h?'07':'01'}-01`, z = h ? `${y+1}-01-01` : `${y}-07-01`;
@@ -5549,24 +5588,37 @@ function vSave(tv, fr){ const rows = [], c = S.donem && S.donem.cur, td = today(
   const add = S.canWrite ? `<button type="button" class="gadd" data-act="goalnew">${ico('plus')}Hedef</button>` : '';
   let spx = ''; try { spx = splitStrip(); } catch (e) { console.error(e); }
   return rows.length || add ? `<div class="sec"><div class="card bsv${fr ? ' vin' : ''}"><div class="bsvh"><span class="eyebrow">Birikim</span>${add}</div>${spx}${rows.join('') || `<button type="button" class="gempty" data-act="goalnew"><b>Bir hedef koy</b><span>Ev eşyası, araba, tatil… Bir yatırımı hedefe bağla; ne zaman ulaşacağını, enflasyonla güncellenmiş tutarıyla görürsün.</span></button>`}</div></div>` : ''; }
-// Kazanç takvimi
+// Kazanç takvimi (T06 v2). Veri: gainDays() (günlük fiyat değişimi); burada yalnız gösterilir.
 function vCal(A){ const G = gainDays(); if (!Object.keys(G).length) return '';
   const ms = [...new Set(Object.keys(G).map(d => d.slice(0,7)))].sort(), m = ms.includes(S.vCalM) ? S.vCalM : ms[ms.length-1], mi = ms.indexOf(m), y = +m.slice(0,4), mo = +m.slice(5,7) - 1, n = dim(y, mo), off = (new Date(y, mo, 1).getDay() + 6) % 7, td = today();
-  const D = Object.entries(G).filter(([d]) => d.slice(0,7) === m), tot = r2(D.reduce((a,[,v]) => a + v, 0)), mx = Math.max(1, ...D.map(([,v]) => Math.abs(v))), best = D.slice().sort((p,q) => q[1] - p[1])[0];
-  // T06: her gün aynı ölçekte (ayın en büyük |değeri| = tam yükseklik); sıfır çizgisinin üstü artış, altı düşüş; altında kısa tutar. Sağda haftalık toplam.
+  const D = Object.entries(G).filter(([d]) => d.slice(0,7) === m).sort((p,q) => p[0] < q[0] ? -1 : 1), tot = r2(D.reduce((a,[,v]) => a + v, 0)), mx = Math.max(1, ...D.map(([,v]) => Math.abs(v))), best = D.slice().sort((p,q) => q[1] - p[1])[0];
+  // Renk koyuluğu: her gün aynı ölçekte, doğrusal: ayın en büyük |değeri| = %48, sıfıra yakın = %8. Sıfır gün nötr gri. İşaret (+/−) yazıda kalır.
+  const A0 = 8, A1 = 40, alpha = v => (A0 + A1*Math.min(1, Math.abs(v)/mx)).toFixed(1) + '%';
   const cp = v => { const a2 = Math.abs(v); return a2 < .005 ? '0' : a2 < .5 ? (v < 0 ? '−' : '+') + '<1' : (v < 0 ? '−' : '+') + (a2 >= 1000 ? fmtN(a2/1000, a2 >= 10000 ? 0 : 1).replace(/,0$/, '') + ' b' : fmt0(a2)); };
-  let cells = '', wk = 0, wd = 0; const wkRow = () => { cells += `<span class="vcwk${wd ? (wk < 0 ? ' n' : wk > 0 ? ' p' : '') : ' z'}" aria-label="Hafta toplamı ${wd ? vSg(r2(wk)) : 'yok'}">${wd ? cp(r2(wk)) : ''}</span>`; wk = 0; wd = 0; };
+  // Ay boyunca birikim çizgisi: ay başı 0, her veri gününde o güne kadarki toplam. x = ayın günü (ayın tamamı), y = birikim (0 çizgisi kesikli). Son nokta = ay toplamı.
+  const W = 300, H = 52, P = 5; let cum = 0; const pts = [[0, 0]]; D.forEach(([d, v]) => { cum = r2(cum + v); pts.push([+d.slice(8), cum]); });
+  const lo = Math.min(0, ...pts.map(p => p[1])), hi = Math.max(0, ...pts.map(p => p[1])), k = (H - 2*P)/((hi - lo) || 1), X = d => d === 0 ? 0 : (d - .5)/n*W, Y = c => P + (hi - c)*k, y0 = Y(0);
+  const CX = {}; pts.forEach(([d, c]) => { if (d) CX[d] = [X(d), Y(c)]; });
+  const pc = (v, of) => (v/of*100).toFixed(2) + '%', f2 = v => v.toFixed(2);
+  const ln = pts.map(([d, c], i) => `${i ? 'L' : 'M'}${f2(X(d))} ${f2(Y(c))}`).join(''), last = pts[pts.length-1], ar = `${ln}L${f2(X(last[0]))} ${f2(y0)}L0 ${f2(y0)}Z`;
+  const chart = pts.length > 1 ? `<div class="vcc" data-k="${k.toFixed(6)}" data-y0="${y0.toFixed(4)}" data-h="${H}" data-w="${W}" role="img" aria-label="${MON[mo]} boyunca birikim: ${vSg(tot)}"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">
+      <defs><clipPath id="vccP"><rect x="-5" y="-20" width="${W + 10}" height="${f2(y0 + 20)}"/></clipPath><clipPath id="vccN"><rect x="-5" y="${f2(y0)}" width="${W + 10}" height="${f2(H - y0 + 20)}"/></clipPath></defs>
+      <line class="z" x1="0" x2="${W}" y1="${f2(y0)}" y2="${f2(y0)}" vector-effect="non-scaling-stroke"/>
+      <path class="ap" d="${ar}" clip-path="url(#vccP)"/><path class="an" d="${ar}" clip-path="url(#vccN)"/>
+      <path class="lp" d="${ln}" pathLength="1" clip-path="url(#vccP)" vector-effect="non-scaling-stroke"/><path class="ln" d="${ln}" pathLength="1" clip-path="url(#vccN)" vector-effect="non-scaling-stroke"/></svg>
+      <i class="vce${tot < 0 ? ' neg' : ''}" style="left:${pc(X(last[0]), W)};top:${pc(Y(last[1]), H)}"></i><i class="vcm" id="vcm"><b></b></i></div><div class="vccx"><span>1 ${MON[mo].slice(0,3)}</span><span>ay boyunca birikim</span><span>${n} ${MON[mo].slice(0,3)}</span></div>` : '';
+  let cells = '', wk = 0, wd = 0; const wkRow = () => { const w2 = r2(wk); cells += `<span class="vcwk${wd ? (w2 < 0 ? ' n' : w2 > 0 ? ' p' : '') : ' z'}" aria-label="Hafta toplamı ${wd ? vSg(w2) : 'yok'}">${wd ? cp(w2) : ''}</span>`; wk = 0; wd = 0; };
   for (let i = 0; i < off; i++) cells += '<i class="e"></i>';
-  for (let d = 1; d <= n; d++) { const k = `${m}-${pad(d)}`, v = G[k], fut = k > td, col = (off + d - 1) % 7;
+  for (let d = 1; d <= n; d++) { const dk = `${m}-${pad(d)}`, v = G[dk], fut = dk > td, col = (off + d - 1) % 7, c = CX[d];
     if (v != null) { wk += v; wd++; }
-    cells += v != null ? `<button type="button" class="${v < 0 ? 'n' : v > 0 ? 'p' : 'z0'}${k === td ? ' t' : ''}" style="--h:${Math.min(1, Math.abs(v)/mx).toFixed(3)};--d:${d*14}ms" data-act="vcday" data-v="${k}|${v}" aria-label="${d} ${MON[mo]}, ${v < 0 ? 'değer azaldı' : v > 0 ? 'değer arttı' : 'değişmedi'} ${vSg(v)}"><b class="vcd">${d}</b><span class="vcz"><i></i></span><small>${cp(v)}</small></button>` : `<i class="${fut ? 'f' : 'z'}${k === td ? ' t' : ''}"><b class="vcd">${d}</b></i>`;
-    if (col === 6 || d === n) { if (d === n) for (let c = col + 1; c < 7; c++) cells += '<i class="e"></i>'; wkRow(); } }
+    cells += v != null ? `<button type="button" class="${v < 0 ? 'n' : v > 0 ? 'p' : 'z0'}${dk === td ? ' t' : ''}" style="${v ? `--a:${alpha(v)};` : ''}--d:${d*14}ms" data-act="vcday" data-v="${dk}|${v}"${c ? ` data-c="${pc(c[0], W)}|${pc(c[1], H)}"` : ''} aria-label="${d} ${MON[mo]}, ${v < 0 ? 'değer azaldı' : v > 0 ? 'değer arttı' : 'değişmedi'} ${vSg(v)}"><b class="vcd">${d}</b><small>${cp(v)}</small></button>` : `<i class="${fut ? 'f' : 'z'}${dk === td ? ' t' : ''}"><b class="vcd">${d}</b></i>`;
+    if (col === 6 || d === n) { if (d === n) for (let c3 = col + 1; c3 < 7; c3++) cells += '<i class="e"></i>'; wkRow(); } }
   const pos = D.filter(([, v]) => v > 0).length, neg = D.filter(([, v]) => v < 0).length;
-  const def = `<b class="num ${tot < 0 ? 'neg' : 'pos'}">${vSg(tot)}</b><span>fiyat değişiminden</span>`;
+  const def = `<b class="num ${tot < 0 ? 'neg' : 'pos'}">${vSg(tot)}</b><span>${MON[mo]} toplamı</span>`;
   return `<div class="sec"><div class="card vcal"><div class="toprow"><span class="eyebrow">Kazanç takvimi</span><span class="vcn">${mi > 0 ? `<button data-act="vcalm" data-v="${ms[mi-1]}" aria-label="Önceki ay">${ico('left')}</button>` : ''}<b>${MON[mo]}</b>${mi < ms.length - 1 ? `<button data-act="vcalm" data-v="${ms[mi+1]}" aria-label="Sonraki ay">${ico('right')}</button>` : ''}</span></div>
-    <div class="vcr" id="vcr" data-def="${esc(def)}">${def}</div><div class="vcw">${['Pt','Sa','Ça','Pe','Cu','Ct','Pz'].map(w => `<em>${w}</em>`).join('')}<em>Hafta</em></div><div class="vcg">${cells}</div>
-    <div class="vcs"><div><small>Artı gün</small><b class="num">${pos}</b></div><div><small>Eksi gün</small><b class="num">${neg}</b></div><div><small>En iyi gün</small><b class="num">${best && best[1] > 0 ? vDl(best[0]) : '—'}</b></div></div>
-    <p class="vcnote">Çubuk yukarı: o gün değer arttı; aşağı: azaldı. Hepsi aynı ölçekte. Bu tutarlar fiyat değişimidir, cebe giren ya da çıkan para değildir.</p></div></div>`; }
+    <div class="vcr" id="vcr" data-def="${esc(def)}">${def}</div>${chart}<div class="vcw">${['Pt','Sa','Ça','Pe','Cu','Ct','Pz'].map(w => `<em>${w}</em>`).join('')}<em>Hafta</em></div><div class="vcg">${cells}</div>
+    <p class="vcs"><span><b class="num">${pos}</b> artı gün</span><span><b class="num">${neg}</b> eksi gün</span><span>en iyi gün <b class="num">${best && best[1] > 0 ? vDl(best[0]) : '—'}</b></span></p>
+    <p class="vcnote">Fiyat değişimidir, cebe giren para değil.</p></div></div>`; }
 // Gelecek hesaplayıcı
 function vFutCalc(X, n, V0){ // birden çok yatırım varsa getiri, güncel değerlere göre ağırlıklı ortalamadır
   const W = S.inv.map(x => { const a = assetOf(x), mk = a && a.monthly ? Object.keys(a.monthly).filter(k => k < today().slice(0,7)).sort().slice(-12) : []; return { w: invValue(x), mk, r: mk.length ? Math.pow(mk.reduce((c,k) => c*(1 + +a.monthly[k]/100), 1), 1/mk.length) - 1 : null }; }).filter(o => o.r != null && o.w > 0);
