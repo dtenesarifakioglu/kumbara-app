@@ -306,8 +306,6 @@ nav .wrap{display:grid;align-items:center}
 .chip.ochip svg{width:15px;height:15px}
 .chip.ochip[aria-pressed="true"] .pd{background:var(--accent-ink)!important}
 .chip.ochip[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#1A1306}
-.tag.sh{color:var(--accent);display:inline-flex;align-items:center;gap:3px}
-.tag.sh svg{width:10px;height:10px}
 .sw{position:relative;overflow:hidden}
 .swdel{position:absolute;top:0;right:0;bottom:0;width:88px;background:var(--exp);color:#2A0D08;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:12px;font-weight:700}
 .swdel svg{width:20px;height:20px}.swdel.sure{background:#fff;color:#7a1308;box-shadow:inset 0 0 0 2px var(--exp)}.btn.sure,.idopt.sure{outline:2px solid var(--exp)}
@@ -926,7 +924,6 @@ body.booting::after{content:"";position:fixed;left:50%;top:42%;width:14px;height
 .qchips{flex-wrap:wrap}.qchips .chip{padding:7px 12px;font-size:13px;background:var(--surface);border-color:var(--line)}
 .qbtns{display:grid;grid-template-columns:1fr 1.7fr;gap:8px;margin-top:12px}.qbtns .btn{justify-content:center;padding:14px}.qbtns .btn[disabled]{opacity:.45}
 .qfh{font-size:12.5px;font-weight:700;color:var(--muted);margin:18px 2px 8px}.qfg{display:grid;grid-template-columns:1fr 1fr;gap:8px}.qfb{display:flex;align-items:center;gap:8px;padding:10px;border-radius:14px;border:1px solid var(--line);background:var(--surface);text-align:left;min-width:0}.qfb b{flex:1;min-width:0;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.qfb em{font-style:normal;font-size:13px;font-weight:650;color:var(--muted)}
-.qarow{display:flex;align-items:center;gap:10px;width:100%;margin:4px 0 6px;padding:10px 12px;border-radius:14px;border:1px dashed var(--line);text-align:left;color:var(--fg)}.qarow>span{flex:1;min-width:0}.qarow b{display:block;font-size:14px}.qarow small{font-size:12px;color:var(--muted)}.qarow svg{width:18px;height:18px;color:var(--muted)}
 .txdelrow{margin-top:14px}.txdelrow .btn{width:100%;justify-content:center}
 .kp{position:sticky;bottom:-18px;margin:12px -4px 0;padding:8px 4px calc(6px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--surface) 90%,transparent);z-index:3}
 .kpo,.kpg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.kpo{margin-bottom:6px}
@@ -1854,6 +1851,9 @@ main{padding-bottom:calc(132px + env(safe-area-inset-bottom,0px))!important}
 textarea.inp{min-height:44px}
 /* Kuruş: küçük ve tema gri tonunda (her temada ≥4.5:1) */
 .mv .kr,.mv .dec{color:var(--muted)!important}
+/* Renkli tutarda (yeşil/kırmızı/altın/vurgu; krTone .mv.mc ekler) kuruş ve ₺ aynı rengin koyu tonu; nötr tutarda yukarıdaki soluk görünüm kalır */
+.mv.mc .kr,.mv.mc .dec,.mv.mc .tl{color:color-mix(in srgb,currentColor 75%,var(--bg))!important}
+:root[data-tone="light"] .mv.mc .kr,:root[data-tone="light"] .mv.mc .dec,:root[data-tone="light"] .mv.mc .tl{color:color-mix(in srgb,currentColor 78%,#000)!important}
 .upkt>small,.upktm small{color:var(--fg)!important}
 .inp.ta{min-height:44px!important}
 :root[data-tone="light"] .mcell.sel small.pos{color:color-mix(in srgb,var(--inc) 80%,#000)}
@@ -1882,9 +1882,13 @@ textarea.inp{min-height:44px}
 .srb i{display:block;height:max(4px,calc((100% - 20px)*var(--h)));border-radius:6px;background:color-mix(in srgb,var(--accent) 28%,var(--surface2));min-height:4px}.srb.cur i{background:var(--accent)}.srb small{text-align:center;font-size:10.5px;font-weight:600;color:var(--muted)}
 /* T01: gün toplamı, kişi rozeti, tek satır bilgi */
 .day .dyt{display:flex;gap:8px;flex:none;font-size:12.5px;font-weight:600}.day .dyt .in{color:var(--inc)}
-.wb{flex:none!important;overflow:visible!important;display:inline-flex;align-items:center;padding:1px 7px;border-radius:99px;font-size:10.5px;font-weight:700;letter-spacing:.01em;line-height:1.5;color:color-mix(in srgb,var(--wc) 40%,var(--fg));background:color-mix(in srgb,var(--wc) 17%,transparent)}
-.wb.wb-o{--wc:var(--gold)}
-#main .row .rs .wb{width:auto;height:auto}
+/* kişi rengi kategori etiketinde: ekleyenin rengi (PEOPLE[...].c) zemini komple doldurur, yazı koyu; ortak sarı/altın; kişisi bilinmeyen nötr */
+.cpill{display:block;padding:1px 7px;border-radius:99px;font-size:10.5px;font-weight:700;letter-spacing:.01em;line-height:1.5;color:#121418;background:var(--wc,var(--surface2))}
+.cpill.cp-o{--wc:var(--gold)}
+.cpill.cp-x{color:var(--muted)}
+:root[data-tone="light"] .cpill{background:color-mix(in srgb,var(--wc,var(--surface2)) 62%,#fff)}
+:root[data-tone="light"] .cpill.cp-o{--wc:#E3B341}
+.srhide{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .infr{display:flex;align-items:center;gap:6px;margin-top:10px;padding:2px 10px;min-height:44px;border-radius:14px;background:var(--surface);border:1px solid color-mix(in srgb,var(--fg) 7%,transparent);font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden}
 .infs{display:flex;align-items:center;gap:8px;min-width:0;padding:0 4px;min-height:44px;text-align:left;white-space:nowrap}.infs{flex:none}.infs:first-child{flex:0 1 auto}.infx{min-width:0;overflow:hidden;text-overflow:ellipsis}
 .infd{width:8px;height:8px;border-radius:50%;flex:none;background:var(--accent)}.infd.w{background:var(--warn)}
@@ -2129,11 +2133,9 @@ const rowIc = (t) => { if (isSav(t) && t.invId) { const ix = (S.inv||[]).find(i 
   const k = t.sub && P['s_'+t.sub] ? 's_'+t.sub : t.cat;
   return `<span class="ic icm">${ico(k)}</span>`; };
 const PEOPLE = { k1:{n:'Kişi 1',c:'var(--k1)'}, k2:{n:'Kişi 2',c:'var(--k2)'} };
-// T01: kişi rozeti: renk yerine kısa yazı. Kişi adlarının ilk iki harfi (PEOPLE'dan türetilir); iki ad aynı harflerle başlıyorsa üçe uzar. Ortak ayrı rozet.
-const whoAbbr = k => { const N = Object.keys(PEOPLE).map(x => [x, String(PEOPLE[x].n||x).trim()]); const me = (N.find(z => z[0] === k) || [k, String(k||'?')])[1];
-  for (let L = 2; L <= me.length; L++) { const a = me.slice(0, L).toLocaleLowerCase('tr'); if (!N.some(z => z[0] !== k && z[1].slice(0, L).toLocaleLowerCase('tr') === a)) return me.slice(0, L); } return me.slice(0, 3); };
-const whoBadge = (k, shared) => { if (shared) return `<span class="wb wb-o" role="img" aria-label="Ortak" title="Ortak">Ortak</span>`; const p = PEOPLE[k]; if (!p) return '';
-  return `<span class="wb" style="--wc:${p.c}" role="img" aria-label="${esc(p.n)}" title="${esc(p.n)}">${esc(whoAbbr(k))}</span>`; };
+// Kayıt satırı: kategori etiketi ekleyenin renginde dolu (harf rozeti yerine). Renk tek ipucu olmasın: kişi adı ekran okuyucuya gizli metinle, parmak/fareye title ile verilir.
+const catPill = (lbl, k, shared) => { const p = shared ? null : PEOPLE[k], who = shared ? 'Ortak' : p ? p.n : '';
+  return `<span class="cpill${shared ? ' cp-o' : p ? '' : ' cp-x'}"${p ? ` style="--wc:${p.c}"` : ''} data-who="${shared ? 'ortak' : p ? esc(k) : ''}"${who ? ` title="${esc(lbl)} · ${esc(who)}"` : ''}>${esc(lbl)}${who ? `<span class="srhide">, ${shared ? 'ortak' : esc(who) + ' ekledi'}</span>` : ''}</span>`; };
 const PAY = { ziraat:{n:'Ziraat',s:'Ziraat',c:'#F0605A'}, yk:{n:'Yapı Kredi',s:'Yapı Kredi',c:'#5B9BFF'}, nakit:{n:'Nakit',s:'Nakit',c:'#5FCB8A'} };
 const fig = (k, size=16) => { const p = PEOPLE[k]; if (!p) return '';
   return `<span class="fig pdot" style="background:${p.c}" role="img" aria-label="${p.n}" title="${p.n}"></span>`; };
@@ -2170,6 +2172,12 @@ function moneyize(root){
       const t = document.createElement('span'); t.className = 'tl'; t.textContent = m[3] + '₺'; sp.appendChild(t); f.appendChild(sp); at = m.index + m[0].length; }
     if (at < v.length) f.appendChild(document.createTextNode(v.slice(at))); n.parentNode.replaceChild(f, n); });
 }
+// Renkli tutar ayrımı: .mv'nin hesaplanmış rengi nötr değilse (renk canlılığı: en büyük-en küçük kanal > 40/255) .mc sınıfı alır; CSS kuruş ve ₺'yi o rengin koyu tonuna çevirir.
+const krChroma = c => { const v = String(c).match(/-?[\d.]+/g); if (!v || v.length < 3) return 0; const k = /^color\(/.test(c) ? 255 : 1, x = v.slice(0, 3).map(n => +n * k); return Math.max(...x) - Math.min(...x); };
+function krTone(root){ if (!root || root.nodeType !== 1) return; const L = root.matches('.mv') ? [root] : []; root.querySelectorAll('.mv').forEach(e => L.push(e)); if (!L.length) return;
+  const seen = new Map(); for (const e of L) { const c = getComputedStyle(e).color; let v = seen.get(c); if (v === undefined) seen.set(c, v = krChroma(c) > 40); e.classList.toggle('mc', v); } }
+const krQ = new Set(); let krT = 0;
+function krQueue(n){ if (n && n.nodeType === 1) krQ.add(n); if (krT || !krQ.size) return; krT = requestAnimationFrame(() => { krT = 0; const q = [...krQ]; krQ.clear(); for (const n of q) if (n.isConnected && !q.some(o => o !== n && o.contains(n))) krTone(n); }); }
 const r2 = n => Math.round(n*100)/100;
 function num(s){ s=String(s??'').trim().replace(/\s|₺|TL/gi,''); if(!s) return NaN;
   if (s.includes(',')) s = s.replace(/\./g,'').replace(',','.'); else if ((s.match(/\./g)||[]).length>1 || /^-?[1-9]\d{0,2}\.\d{3}$/.test(s)) s = s.replace(/\./g,'');
@@ -2258,7 +2266,7 @@ function applyTheme(){ const r = document.documentElement;
   if (sk==='night') r.removeAttribute('data-skin'); else r.setAttribute('data-skin', sk);
   if (lsGet('kasa.priv') === 'on') r.setAttribute('data-priv',''); else r.removeAttribute('data-priv');
   const ac2 = ac === 'akilli' ? smartAcc() : ac; if (ac2==='gold') r.removeAttribute('data-acc'); else r.setAttribute('data-acc', ac2);
-  requestAnimationFrame(() => { const m = document.querySelector('meta[name="theme-color"]'), bg = getComputedStyle(document.body).backgroundColor; if (m && bg) m.setAttribute('content', bg); }); }
+  setTimeout(() => krQueue(document.body), 420); requestAnimationFrame(() => { const m = document.querySelector('meta[name="theme-color"]'), bg = getComputedStyle(document.body).backgroundColor; if (m && bg) m.setAttribute('content', bg); }); }
 
 /* ---------- Durum ---------- */
 const now = new Date();
@@ -2428,7 +2436,7 @@ function txRow(t){
   return `<div class="sw${t.date>today()?' fut':''}${S.flashIds && S.flashIds.has(t.id)?' newrow':''}${PAY[t.pay]?' paid':''}${t.ok && lsGet('kasa.okdim') !== 'off' ? ' okdim' : ''}"${PAY[t.pay]?` style="--pc:${PAY[t.pay].c}"`:''}>${S.canWrite && !t.virt && !t.vrec?`<button class="swdup" data-act="swdup" data-id="${esc(t.id)}" tabindex="-1">${ico('repeat')}<span>Tekrar ekle</span></button><button class="swdel" data-act="swdel" data-id="${esc(t.id)}" tabindex="-1">${ico('trash')}<span>Sil</span></button>`:''}<button class="row" ${t.virt?`data-act="subd" data-v="${esc(t.virt)}"`:t.vrec?`data-act="editrec" data-id="${esc(t.vrec)}"`:`data-act="edittx" data-id="${esc(t.id)}"`}>
     ${rowIc(t)}
     <span class="rbody"><span class="rt" style="display:block">${esc(title)}${t.ok?`<span class="okb" role="img" aria-label="Ekstreyle doğrulandı">${ico('check')}</span>`:''}</span>
-      <span class="rs">${(()=>{ const sn=subName(t.cat,t.sub); const lbl = sn ? `${c.n} › ${sn}` : c.n; return (t.note||sn)?`<span>${esc(lbl)}</span>`:''; })()}${whoBadge(t.by, t.shared)}${t.recId?`<span class="rrep" role="img" aria-label="Tekrarlayan">${ico('repeat')}</span>`:''}${rf?`<span class="tag rfg">${ico('s_iade')}iade · ${fmtD(rf.date)}</span>`:''}${t.inst?instPill(t.inst):''}${+t.puan>0?`<span class="putag">Puanla</span>`:''}${t.split?`<span class="sptag${t.split.paid?' ok':''}">${t.split.paid?ico('check'):''}${esc(t.split.who)} ${fmt0(t.split.amount)}\u00A0₺</span>`:''}</span></span>
+      <span class="rs">${(()=>{ const sn=subName(t.cat,t.sub); return catPill(sn ? `${c.n} › ${sn}` : c.n, t.by, t.shared); })()}${t.recId?`<span class="rrep" role="img" aria-label="Tekrarlayan">${ico('repeat')}</span>`:''}${rf?`<span class="tag rfg">${ico('s_iade')}iade · ${fmtD(rf.date)}</span>`:''}${t.inst?instPill(t.inst):''}${+t.puan>0?`<span class="putag">Puanla</span>`:''}${t.split?`<span class="sptag${t.split.paid?' ok':''}">${t.split.paid?ico('check'):''}${esc(t.split.who)} ${fmt0(t.split.amount)}\u00A0₺</span>`:''}</span></span>
     ${rf ? (() => { const net = r2(+t.amount - +rf.amount); return `<span class="amt num rfa"><s>−${fmt(t.amount)}</s><span${net>0?'':' class="z"'}>${net>0?'−':''}${fmt(net)}</span></span>`; })() : `<span class="amt num ${t.type==='gelir'?'g':isSav(t)?'sv':''}">${t.type==='gelir'||t.type==='cekim'?'+':'−'}${fmt(t.amount)}</span>`}</button></div>`;
 }
 
@@ -2644,18 +2652,12 @@ function vKayit(){
   if (fold6) { const FL6 = FD.flatMap(d => by[d]), fg = sumOf(FL6,'gider'), fi = sumOf(FL6,'gelir'), ng = FL6.filter(t => t.type==='gider').length, nx = FL6.length - ng;
     h += `<button class="futb${S.futOpen?' open':''}" data-act="futopen" aria-expanded="${!!S.futOpen}"><span class="futi">${ico('calendar')}</span><span class="futt"><b>Yaklaşan</b><small>${ng ? `${ng} ödeme` : ''}${ng && nx ? ' · ' : ''}${nx ? `${nx} gelir` : ''}</small></span><span class="futa num">${fg ? `<b>${fmtT0(fg)}</b>` : ''}${fi ? `<small>+${fmtT0(fi)}</small>` : ''}</span><span class="futc">${ico('chev')}</span></button>`; }
   const nF = FD.length; let fk = 0;
-  // T11: bugünün yerinde "Hızlı ekle" satırı (bugünün başlığının altında; bugün kaydı yoksa geçmiş günlerin üstünde)
-  const qaRow = S.canWrite && isCurMonth() && !S.q ? `<button type="button" class="qarow" data-act="newtx" data-v="quick">${ico('spark')}<span><b>Hızlı ekle</b><small>market 250 gibi yaz, anlasın</small></span>${ico('right')}</button>` : '';
-  let qaDone = !qaRow; if (!qaDone && !DS.some(d => d <= t0)) { h += qaRow; qaDone = true; }
   for (const d of DS) { if (fold6 && d > t0 && !S.futOpen) continue;
-    if (!qaDone && d < t0) { h += qaRow; qaDone = true; }
     const L = by[d], D = pd(d), isF = fold6 && d > t0;
     if (isF) h += `<div class="futg${S.futAnim ? ' fan' : ''}" style="--fi:${nF - 1 - fk++}">`;
     h += `<div class="day${d>today()?' fut':''}${isF ? ' futd' : ''}" data-date="${d}"><span class="dyl"><b>${D.getDate()} ${MON[D.getMonth()]}</b> <span class="dyd" data-s="${['Paz','Pzt','Sal','Çar','Per','Cum','Cmt'][D.getDay()]}">${DAY[D.getDay()]}</span></span>${(() => { const dg = sumOf(L,'gider'), di = sumOf(L,'gelir'); return dg || di ? `<span class="dyt num">${dg ? `<span class="ex">−${tlN(dg)}</span>` : ''}${di ? `<span class="in">+${tlN(di)}</span>` : ''}</span>` : ''; })()}</div>`;
-    if (!qaDone && d === t0) { h += qaRow; qaDone = true; }
     h += L.map(txRow).join(''); if (isF) h += `</div>`;
   }
-  if (!qaDone) h += qaRow;
   S.futAnim = false; return h;
 }
 
@@ -5171,7 +5173,7 @@ function kisayolAc(){ if (!KISAYOL || S.kisayolDone) return; S.kisayolDone = tru
   if (!S.db || !S.canWrite) { toast('Bu kısayol için kayıt ekleme izni gerekiyor'); return; }
   if (KISAYOL === 'gider') { openSheet(newQuickState()); setTimeout(() => document.getElementById('q_in')?.focus(), 80); }
   else { S.view = 'varlik'; render(); openSheet({ kind:'inv', d:{ kind:'fon' } }); } }
-try { moneyize(document.body); new MutationObserver(ms => { for (const m of ms) m.addedNodes.forEach(n => { if (n.nodeType === 1 || n.nodeType === 3) moneyize(n.nodeType === 3 ? n.parentElement : n); }); }).observe(document.body, { childList: true, subtree: true }); } catch (e) { console.error(e); }
+try { moneyize(document.body); krQueue(document.body); new MutationObserver(ms => { for (const m of ms) m.addedNodes.forEach(n => { if (n.nodeType === 1 || n.nodeType === 3) { const e = n.nodeType === 3 ? n.parentElement : n; moneyize(e); krQueue(e); } }); }).observe(document.body, { childList: true, subtree: true }); } catch (e) { console.error(e); }
 applyTheme();
 loadCache();
 document.body.classList.toggle('booting', S.status!=='ready');
