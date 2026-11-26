@@ -1487,6 +1487,8 @@ nav{transition:transform .28s cubic-bezier(.2,.8,.2,1),opacity .2s}
 .salic{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;flex:none;background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}.salr.a .salic{background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent)}.salic svg{width:16px;height:16px}
 .salt{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.3}.salt b{font-size:13px;font-weight:650}.salt small{font-size:11.5px;color:var(--muted)}
 .salr .btn.sm{flex:none;padding:7px 11px;font-size:12px}
+.ekr{margin:10px 0 0;border-radius:14px;background:var(--surface);border:1px solid color-mix(in srgb,var(--fg) 7%,transparent);overflow:hidden}.ekrow{display:flex;align-items:center;gap:8px;padding:6px 10px 6px 4px;min-height:44px}.ekrow+.ekrow{border-top:1px solid color-mix(in srgb,var(--fg) 7%,transparent)}
+.ekbd{flex:1;min-width:0;display:flex;align-items:center;gap:10px;padding:2px 4px;text-align:left;color:inherit}.ekr .salic{width:26px;height:26px;border-radius:9px}.ekr .salt small{overflow-wrap:anywhere}.ekr .btn.sm{flex:none;padding:6px 11px;font-size:12px}
 .anim .salr{animation:gFade .4s ease var(--d) both}
 .strl{display:inline-block;margin-left:7px;padding:1px 7px;border-radius:99px;font-size:10.5px;font-weight:700;vertical-align:1px;color:var(--warn);background:color-mix(in srgb,var(--warn) 15%,transparent)}
 .srise{font-style:normal;font-weight:700;color:var(--exp);margin-left:4px}
@@ -2612,7 +2614,8 @@ function vKayit(){
   const by = {}; mt.sort((a,b)=> b.date.localeCompare(a.date) || (b.created||0)-(a.created||0)).forEach(t => (by[t.date] ||= []).push(t));
   const t0 = today(), DS = Object.keys(by), FD = isCurMonth() ? DS.filter(d => d > t0) : [], fold6 = FD.length > 0 && FD.length < DS.length;
   { // T01: ekstre hatırlatması ve öneri tek satırda; her parça kendi işlemini açar
-    let D = [], G = []; if (!S.q && S.canWrite && isCurMonth()) { try { D = stmDue(); } catch(_){} } if (!S.q) { try { G = sugScan(); } catch(_){} }
+    let D = [], G = []; if (!S.q && S.canWrite && isCurMonth()) { try { D = stmDue(); } catch(_){} const shown = new Set(ekstreShown().map(x => x.k)); D = D.filter(x => !shown.has(x.k)); } // hatırlatıcı satırı olan kart şeritte tekrar sayılmaz (Tamam'dan sonra geri döner)
+    if (!S.q) { try { G = sugScan(); } catch(_){} }
     const seg = [];
     if (D.length) seg.push(`<button class="infs" data-act="stmrem" aria-label="${esc(D.map(x => `${PAY[x.k].n} ${monLoc(x.cut)} kesildi`).join(', '))}. PDF yükle"><i class="infd w"></i><span class="infx">${D.length > 1 ? `${D.length} ekstre` : `${esc(PAY[D[0].k].n)} ekstresi`} bekliyor</span></button>`);
     if (G.length) seg.push(`<button class="infs" data-act="sugs" aria-label="${esc(String(G[0].title||'').replace(/<[^>]+>/g,''))}"><i class="infd"></i><span class="infx">${G.length} öneri</span></button>`);
@@ -3730,14 +3733,14 @@ const TASKS = [
   { k:'yedek', n:'Tam yedek (Drive)', when:'Her pazar 03:17', at:(d)=> d.getDay()===0, hh:3, mm:17 },
   { k:'enf', n:'Enflasyon ve AIS getirisi', when:'Ayın 3–5\'i 10:32', at:(d)=> d.getDate()>=3 && d.getDate()<=5, hh:10, mm:32 },
   { k:'denetim', n:'Derin hesap denetimi', when:'Ayın 11\'i 10:47', at:(d)=> d.getDate()===11, hh:10, mm:47 },
-  { k:'ekstre', n:'Ekstre hatırlatıcı', when:'Her kart için kesimden 1 gün sonra', local:true },
+  { k:'ekstre', n:'Ekstre hatırlatıcı', when:'', local:true },
 ];
 function taskRows(){
   const R = (S.cfg && S.tasksDoc) || {}, now = new Date();
   const stamp = d => `${d.getDate()} ${MON[d.getMonth()].slice(0,3)} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
   return TASKS.map(t => {
     if (t.local) { let D = []; try { D = stmDue(); } catch(_){} const nx = stmNext();
-      return { ...t, st: D.length ? 'warn' : 'ok', next: nx ? dShort(nx) : '—', nt: nx ? pd(nx).getTime() : 9e15, last: D.length ? `bekleyen: ${D.map(x => `${PAY[x.k].n} ${dShort(x.cut)}`).join(', ')}` : 'bütün ekstreler yüklü', msg:'' }; }
+      return { ...t, when: ekOn() ? `Kesimden ${ekGun()} gün sonra` : 'kapalı', st: D.length ? 'warn' : 'ok', next: nx ? dShort(nx) : '—', nt: nx ? pd(nx).getTime() : 9e15, last: D.length ? `bekleyen: ${D.map(x => `${PAY[x.k].n} ${dShort(x.cut)}`).join(', ')}` : 'bütün ekstreler yüklü', msg:'' }; }
     const slot = off => { const d = new Date(now.getFullYear(), now.getMonth(), now.getDate()+off, t.hh, t.mm); return t.at(d) ? d : null; };
     let next = null, prev = null; for (let i=0;i<40 && !next;i++){ const d = slot(i); if (d && d > now) next = d; }
     for (let i=0;i>-40 && !prev;i--){ const d = slot(i); if (d && d <= now) prev = d; }
@@ -5348,10 +5351,12 @@ function ekstreRem(){ if (!ekOn()) return []; const t = today(), N = ekGun(), C 
       let due; if (dd >= 1 && dd <= 31) due = ds(wkShift(clampDate(cu.getFullYear(), cu.getMonth() + (dd < cd ? 1 : 0), dd))); else { const f = new Date(cu); f.setDate(f.getDate() + 14); due = ds(f); }
       const st = (c.statements || []).find(x => x && x.cut && x.due && Math.abs(dayDiff(x.cut, cut)) <= 5); if (st) due = st.due;
       if (t < ds(from) || t > due) continue; const key = k + '|' + cut; if (ok.includes(key)) break;
-      const sm = stmtSum({ cuts:{ [k]:cut }, prevCuts:{ [k]:lo } }); out.push({ k, cut, due, key, amt:r2(sm.card + sm.inst) }); break; } });
+      const sm = stmtSum({ cuts:{ [k]:cut }, prevCuts:{ [k]:lo } }); out.push({ k, cut, due, key, amt:r2(sm.card + sm.inst), loaded:!!st }); break; } });
   return out; }
-function ekstreCard(){ if (S.q || !isCurMonth()) return ''; let L = []; try { L = ekstreRem(); } catch(_) { return ''; } if (!L.length) return '';
-  return `<div class="sal ekr">${L.map((x, i) => `<div class="salr a" style="--d:${i*60}ms"><span class="salic">${ico('card')}</span><span class="salt"><b>${esc(PAY[x.k].n)} ekstresi kesildi${x.amt > 0 ? ` · ${fmt(x.amt)}` : ''}</b><small>${x.amt > 0 ? '' : 'Kayıtlarda bu dönem için tutar yok · '}Son ödeme ${fmtD(x.due)}</small></span><button class="btn sm" data-act="ekok" data-v="${esc(x.key)}">Tamam</button></div>`).join('')}</div>`; }
+function ekstreShown(){ if (S.q || !isCurMonth()) return []; try { return ekstreRem(); } catch(_) { return []; } } // Kayıtlar'da görünecek hatırlatıcılar (kart ve özet şeridi aynı listeyi kullanır)
+function ekstreCard(){ const L = ekstreShown(); if (!L.length) return '';
+  return `<div class="ekr">${L.map(x => { const sub = `${x.amt > 0 ? '' : 'Kayıtlarda bu dönem için tutar yok · '}Son ödeme ${fmtD(x.due)}${x.loaded ? '' : ' · ekstre yüklenmedi'}`, body = `<span class="salic">${ico('card')}</span><span class="salt"><b>${esc(PAY[x.k].n)} ekstresi kesildi${x.amt > 0 ? ` · ${fmt(x.amt)}` : ''}</b><small>${sub}</small></span>`;
+    return `<div class="ekrow">${x.loaded ? `<div class="ekbd">${body}</div>` : `<button type="button" class="ekbd" data-act="stmrem" aria-label="${esc(PAY[x.k].n)} ekstresi kesildi, ekstre yüklenmedi. PDF yükle">${body}</button>`}<button class="btn sm" data-act="ekok" data-v="${esc(x.key)}">Tamam</button></div>`; }).join('')}</div>`; }
 document.addEventListener('change', e => { const t = e.target; if (t && t.classList && t.classList.contains('stmfile') && t.files && t.files[0]) { const f = t.files[0]; t.value = ''; stmImport(f); } });
 
 
