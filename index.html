@@ -156,9 +156,6 @@ main>.sec:first-child,main>.gtabs+.gbody>.sec:first-child{margin-top:14px}
 .row .rs{font-size:11.5px;gap:4px;margin-top:2px;color:color-mix(in srgb,var(--muted) 80%,var(--bg))}
 .row .who{font-weight:500}
 .sub svg{width:15px;height:15px;margin-left:-2px}
-.fig{flex:none;display:block}
-.pdot{width:8px;height:8px;border-radius:50%}
-.rs .fig{margin-right:1px}
 .row .tag{font-size:10px;padding:0 5px;border-radius:5px}
 .pcard{width:13px;height:9px;border-radius:2.5px;flex:none;box-shadow:inset 0 -2px 0 rgba(0,0,0,.18)}
 .row .rs{flex-wrap:nowrap;white-space:nowrap}
@@ -185,7 +182,6 @@ main>.sec:first-child,main>.gtabs+.gbody>.sec:first-child{margin-top:14px}
 .mark{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--fg);opacity:.6;border-radius:2px}
 .set .rs{flex-wrap:nowrap;white-space:nowrap;min-width:0}
 .set .rs>span:not(.tag):not(.fig):not(.pill){min-width:0;overflow:hidden;text-overflow:ellipsis}
-.set .rs>.fig{flex:none}
 .hv{text-align:right}
 .pl{font-size:12.5px;font-weight:600}
 .actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
@@ -461,8 +457,6 @@ body.booting::after{content:"";position:fixed;left:50%;top:42%;width:14px;height
 .subhead{display:flex;justify-content:space-between;align-items:flex-end}
 .subm{font-size:24px;font-weight:700;letter-spacing:-.02em;margin-top:2px}
 .suby{font-size:16px;font-weight:600;color:var(--accent);margin-top:2px}
-.subnext{display:flex;align-items:center;gap:8px;margin-top:12px;padding:9px 11px;border-radius:12px;background:var(--surface2);font-size:12.5px}
-.subnext{flex-wrap:wrap;row-gap:2px}.subnext>span:first-child{color:var(--muted);width:100%;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}.subnext b{font-weight:600;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.subnext>span:last-child{color:var(--muted);white-space:nowrap}
 .soon{color:var(--warn)!important;font-weight:600}
 .subl{display:flex;flex-direction:column;margin-top:4px}
 .subrow2{display:flex;align-items:center;gap:6px;width:100%;padding:10px 0;border-top:1px solid var(--line)}
@@ -541,7 +535,6 @@ body.booting::after{content:"";position:fixed;left:50%;top:42%;width:14px;height
 .ldp{margin-top:10px;border-radius:18px;background:var(--surface2);padding:4px 14px 6px;border:1px solid color-mix(in srgb,var(--h) 18%,var(--line))}
 .ldpn{display:flex;align-items:center;gap:12px;padding:10px 0}.ldav{flex:none;width:40px;height:40px;border-radius:13px;display:grid;place-items:center;font-weight:800;font-size:17px;color:var(--h);background:color-mix(in srgb,var(--h) 16%,transparent)}
 .ldpt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.ldpt b{font-size:17px;font-weight:750;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ldpt small{font-size:11.5px;color:var(--muted)}.ldpt small.soon{color:var(--accent)}.ldpt small.late{color:var(--exp)}
-.ldpv{display:flex;flex-direction:column;align-items:flex-end;gap:2px}.ldpv b{font-size:16.5px;font-weight:750}.ldpv small{font-size:10.5px;color:var(--faint)}
 .ldpb{border-top:1px solid color-mix(in srgb,var(--fg) 7%,transparent)}.ldpb>.ldr:last-child,.ldpb>.ldg:last-child{border-bottom:0}.ldpb .ldr{padding:9px 0}.ldpb .ldn{font-size:13.5px;color:color-mix(in srgb,var(--fg) 88%,transparent)}
 .ldlh{display:flex;align-items:center;justify-content:space-between;margin-top:18px}.ldlh>span{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--faint)}
 :root{--lh0:#7DB7FF;--lh1:#F38BC0;--lh2:#55D6AE;--lh3:#FFB65C;--lh4:#B49BFF;--lh5:#FF8A8A}
@@ -729,12 +722,9 @@ body.booting::after{content:"";position:fixed;left:50%;top:42%;width:14px;height
 .d2h>.num{font-size:15px;font-weight:600}.d2h .chev2{width:16px;height:16px;color:var(--faint)}.d2h .chev2 svg{width:16px;height:16px}
 .d2b{padding:0 14px 10px;animation:ivdn .28s cubic-bezier(.2,.8,.2,1) both}
 .d2ln{min-width:0;display:flex;flex-direction:column;gap:2px;font-size:13.5px}.d2ln small{font-size:11px;color:var(--muted)}
-.d2m{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:baseline;padding:5px 0;font-size:12px;color:var(--muted);text-align:left}
-.d2m span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.d2m small{font-size:10.5px;color:var(--faint)}
 .d2t{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;width:100%;padding:8px 0;text-align:left;border-top:1px solid color-mix(in srgb,var(--fg) 6%,transparent)}
 .d2t .ic{width:30px;height:30px;border-radius:9px}.d2t .ic svg{width:16px;height:16px}.d2t>.num{font-size:13.5px;font-weight:600}
 .d2e{font-size:12.5px;color:var(--muted);margin:4px 0 6px}
-:root{--vio:#9B8AF5}
 .d2sav{display:block;width:100%;text-align:left;margin-top:10px;padding:13px 14px;border-radius:16px;background:color-mix(in srgb,var(--gold) 8%,var(--surface2));border:1px solid color-mix(in srgb,var(--gold) 28%,var(--line))}
 .d2svh{display:flex;align-items:center;gap:8px}.d2svh svg{width:17px;height:17px;color:var(--gold)}.d2svh b{font-size:14px}.d2svh em{font-style:normal;font-size:11px;font-weight:650;color:var(--gold);padding:2px 7px;border-radius:99px;background:color-mix(in srgb,var(--gold) 16%,transparent)}.d2svh .num{margin-left:auto;font-weight:650}
 .d2svb{display:block;height:6px;border-radius:4px;margin:10px 0 8px;background:color-mix(in srgb,var(--gold) 14%,transparent);overflow:hidden}.d2svb i{display:block;height:100%;border-radius:4px;background:var(--gold);transition:width .6s}
@@ -803,9 +793,6 @@ body.booting::after{content:"";position:fixed;left:50%;top:42%;width:14px;height
 .msl{display:flex;flex-direction:column;gap:6px;min-width:0}.msl .eyebrow{font-size:10.5px;letter-spacing:.1em}
 .msv{font-size:30px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--inc)}.msv.neg{color:var(--exp)}
 .msv .dec{font-size:.55em}.msv .tl{font-size:.6em;opacity:.8}
-.mssub{font-size:12px;color:var(--muted)}
-.mschip{display:inline-flex;align-items:center;gap:2px;align-self:flex-start;font-size:10.5px;font-weight:700;padding:2px 6px;border-radius:99px}.mschip svg{width:10px;height:10px;stroke-width:2.6}
-.mschip.good{color:var(--inc);background:color-mix(in srgb,var(--inc) 14%,transparent)}.mschip.bad{color:var(--exp);background:color-mix(in srgb,var(--exp) 14%,transparent)}
 .msnote{margin:12px 4px 0;font-size:12.5px;color:var(--muted);line-height:1.45}.msnote b.ex{color:var(--exp)}.msnote b.in{color:var(--inc)}.msnote span{color:var(--faint)}
 .mssec{margin-top:16px}.mscap{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 2px 6px}
 .mscat,.msbig{display:grid;grid-template-columns:auto 1fr auto;gap:11px;align-items:center;width:100%;padding:10px 12px;border-radius:14px;background:var(--surface2);text-align:left}
@@ -844,7 +831,6 @@ body.booting::after{content:"";position:fixed;left:50%;top:42%;width:14px;height
 #main .row .ic{width:42px;height:42px;border-radius:14px}#main .row .ic svg{width:20px;height:20px}
 #main .row .rt{letter-spacing:-.01em;line-height:1.25}
 #main .row .rs{font-size:11.5px;gap:6px;margin-top:4px;color:var(--muted)}
-#main .row .rs .pdot,#main .row .rs .fig{width:7px;height:7px}
 #main .row .amt{font-family:var(--f-display);font-size:15.5px;font-weight:600;letter-spacing:-.02em;padding-left:6px}
 #main .row .amt .dec{font-size:.64em;font-weight:600}#main .row .amt .tl{font-size:.7em;opacity:.72;margin-left:1px}
 #main .row .ipill{padding:2px 6px 2px 5px}#main .row .tag{font-size:10px;padding:1px 6px;border-radius:99px;background:color-mix(in srgb,var(--fg) 7%,transparent)}
@@ -911,7 +897,6 @@ body.booting::after{content:"";position:fixed;left:50%;top:42%;width:14px;height
 .ipm{display:flex;gap:3px;align-items:flex-end}.ipm i{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:4px;animation:hzPop .3s cubic-bezier(.3,1.5,.5,1) var(--d) both}
 .ipm i::before{content:"";width:100%;height:7px;border-radius:4px;background:color-mix(in srgb,var(--exp) 38%,transparent)}.ipm i.on::before{background:var(--exp)}
 .ipm em{font-style:normal;font-size:9.5px;line-height:1;color:var(--faint);white-space:nowrap}.ipm i.on em{color:var(--fg);font-weight:700}.ipm small{align-self:flex-start;font-size:10px;color:var(--muted);margin-left:2px}
-.txfoot{position:sticky;bottom:-18px;margin:18px -4px 0;padding:12px 4px calc(4px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--surface) 78%,transparent)}
 .txsave{background:var(--tc)!important;color:#0b0d10!important;font-weight:700;font-size:15px;box-shadow:0 6px 20px -8px var(--tc)}
 .txsave:active{transform:scale(.97)}
 .amtpv{min-height:20px;text-align:center;font-size:13.5px;font-weight:650;margin:2px 0 0;color:var(--muted)}.amtpv .pvok{color:var(--tc,var(--fg))}.amtpv .pvb{color:var(--exp)}
@@ -1196,11 +1181,6 @@ textarea.dein{resize:none;overflow:hidden;line-height:1.3;padding:11px 0;height:
 .txok{color:var(--inc)}.txok svg{color:var(--inc)}
 .txrf{display:flex;align-items:center;gap:10px;width:100%;margin-top:8px;padding:11px 14px;border-radius:13px;background:var(--surface2);border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--fg);text-align:left}
 .txrf svg{width:17px;height:17px;color:var(--inc)}.txrf span{flex:1}.txrf svg:last-child{color:var(--faint)}
-.srgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:8px;margin-top:12px;animation:srUp .25s ease both}
-.srs{display:flex;flex-direction:column;gap:6px;padding:12px 12px 11px;border-radius:14px;background:var(--surface);border:1px solid var(--line);min-width:0;line-height:1}
-.srs>span{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
-.srs b{font-size:17px;font-weight:700;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.srs b.e{color:var(--exp)}.srs b.g{color:var(--inc)}
-.srs small{font-size:11px;color:var(--faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.srs i{font-style:normal;font-weight:600}.srs i.e{color:var(--exp)}.srs i.g{color:var(--inc)}.srs i.v{color:var(--gold)}
 .txmeta{display:grid;grid-template-columns:1fr 1fr;gap:10px}.txmeta.one{grid-template-columns:1fr}
 .txmeta .field{min-width:0}
 .mseg{display:flex;gap:3px;padding:3px;border-radius:12px;background:var(--surface2);border:1px solid var(--line)}
@@ -1265,8 +1245,6 @@ body[data-view="ayar"] #top .hero{display:none}
 body:not(.kv) #top.mini .hero>*{animation:none}
 .tmp{position:relative;padding:16px 16px 13px;overflow:hidden}
 .tmph{display:flex;justify-content:space-between;align-items:center}
-.tmpc{display:inline-flex;align-items:center;gap:2px;font-size:12.5px;font-weight:700;padding:4px 9px 4px 6px;border-radius:99px}.tmpc svg{width:13px;height:13px;stroke-width:2.6}
-.tmpc.g{color:var(--inc);background:color-mix(in srgb,var(--inc) 13%,transparent)}.tmpc.r{color:var(--exp);background:color-mix(in srgb,var(--exp) 13%,transparent)}
 .tmpt{margin-top:8px;font-size:17px;font-weight:700;letter-spacing:-.01em;line-height:1.25}.tmpt.g{color:var(--inc)}.tmpt.r{color:var(--exp)}
 .tmpl{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:var(--muted)}.tmpl i{width:16px;border-top:2px dashed color-mix(in srgb,var(--fg) 38%,transparent)}
 .tmpn{margin:10px 2px 0;font-size:12px;line-height:1.45;color:var(--muted)}
@@ -1320,9 +1298,6 @@ body:not(.kv) #top.mini .hero>*{animation:none}
 .kcl{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px;padding-top:10px;border-top:1px solid color-mix(in srgb,var(--fg) 7%,transparent)}.kcl span{display:flex;flex-direction:column;gap:2px}.kcl small{font-size:11.5px;color:var(--muted)}.kcl b{font-size:16px;font-weight:700}
 .kcs{align-items:flex-end}.kcs em{font-style:normal;display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:650;padding:3px 8px;border-radius:99px}.kcs em svg{width:12px;height:12px}.kcs em.g{color:var(--inc);background:color-mix(in srgb,var(--inc) 12%,transparent)}.kcs em.w{color:var(--warn);background:color-mix(in srgb,var(--warn) 14%,transparent)}
 .kcs2+.stmup{margin-top:12px;width:100%;justify-content:center}
-.sugb{display:flex;align-items:center;gap:11px;width:100%;margin-top:12px;padding:10px 12px;border-radius:16px;background:color-mix(in srgb,var(--accent) 9%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);text-align:left}.sugb:active{transform:scale(.985)}
-.sugb .futi{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}.sugb .futc{transform:none}
-.remb{background:color-mix(in srgb,var(--warn) 9%,var(--surface));border-color:color-mix(in srgb,var(--warn) 30%,transparent)}.remb .futi{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
 .kc.pend{border-color:color-mix(in srgb,var(--warn) 45%,var(--line))}.kcp{display:flex;align-items:center;gap:6px;margin:-2px 0 10px;font-size:12px;font-weight:650;color:var(--warn)}.kcp svg{width:14px;height:14px}
 .ldcard{padding:14px 14px 10px}.catmb{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;margin-top:14px;padding:11px;border-radius:14px;border:1px dashed var(--line);font-size:13.5px;font-weight:650;color:var(--accent)}.catmb svg{width:15px;height:15px}.catmsh{max-height:64vh;overflow-y:auto;margin-top:4px}.stsh{max-height:72vh;overflow-y:auto}.sgsh{max-height:70vh;overflow-y:auto}
 .clvs{margin:10px 0 2px;font-size:13px;line-height:1.5;color:var(--muted)}
@@ -1484,7 +1459,7 @@ nav{transition:transform .28s cubic-bezier(.2,.8,.2,1),opacity .2s}
 @keyframes vConf{to{transform:translate(calc(var(--x)*.25),105vh) rotate(var(--r));opacity:.2}}
 @media (prefers-reduced-motion:reduce){.vle::after,.anim .vlp,.anim .vla,.anim .vcg button,.anim .vcc .lp,.anim .vcc .ln,.anim .vcc .ap,.anim .vcc .an,.anim .vcc .vce{animation:none}}
 /* ===== v3 dil: etiketler küçük harf, sakin; büyük harf ve harf aralığı yok ===== */
-.eyebrow,.lgday,.subnext>span:first-child,.sdg span,.ldh>div>span,.ihm,.krtl span,.srsh span,.srmh,.ded small,.detot small,.mscap,.txf .field>label,.w3tot span,.vdk small,.vlab,.dkg small,.vh2s small,.hzl,.hnk,.srs>span,.stmdial span,.stmsum span,.vfv small,.msl .eyebrow,.w3xh .eyebrow,.subcard .subgrp .eyebrow{text-transform:none;letter-spacing:0;font-size:12.5px;font-weight:600}
+.eyebrow,.lgday,.sdg span,.ldh>div>span,.ihm,.krtl span,.srsh span,.srmh,.ded small,.detot small,.mscap,.txf .field>label,.w3tot span,.vdk small,.vlab,.dkg small,.vh2s small,.hzl,.hnk,.stmdial span,.stmsum span,.vfv small,.msl .eyebrow,.w3xh .eyebrow,.subcard .subgrp .eyebrow{text-transform:none;letter-spacing:0;font-size:12.5px;font-weight:600}
 .vh2s small,.dkg small,.stmsum span,.vdk small,.vfv small,.sdg span,.ldh>div>span{font-size:11.5px}
 .hzl{font-size:13px;font-family:var(--f-display)}.hnk{font-size:13px;font-family:var(--f-display)}.hnk small{font-size:12px;font-family:var(--f-body)}
 .eyebrow{font-family:var(--f-display);font-weight:600}
@@ -1524,13 +1499,8 @@ nav{transition:transform .28s cubic-bezier(.2,.8,.2,1),opacity .2s}
 .trv b.p,.tr6s b.p{color:var(--inc)}.trv b.n,.tr6s b.n{color:var(--exp)}.tr6s{font-size:12px;color:var(--muted)}.tr6s b{font-weight:700;margin-left:3px}
 .tr6f{font-size:11px;color:var(--faint);margin:4px 6px 4px}
 @media (prefers-reduced-motion:reduce){.anim .trb i{animation:none}}
-.wfd{display:flex;flex-direction:column;gap:9px;margin:16px 2px 6px}
 .wfw{display:grid;grid-template-columns:74px 1fr auto;align-items:center;gap:10px;font-size:13px;color:var(--muted)}.wfw b{font-size:13.5px;font-weight:600;min-width:86px;text-align:right;white-space:nowrap}
-.wfb{position:relative;height:16px;border-radius:5px;background:color-mix(in srgb,var(--fg) 5%,transparent)}.wfb i{position:absolute;top:0;bottom:0;border-radius:5px;min-width:3px}
-.wfb em{position:absolute;top:-3px;bottom:-3px;width:1px;background:color-mix(in srgb,var(--fg) 35%,transparent)}
 .wfw.res{padding-top:10px;border-top:1px solid color-mix(in srgb,var(--fg) 9%,transparent);color:var(--fg);font-weight:600}.wfw.res b{font-size:15px;font-weight:700}
-.msin .wfb i{animation:wfIn .5s cubic-bezier(.2,.8,.2,1) var(--d) both;transform-origin:left}@keyframes wfIn{from{transform:scaleX(0);opacity:0}}
-@media (prefers-reduced-motion:reduce){.msin .wfb i{animation:none}}
 /* varlık sayfası */
 .as{display:flex;flex-direction:column;gap:14px}
 .ash{display:flex;align-items:center;gap:12px}.ash .ic{width:44px;height:44px;border-radius:14px;flex:none}.ash .ic svg{width:22px;height:22px}
@@ -1666,7 +1636,6 @@ nav{transition:transform .28s cubic-bezier(.2,.8,.2,1),opacity .2s}
 /* === Paket 3: sakin defter (görünüm katmanı) === */
 /* İlke: her ekranda tek kahraman sayı; ikincil sayılar küçük ve soluk; çizgi yerine boşluk; renk yalnız anlam taşır.
    Yalnız mevcut tema değişkenleri kullanılır (--bg --surface --surface2 --line --fg --muted --faint --accent --inc --exp). */
-:root{--p3-r:18px;--p3-gap:28px}
 
 /* --- Kuruş: kuruşlu tutarda bile küçük ve soluk --- */
 .mv .kr,.mv .dec{font-size:.72em;font-weight:500;opacity:.55;letter-spacing:0}
@@ -1714,8 +1683,8 @@ main{padding-bottom:calc(132px + env(safe-area-inset-bottom,0px))!important}
 .amt.g{color:var(--inc)}
 
 /* Duyuru şeritleri (ekstre, öneri, yaklaşan): kart değil ince satır */
-.sugb,.remb,.futb,.newbadge{margin-top:8px!important;padding:8px 10px!important;border-radius:14px!important;background:var(--surface)!important;border:1px solid color-mix(in srgb,var(--fg) 7%,transparent)!important;min-height:52px}
-.sugb .futi,.remb .futi,.futb .futi{width:30px!important;height:30px!important;border-radius:10px!important}
+.futb,.newbadge{margin-top:8px!important;padding:8px 10px!important;border-radius:14px!important;background:var(--surface)!important;border:1px solid color-mix(in srgb,var(--fg) 7%,transparent)!important;min-height:52px}
+.futb .futi{width:30px!important;height:30px!important;border-radius:10px!important}
 .futt b{font-size:13.5px!important;font-weight:600!important}
 
 /* Filtre çipi: görünür hap küçük, dokunma alanı 44px (saydam kenarlık) */
@@ -1813,7 +1782,6 @@ main{padding-bottom:calc(132px + env(safe-area-inset-bottom,0px))!important}
 .ldav{width:34px!important;height:34px!important;border-radius:11px!important;font-size:15px!important}
 .ldpt b{font-size:15px!important;font-weight:600!important}
 .ldpb{border-top:0!important;padding-left:46px}
-.ldpv b{font-size:15px!important;font-weight:600!important}
 .ldlh>span{text-transform:none!important;letter-spacing:0!important;font-size:13px!important;color:var(--fg)!important;font-weight:600!important}
 .ldadd{border-width:1px!important}
 .ldadd>svg{width:16px!important;height:16px!important;padding:6px!important}
@@ -1837,7 +1805,7 @@ main{padding-bottom:calc(132px + env(safe-area-inset-bottom,0px))!important}
 
 /* --- Sayfalar (sheet) --- */
 .tseg .seg button[data-v="led"]{white-space:nowrap;font-size:12px!important;letter-spacing:-.01em}
-.d2hero,.dhero{box-shadow:none!important}
+.d2hero{box-shadow:none!important}
 .sheet{border-color:color-mix(in srgb,var(--fg) 8%,var(--line))!important}
 .d2hero{background:var(--surface2)!important;border-color:transparent!important}
 /* Kartlar: iç kutular zeminsiz, bekleyen ekstre yalnız üst satırda renkli */
@@ -1867,7 +1835,7 @@ textarea.inp{min-height:44px}
 /* T19: hareketi azalt ayarında tüm animasyon ve geçişler fiilen kapanır (animationend yine tetiklenir) */
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0s!important;scroll-behavior:auto!important}.hero::after{display:none!important}}
 /* T17: tek renk kuralı: gider düz koyu yazı, gelir ve kazanç yeşil, kırmızı yalnız aşım ve uyarı. Tek para yazımı: lira büyük, kuruş ve ₺ küçük. */
-.day .ex,.umr .ex,.ldh .ex,.ldh>div>b.ex,.ldp .ex,.ldv.ex,.ldm0 .ex,.sra.ex,.srs b.e,.srs i.e,.d2h>.num.ex,.d2t>.num.ex,.d2ch>.num,.msbig .ex,.svpv .ex,.lpdiff .ex,.amt:not(.g):not(.sv):not(.rfa){color:var(--fg)!important}
+.day .ex,.umr .ex,.ldh .ex,.ldh>div>b.ex,.ldp .ex,.ldv.ex,.ldm0 .ex,.sra.ex,.d2h>.num.ex,.d2t>.num.ex,.d2ch>.num,.msbig .ex,.svpv .ex,.lpdiff .ex,.amt:not(.g):not(.sv):not(.rfa){color:var(--fg)!important}
 .day .ex{font-weight:600}
 .gtg.t-gider i{background:color-mix(in srgb,var(--fg) 10%,var(--bg));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--fg) 28%,transparent)}.gtg.t-gider button[data-v="gider"]{color:var(--fg)}
 .mv .tl{font-size:.72em;font-weight:500;margin-left:0;opacity:.6}
@@ -2129,7 +2097,6 @@ const brandOf = n => { const f = fold(n).replace(/\s+/g, ''); if (!f) return nul
 const brandIc = (n, cls = 'ic') => { const b = brandOf(n); return b ? `<span class="${cls} brnd${b[3] ? ' br-' + b[3] : ''}" style="--bb:${b[1]}">${b[2]}</span>` : ''; };
 const rowIc = (t) => { if (isSav(t) && t.invId) { const ix = (S.inv||[]).find(i => i.id === t.invId); if (ix) return invIc(ix); } const bi = brandIc(t.note) || (t.sub ? brandIc(subName(t.cat, t.sub)) : ''); if (bi) return bi; const st = t.cat==='abonelik' && t.sub ? subT(t.cat, t.sub) : null;
   if (st) return `<span class="ic icm">${ico(st[0])}</span>`;
-  const c = CAT[t.cat] || CAT.diger;
   const k = t.sub && P['s_'+t.sub] ? 's_'+t.sub : t.cat;
   return `<span class="ic icm">${ico(k)}</span>`; };
 const PEOPLE = { k1:{n:'Kişi 1',c:'var(--k1)'}, k2:{n:'Kişi 2',c:'var(--k2)'} };
@@ -2137,8 +2104,6 @@ const PEOPLE = { k1:{n:'Kişi 1',c:'var(--k1)'}, k2:{n:'Kişi 2',c:'var(--k2)'} 
 const catPill = (lbl, k, shared) => { const p = shared ? null : PEOPLE[k], who = shared ? 'Ortak' : p ? p.n : '';
   return `<span class="cpill${shared ? ' cp-o' : p ? '' : ' cp-x'}"${p ? ` style="--wc:${p.c}"` : ''} data-who="${shared ? 'ortak' : p ? esc(k) : ''}"${who ? ` title="${esc(lbl)} · ${esc(who)}"` : ''}>${esc(lbl)}${who ? `<span class="srhide">, ${shared ? 'ortak' : esc(who) + ' ekledi'}</span>` : ''}</span>`; };
 const PAY = { ziraat:{n:'Ziraat',s:'Ziraat',c:'#F0605A'}, yk:{n:'Yapı Kredi',s:'Yapı Kredi',c:'#5B9BFF'}, nakit:{n:'Nakit',s:'Nakit',c:'#5FCB8A'} };
-const fig = (k, size=16) => { const p = PEOPLE[k]; if (!p) return '';
-  return `<span class="fig pdot" style="background:${p.c}" role="img" aria-label="${p.n}" title="${p.n}"></span>`; };
 
 /* ---------- Yardımcılar ---------- */
 const $ = s => document.querySelector(s);
@@ -2333,10 +2298,7 @@ function fitNums(){ const E = [...document.querySelectorAll('#top .sum2 .sbv, #t
 addEventListener('resize', () => { clearTimeout(fitNums.t); fitNums.t = setTimeout(()=>{ renderTop.last = null; renderTop(); fitTop(); fitNums(); stickOff(); }, 120); });
 
 function renderTop(){
-  const mt = monthTx(), g = sumOf(mt,'gider'), i = sumOf(mt,'gelir'), sv = r2(sumOf(mt,'birikim') - sumOf(mt,'cekim')), b = r2(i-g);
-  const pmD = new Date(S.y, S.m-1, 1), pmt = TXE().filter(t => ymOf(t.date) === ymStr(pmD.getFullYear(), pmD.getMonth())), pg = sumOf(pmt,'gider'), pi = sumOf(pmt,'gelir'), pml = MON[pmD.getMonth()].slice(0,3);
-  const prevLine = v => pmt.length ? `<span class="plan2">${pml}: ${fmtT0(v)}</span>` : '';
-  const p = PEOPLE[S.me];
+  const mt = monthTx(), g = sumOf(mt,'gider'), i = sumOf(mt,'gelir'), b = r2(i-g);
   const html = `<div class="wrap top">
     <div class="toprow topline">
       <div class="brand"><svg class="blogo" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="120" fill="#1D2838"/><rect x="150" y="124" width="48" height="264" rx="24" fill="#EDE7DA"/><path d="M198 272 L334 136" stroke="#EDE7DA" stroke-width="48" stroke-linecap="round"/><circle cx="322" cy="334" r="64" fill="#D2AA66"/></svg>Kumbara</div>
@@ -2376,10 +2338,10 @@ document.addEventListener('pointerdown', e => { const f = e.target.closest('.fab
 { let ly = 0, ui = 0; ['touchmove','wheel'].forEach(ev => addEventListener(ev, () => { ui = Date.now(); }, { passive:true }));
   addEventListener('scroll', () => { const y = window.scrollY, d = y - ly; ly = y;
     if (SH || S.searchOpen) return; if (Date.now() - ui > 500 && y >= 120) return; if (y < 120 || d < -6) document.body.classList.remove('navhid'); else if (d > 8) { document.body.classList.add('navhid'); fabMenu(false); } }, { passive:true }); }
-{ let sx = 0, sy = 0, st = 0; const m0 = () => document.getElementById('main');
+{ let sx = 0, sy = 0, st = 0;
   addEventListener('touchstart', e => { if (S.view!=='grafik' || SH || e.touches.length>1 || e.target.closest('.upkg,.soon,.w3tb,.trend')) { st = 0; return; } sx = e.touches[0].clientX; sy = e.touches[0].clientY; st = Date.now(); }, { passive:true });
   addEventListener('touchend', e => { if (!st || Date.now()-st > 600) return; const t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy; st = 0;
-    if (Math.abs(dx) < 70 || Math.abs(dy) > Math.abs(dx)*.6) return; const TB = ['kat','duz','kis','def'], cur = TB.indexOf(gTabOf()), nx = cur + (dx < 0 ? 1 : -1);
+    if (Math.abs(dx) < 70 || Math.abs(dy) > Math.abs(dx)*.6) return; const TB = GTABS, cur = TB.indexOf(gTabOf()), nx = cur + (dx < 0 ? 1 : -1);
     if (nx < 0 || nx >= TB.length) return; S.gTab = TB[nx]; S.openCat = null; S.tabAnim = true; S.tabDir = dx < 0 ? 'r' : 'l'; buzz(); renderMain(); S.tabAnim = false; }, { passive:true }); }
 function renderNav(){
   const nv = $('#nav'); if (S.navAnim) { nv.classList.add('navanim'); S.navAnim = false; clearTimeout(renderNav.t); renderNav.t = setTimeout(()=>nv.classList.remove('navanim'), 500); }
@@ -2437,7 +2399,7 @@ function instPill(I){ if (I.folded) return `<span class="ipill last" aria-label=
     : `<span class="ipbr"><i style="width:${i/n*100}%"></i></span>`;
   return `<span class="ipill${last?' last':''}" aria-label="${n} taksitin ${i}. taksiti">${bar}<b>${i}/${n}</b></span>`; }
 function txRow(t){
-  const c = CAT[t.cat] || CAT.diger, p = PEOPLE[t.by] || {n:t.by||'?',c:'var(--muted)'};
+  const c = CAT[t.cat] || CAT.diger;
   const title = t.note || subName(t.cat,t.sub) || c.n, rf = RFM.get(t.id);
   return `<div class="sw${t.date>today()?' fut':''}${S.flashIds && S.flashIds.has(t.id)?' newrow':''}${PAY[t.pay]?' paid':''}${t.ok && lsGet('kasa.okdim') !== 'off' ? ' okdim' : ''}"${PAY[t.pay]?` style="--pc:${PAY[t.pay].c}"`:''}>${S.canWrite && !t.virt && !t.vrec?`<button class="swdup" data-act="swdup" data-id="${esc(t.id)}" tabindex="-1">${ico('repeat')}<span>Tekrar ekle</span></button><button class="swdel" data-act="swdel" data-id="${esc(t.id)}" tabindex="-1">${ico('trash')}<span>Sil</span></button>`:''}<button class="row" ${t.virt?`data-act="subd" data-v="${esc(t.virt)}"`:t.vrec?`data-act="editrec" data-id="${esc(t.vrec)}"`:`data-act="edittx" data-id="${esc(t.id)}"`}>
     ${rowIc(t)}
@@ -2464,7 +2426,6 @@ function upcCard(){
     .sort((a,b) => a.last.localeCompare(b.last) || b.total - a.total);
   const ks0 = Object.keys(u.byMonth).filter(k => u.byMonth[k].g > 0).sort(), ks = []; { let [y,m] = ks0[0].split('-').map(Number); const [ly,lm] = ks0[ks0.length-1].split('-').map(Number); while (y < ly || (y === ly && m <= lm)) { ks.push(ymStr(y, m-1)); m++; if (m > 12) { m = 1; y++; } } }
   const V = ks.map(k => u.byMonth[k]?.g || 0), mx = Math.max(...V, 1), N = ks.length, cy = new Date().getFullYear();
-  const lab = k => { const [y,m] = k.split('-').map(Number); return MON[m-1].slice(0,3) + (y !== cy ? `<small>'${String(y).slice(2)}</small>` : ''); };
   const CN = {}; fut.forEach(x => { const k = ymOf(x.date); CN[k] = (CN[k]||0) + 1; }); const nowK = ymStr(new Date().getFullYear(), new Date().getMonth());
   const tiles = ks.map((k,i) => { const [y,m] = k.split('-').map(Number), v = V[i], f = v/mx;
     return `<button type="button" class="upkt${k === nowK ? ' now' : ''}${v ? '' : ' z'}" data-act="upcm" data-v="${k}" style="--f:${f.toFixed(3)};--d:${i*40}ms" aria-label="${MON[m-1]} ${y}: ${fmtT0(v)}"><span class="upktm">${MON[m-1].slice(0,3)}${y !== cy ? `<small>'${String(y).slice(2)}</small>` : ''}</span><b class="num">${v ? fmtT0(v) : '—'}</b><small>${CN[k] ? `${CN[k]} taksit` : 'boş'}</small><i></i></button>`; }).join('');
@@ -2499,8 +2460,8 @@ function shNewRec(){
 function shMsum(){
   const mt = monthTx(), i = sumOf(mt,'gelir'), g = sumOf(mt,'gider'), sv = r2(sumOf(mt,'birikim') - sumOf(mt,'cekim')), b = r2(i-g), left = r2(b - sv);
   const pm = new Date(S.y, S.m-1, 1), cur = isCurMonth(), lim = cur ? new Date().getDate() : 31;
-  const pmt = TXE().filter(t => ymOf(t.date)===ymStr(pm.getFullYear(), pm.getMonth()) && +t.date.slice(8,10) <= lim), pg = sumOf(pmt,'gider'), pi = sumOf(pmt,'gelir');
-  const dG = pg ? (g-pg)/pg*100 : null, dI = pi ? (i-pi)/pi*100 : null;
+  const pmt = TXE().filter(t => ymOf(t.date)===ymStr(pm.getFullYear(), pm.getMonth()) && +t.date.slice(8,10) <= lim), pg = sumOf(pmt,'gider');
+  const dG = pg ? (g-pg)/pg*100 : null;
   const byC = {}; mt.filter(t=>t.type==='gider').forEach(t => byC[t.cat] = r2((byC[t.cat]||0) + +t.amount));
   const top = Object.entries(byC).filter(([k])=>CAT[k]).sort((a,b)=>b[1]-a[1]).slice(0,3);
   const big = mt.filter(t=>t.type==='gider').sort((a,b)=>b.amount-a.amount)[0];
@@ -2519,13 +2480,13 @@ function shMsum(){
     <div class="mxd">${row('', '', 'Gelir', i, true)}${row('', 'var(--exp)', 'Gider', -g)}${row('res', '', 'Net', b)}${sv ? row('', 'var(--gold)', sv > 0 ? 'Yatırıma ayrılan' : 'Yatırımdan çekilen', -sv, true) : ''}${row('res', 'var(--inc)', 'Elde kalan', left)}</div>
     ${dG!=null ? `<p class="msnote mxn">${same ? `${ico('check')}<span>Gider, ${cur ? 'geçen ayın aynı günleriyle' : 'geçen ayla'} aynı: <b class="num">${fmtT0(pg)}</b></span>` : `<span>${cur ? 'Geçen ayın aynı günlerine' : 'Geçen aya'} göre gider <b class="${dG>0?'ex':'in'}">%${fmt0(Math.abs(dG))} ${dG>0?'fazla':'az'}</b> (${fmtT0(pg)})</span>`}</p>` : ''}
     ${top.length ? `<div class="mssec"><span class="mscap">En çok harcanan</span>${top.map(([k,v],ix)=>`<button class="mxc" style="--d:${ix*70}ms" data-act="catx" data-v="${k}" data-id="*">${chipIc(k)}<b class="mxn1">${esc(CAT[k].n)}</b><b class="num mxv">${tlN(v)}</b><small class="mxq">%${fmt0(g?v/g*100:0)}</small><span class="mscb"><i style="--w:${v/top[0][1]*100}%;background:${CAT[k].c}"></i></span></button>`).join('')}</div>` : ''}
-    ${big ? `<div class="mssec"><span class="mscap">En büyük harcama</span><button class="msbig" data-act="edittx" data-id="${esc(big.id)}">${rowIc(big)}<span class="mscn"><b>${esc(big.note || subName(big.cat,big.sub) || CAT[big.cat]?.n || '')}</b><small>${dShort(big.date)} · ${esc(CAT[big.cat]?.n||'')}</small></span><b class="num ex">${tlN(big.amount)}</b></button></div>` : ''}
+    ${big ? `<div class="mssec"><span class="mscap">En büyük harcama</span><button class="msbig" data-act="edittx" data-id="${esc(big.id)}">${rowIc(big)}<span class="mscn"><b>${esc(big.note || subName(big.cat,big.sub) || CAT[big.cat]?.n || '')}</b><small>${fmtD(big.date)} · ${esc(CAT[big.cat]?.n||'')}</small></span><b class="num ex">${tlN(big.amount)}</b></button></div>` : ''}
   </div>`;
 }
 function invHist(x){ return S.tx.filter(t => isSav(t) && (t.invId===x.id || (!t.invId && fold(t.note||'')===fold(x.code||x.name||'')))).sort((a,b)=>b.date.localeCompare(a.date)); }
 function shIHist(){
   const x = S.inv.find(h=>h.id===SH.id); if (!x) return head('Bulunamadı');
-  const Ls = invHist(x), st = invStats(x), A = valSeries(x), unit = x.kind==='altin' ? 'gr' : 'adet', dg = st.now < 1 ? 6 : 2, col = invCol(x), fr = SH._fresh;
+  const Ls = invHist(x), st = invStats(x), A = valSeries(x), dg = st.now < 1 ? 6 : 2, col = invCol(x), fr = SH._fresh;
   const g = st.gain, by = {}; Ls.forEach(t => { const k = t.date.slice(0,7); (by[k] ||= []).push(t); });
   let chart = ''; if (A.length >= 2) { const G = A.map(vGain), LT = invLots(x).filter(l => !l.adj), marks = LT.map(l => { let ix = A.findIndex(p => p[0] >= l.date); if (ix < 0) ix = A.length - 1; return [ix, l.units < 0 ? 's' : 'b']; });
     chart = `<div class="asx"><span class="vro">${vDl(A[0][0])}’den beri kazanç</span>${vLine('asset', G, i => `<b>${vDl(A[i][0])}</b> · ${fmtN(A[i][1])} ₺ · <span class="${G[i] < 0 ? 'neg' : 'pos'}">${vSg(G[i])}</span>`, { zero:true, h:84, col: G[G.length-1] < 0 ? 'var(--exp)' : 'var(--inc)', marks })}</div>`; }
@@ -2610,7 +2571,7 @@ function goToday(instant){ miniHold = true; { const t = $('#top'); if (t && t.cl
 }
 function money(n){ if (lsGet('kasa.kr') === 'off') return `<span class="mv">${fmtN(rnd0(n), 0)}<span class="tl">\u202F₺</span></span>`; const s = fmtN(n), k = s.lastIndexOf(','), dc = s.slice(k); return `<span class="mv">${s.slice(0,k)}${dc === ',00' ? '' : `<span class="dec">${dc}</span>`}<span class="tl">\u202F₺</span></span>`; }
 function isCurMonth(){ const T = new Date(); return S.y===T.getFullYear() && S.m===T.getMonth(); }
-function recVirt(){ const ym = ymStr(S.y, S.m), t0 = today(), out = [], y = S.y, m = S.m, last = dim(y, m);
+function recVirt(){ const t0 = today(), out = [], y = S.y, m = S.m, last = dim(y, m);
   S.rec.forEach(r => { if (!r.active) return; const ds0 = [];
     if (r.freq==='weekly') { for (let d = 1; d <= last; d++) if (new Date(y, m, d).getDay()===+r.weekday) ds0.push(ds(new Date(y, m, d))); }
     else ds0.push(ds(new Date(y, m, Math.min(+r.day||1, last))));
@@ -2807,8 +2768,6 @@ function shDonem(){
   const ins = D.lines.filter(l=>l.t==='in'), outs = D.lines.filter(l=>l.t==='out');
   const live = D.items.filter(i => i.t.date<=t0 || i.eff).reverse();
   const spentL = live.filter(i => i.eff && i.t.type==='gider'), extraL = live.filter(i => i.eff && i.t.type==='gelir'), planL = live.filter(i => !i.eff);
-  const mini = it => { const t = it.t, title = t.note || subName(t.cat,t.sub) || CAT[t.cat]?.n || '';
-    return `<button class="d2m" data-act="dtog" data-id="${esc(t.id)}"><span>${esc(title)}</span><small>${fmtD(t.date)}</small><span class="num">${tlN(it.amt)}</span></button>`; };
   const other = planL.filter(it => !D.lines.some(l => l.n===it.why));
   const taksL = outs.find(l => /taksit/i.test(l.n));
   const subRow = it => { const t = it.t, title = t.note || subName(t.cat,t.sub) || CAT[t.cat]?.n || '';
@@ -2954,7 +2913,7 @@ function deDiff(l){ const a = +l.a||0, p = +l.p||0, d = r2(a - p), g = l.g, tg =
 function deSums(){ const v = t => r2(SH.lines.filter(l=>l.t===t).reduce((s,l)=>s+(+l.a||0),0)); const i = v('in'), o = v('out'), pc = +SH.savPct||0, s = Math.max(0, r2((i-o)*pc/100)); return { i, o, s, b: r2(i-o-s) }; }
 function shDonemEdit(){
   const L = SH.lines, fr = SH._fresh, Sm = deSums(), nw = SH.newRow; SH.newRow = null;
-  const GO = SH.dgo || (SH.dgo = {}), grp = (t, title, col, k) => { const rows = L.map((l,i)=>[l,i]).filter(([l])=>l.t===t), o = !!GO[t] || (nw != null && L[nw] && L[nw].t === t), fl = rows.filter(([l]) => l.led).length, on = rows.filter(([l]) => l.once).length;
+  const GO = SH.dgo || (SH.dgo = {}), grp = (t, title, col, k) => { const rows = L.map((l,i)=>[l,i]).filter(([l])=>l.t===t), o = !!GO[t] || (nw != null && L[nw] && L[nw].t === t);
     return `<div class="degc${o?' open':''}" style="--c:${col};--d:${k*70}ms"><button type="button" class="dech" data-act="degt" data-v="${t}" aria-expanded="${o}"><span class="ddot" style="background:${col}"></span><b>${title}</b><small>${rows.length} satır</small><span class="num" id="de_${t}">${tlN(t==='in'?Sm.i:t==='sav'?Sm.s:Sm.o)}</span><span class="chev2 ${o?'up':''}">${ico('right')}</span></button>
       ${o ? `<div class="decw">${PORD.filter(kk => rows.some(([l]) => lineKind(l) === kk)).map(kk => { const R = rows.filter(([l]) => lineKind(l) === kk), K = PKIND[kk];
         return `<div class="decs" style="--pc:${K[2]}"><span class="decsh"><i>${ico(K[1])}</i>${K[0]}<small>${R.length}</small></span><div class="decl">${R.map(([l,i], j)=>`<div class="der2 hasp${nw===i?' dnew':''}${SH.dopen===i?' dopen':''}${l.led?' fled':''}${l.once?' fonce':''}" data-i="${i}" style="--i:${Math.min(j,12)}"><span class="dhand" aria-label="Basılı tutup sürükleyerek sırala"><svg viewBox="0 0 12 18" width="12" height="18" fill="currentColor"><circle cx="3" cy="3" r="1.6"/><circle cx="9" cy="3" r="1.6"/><circle cx="3" cy="9" r="1.6"/><circle cx="9" cy="9" r="1.6"/><circle cx="3" cy="15" r="1.6"/><circle cx="9" cy="15" r="1.6"/></svg></span><textarea class="dein ta" id="dl_n${i}" rows="1" placeholder="Ad" autocomplete="off" enterkeyhint="next">${esc(l.n)}</textarea><input class="dein num" id="dl_a${i}" inputmode="decimal" value="${l.a!=null&&l.a!==''?fmtN(l.a):''}" placeholder="0,00" enterkeyhint="done"><button type="button" class="dedel" data-act="ddel" data-v="${i}" aria-label="Satırı sil">${ico('x')}</button>${deRow2(l, i)}</div>`).join('')}</div></div>`; }).join('')}</div>
@@ -2981,7 +2940,7 @@ async function dSave(){ dRead(); const isNew = !!SH.isNew;
   if (!lines.length) { toast('En az bir satır gir'); return; }
   if (SH.end < SH.start) { toast('Bitiş, başlangıçtan önce olamaz'); return; }
   const cuts = Object.fromEntries(Object.entries(SH.cuts||{}).filter(([,v])=>v)); if (!SH.spendEnd && Object.keys(cuts).length) { const mx = Object.values(cuts).sort().pop(); SH.spendEnd = ds(new Date(pd(mx).getTime() + 864e5)); }
-  const cur = S.donem && S.donem.cur, past = ((S.donem && S.donem.past) || []).slice();
+  const cur = S.donem && S.donem.cur;
   let next; const remNow = cur ? (() => { const D = donemCalc(); return D ? D.rem : null; })() : null;
   const mk = base => { const cur = base && base.cur, past = ((base && base.past) || []).slice();
   if (SH.isNew) { if (cur) { past.unshift({ ...cur, closed: today(), rem: remNow }); }
@@ -3008,8 +2967,6 @@ async function dTog(id){ const D = donemCalc(); if (!D) return; const it = D.ite
 const addMon = (s, k) => { const D = pd(s), y = D.getFullYear(), m = D.getMonth()+k; return ds(new Date(y, m, Math.min(D.getDate(), dim(y, m)))); };
 const daysTo = s => Math.round((pd(s) - pd(today())) / 864e5);
 const relDay = n => n===0 ? 'bugün' : n===1 ? 'yarın' : n<0 ? `${-n} gün geçti` : `${n} gün sonra`;
-const SUBCOL = ['#E66A6A','#E9A14B','#5DBB8A','#5B9BFF','#A88BFF','#E07BB5','#3CC8BE','#C9B458'];
-const subColor = k => { let h = 0; for (const ch of k) h = (h*31 + ch.charCodeAt(0)) >>> 0; return SUBCOL[h % SUBCOL.length]; };
 const SUBT = { oyun:['oyun','#5DBB8A'], egitim:['egitim','#5B9BFF'], spor:['spor','#E9A14B'], eglence:['play','#E66A6A'], yaraticilik:['spark','#A88BFF'] };
 function subT(cat, sub){ return SUBT[fold(subName(cat, sub)).replace(/ /g,'')] || null; }
 const subAv = x => { const bi = brandIc(x.name, 'sav'); if (bi) return bi; const t = subT(x.cat, x.sub);
@@ -3233,7 +3190,7 @@ function tempoCard(){ const y = S.y, m = S.m, cur = isCurMonth(), n = dim(y, m),
 function catLimits(){ return {}; }
 function vGrafik(){
   const T = S.gType || 'gider', isG = T==='gider';
-  const mt = monthTx(), gid = mt.filter(t=>t.type===T), tot = sumOf(mt,T), totG = sumOf(mt,'gider');
+  const mt = monthTx(), gid = mt.filter(t=>t.type===T), tot = sumOf(mt,T);
   const byCat = {}; gid.forEach(t => byCat[t.cat] = r2((byCat[t.cat]||0) + +t.amount));
   const B = catLimits();
   const cats = Object.keys({...byCat, ...Object.fromEntries(Object.keys(B).filter(k=>+B[k]>0).map(k=>[k,1]))})
@@ -3289,7 +3246,7 @@ function who3c(){
   const top = cats.slice(0,6).map(([k])=>k), tot = w => r2(Object.values(P[w]).reduce((a,v)=>a+v,0)), mx = Math.max(...K.map(([w])=>tot(w)), 1);
   const other = w => r2(tot(w) - top.reduce((a,k)=>a+(P[w][k]||0),0)), oc = 'color-mix(in srgb,var(--fg) 25%,transparent)';
   const grand0 = r2(cats.reduce((a,[,v])=>a+v,0));
-  const rows = K.map(([w,n,c],ix) => { const tt = tot(w), H = hist(w), hm = Math.max(...H, 1);
+  const rows = K.map(([w,n,c],ix) => { const tt = tot(w), H = hist(w);
     return `<div class="w3c2" role="button" data-act="w3x" data-v="*" data-id="${w}" style="--d:${ix*80}ms;--pc:${c}">
       <div class="w3c2h"><span class="w3cn"><i style="background:${c}"></i>${n}</span><span class="w3ct2"><b class="num">${tt ? fmtT0(tt) : '—'}</b>${tt ? `<small>%${fmt0(tt/grand0*100)}</small>` : ''}</span></div>
       <span class="w3cb"><span class="w3cs" style="width:${tt ? Math.max(tt/mx*100, 2) : 0}%">${top.map(k=>P[w][k]?`<i style="flex-grow:${P[w][k]};background:${CAT[k].c}"></i>`:'').join('')}${other(w)>0?`<i style="flex-grow:${other(w)};background:${oc}"></i>`:''}</span></span></div>`; }).join('');
@@ -3432,7 +3389,6 @@ function assetOf(x){ const A = S.market && S.market.assets || {}; return A[asset
 const CARDS = ['ziraat','yk'];
 const wkShift = d => { const w = d.getDay(); if (w===6) d.setDate(d.getDate()+2); else if (w===0) d.setDate(d.getDate()+1); return d; };
 const addM = (s, n, day) => { const d = pd(s); return clampDate(d.getFullYear(), d.getMonth()+n, day ?? d.getDate()); };
-const dShort = s => { const d = pd(s); return `${d.getDate()} ${MON[d.getMonth()].slice(0,3)}`; };
 function cardPeriod(k){
   const c = (S.cfg.cards||{})[k] || {}, st = (c.statements||[]).slice().sort((a,b)=>a.cut.localeCompare(b.cut)), last = st[st.length-1] || null;
   let prevCut = last ? last.cut : ds(addM(today(), -1, c.cut||1)), nextCut, nextDue;
@@ -3464,7 +3420,7 @@ function statusCard(){ const T = S.tasksDoc || {}, TK = taskRows(), tb = TK.filt
     ['tema', 'palette', 'Tercihler', tercihSub(), 'none', '@tema'],
     ...(S.canWrite ? [['kat', 'tag', 'Kategoriler', `${Object.keys(CAT).length} kategori · ekle, düzenle, gizle`, 'none', '!setcat'], ['kisi', 'list', 'Kişiler', `${whoList().length} kişi · Borç/Alacak listesi`, 'none', '!ledppl']] : []),
     ['log', 'hist', 'Değişiklikler', L0 ? (() => { const d = new Date(L0.t); return `son ${d.getDate()} ${MON[d.getMonth()].slice(0,3)} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`; })() : 'henüz yok', 'none', '@log'],
-    ['ekstre', 'card', 'Kartlar', D.length ? `${D.map(x => PAY[x.k].n).join(', ')} ekstresi yüklenmedi` : `Ziraat · Yapı Kredi · sıradaki ekstre ${dShort(stmNext())}`, D.length ? 'warn' : 'ok', '@kart'],
+    ['ekstre', 'card', 'Kartlar', D.length ? `${D.map(x => PAY[x.k].n).join(', ')} ekstresi yüklenmedi` : `Ziraat · Yapı Kredi · sıradaki ekstre ${fmtD(stmNext())}`, D.length ? 'warn' : 'ok', '@kart'],
     ['audit', 'check', 'Hesap denetimi', [ab ? `${ab} rakam tutmuyor` : `${AR.length} anlık kontrol tutuyor`, dn?.at ? `derin ${dd(dn.at)}${dBad ? ' · tutmayan var' : ' · tutuyor'}` : "derin denetim ayın 11'inde"].join(' · '), ab || dBad ? 'bad' : 'ok', '@audit'],
     ['tasks', 'repeat', 'Otomatik görevler', tb ? `${tb} görev dikkat istiyor` : `${TK.length} görev · sorun yok`, tb ? 'warn' : 'ok', '@tasks'],
     ['backup', 'download', 'Yedek', yk?.at ? (yk.ok === false ? `${dd(yk.at)} · başarısız` : `son ${dd(yk.at)} · her pazar`) : 'henüz yok', yk?.ok === false ? 'bad' : yk?.at ? 'ok' : 'warn', '@yedek']];
@@ -3473,8 +3429,8 @@ function statusCard(){ const T = S.tasksDoc || {}, TK = taskRows(), tb = TK.filt
 function kartBody(){ const C = S.cfg.cards || {}, card = k => { const c = C[k] || {}, P = cardPeriod(k), L = (c.statements||[]).filter(s => s.at || s.amount).slice(-1)[0], open = L && L.at ? (S.cfg.stmtSug||[]).filter(s => String(s.key).startsWith(`${k}${L.cut.replace(/-/g,'')}_`) && !(S.cfg.sugOk||[]).includes('stmt|' + s.key)).length : 0;
     const dl = Math.round((pd(P.nextDue) - pd(today())) / 864e5), lastDue = L && L.due ? Math.round((pd(L.due) - pd(today())) / 864e5) : null;
     const pend = stmDue().find(x => x.k === k);
-    return `<div class="kc${pend ? ' pend' : ''}" style="--c:${PAY[k].c}">${pend ? `<div class="kcp">${ico('card')}${dShort(pend.cut)} ekstresi bekleniyor</div>` : ''}<div class="kch"><span class="pyl pyl-${k}">${PAYLOGO[k] || ''}</span><b>${PAY[k].n}</b>${c.limit ? `<small>limit ${fmtT0(c.limit)}</small>` : ''}${S.canWrite ? `<button type="button" class="iconbtn" data-act="kcfg" data-v="${k}" aria-label="${PAY[k].n} ayarları">${ico('edit')}</button>` : ''}</div>
-      <div class="kcg"><div><small>Hesap kesim</small><b>${c.cut ? `Ayın ${c.cut}${nSfx(c.cut)}` : '—'}</b><em>sonraki ${dShort(P.nextCut)}</em></div><div><small>Son ödeme</small><b>${c.due ? `Ayın ${c.due}${nSfx(c.due)}` : '—'}</b><em>sonraki ${dShort(P.nextDue)}${dl >= 0 && dl <= 31 ? ` · ${dl} gün` : ''}</em></div></div>
+    return `<div class="kc${pend ? ' pend' : ''}" style="--c:${PAY[k].c}">${pend ? `<div class="kcp">${ico('card')}${fmtD(pend.cut)} ekstresi bekleniyor</div>` : ''}<div class="kch"><span class="pyl pyl-${k}">${PAYLOGO[k] || ''}</span><b>${PAY[k].n}</b>${c.limit ? `<small>limit ${fmtT0(c.limit)}</small>` : ''}${S.canWrite ? `<button type="button" class="iconbtn" data-act="kcfg" data-v="${k}" aria-label="${PAY[k].n} ayarları">${ico('edit')}</button>` : ''}</div>
+      <div class="kcg"><div><small>Hesap kesim</small><b>${c.cut ? `Ayın ${c.cut}${nSfx(c.cut)}` : '—'}</b><em>sonraki ${fmtD(P.nextCut)}</em></div><div><small>Son ödeme</small><b>${c.due ? `Ayın ${c.due}${nSfx(c.due)}` : '—'}</b><em>sonraki ${fmtD(P.nextDue)}${dl >= 0 && dl <= 31 ? ` · ${dl} gün` : ''}</em></div></div>
       ${L ? `<div class="kcl"><span><small>Son ekstre · ${fmtD(L.cut)}</small><b class="num">${tlN(L.amount)}</b></span><span class="kcs">${L.at ? (open ? `<em class="w">${open} açık öneri</em>` : `<em class="g">${ico('check')}eşleşti</em>`) : ''}${L.due ? `<small>${lastDue != null && lastDue >= 0 ? `ödeme ${fmtD(L.due)} · ${lastDue} gün` : `ödeme ${fmtD(L.due)}`}</small>` : ''}</span></div>` : `<div class="kcl"><small>Henüz ekstre yüklenmedi</small></div>`}</div>`; };
   return `<div class="kcs2">${CARDS.map(card).join('')}</div>${S.canWrite ? `<label class="btn pri stmup">${ico('up')}Ekstre PDF’i yükle ve eşleştir<input type="file" class="stmfile" accept="application/pdf,.pdf" hidden></label><p class="note" style="margin:8px 2px 0">Ziraat ya da Yapı Kredi ekstresini yükle; kayıtlarla kendiliğinden karşılaştırılır, farklar Kayıtlar'daki Öneriler'e düşer.</p>` : ''}`; }
 function shKcfg(){ const k = SH.k, c = (S.cfg.cards||{})[k] || {};
@@ -3779,7 +3735,7 @@ function taskRows(){
   const stamp = d => `${d.getDate()} ${MON[d.getMonth()].slice(0,3)} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
   return TASKS.map(t => {
     if (t.local) { let D = []; try { D = stmDue(); } catch(_){} const nx = stmNext();
-      return { ...t, when: ekOn() ? `Kesimden ${ekGun()} gün sonra` : 'kapalı', st: D.length ? 'warn' : 'ok', next: nx ? dShort(nx) : '—', nt: nx ? pd(nx).getTime() : 9e15, last: D.length ? `bekleyen: ${D.map(x => `${PAY[x.k].n} ${dShort(x.cut)}`).join(', ')}` : 'bütün ekstreler yüklü', msg:'' }; }
+      return { ...t, when: ekOn() ? `Kesimden ${ekGun()} gün sonra` : 'kapalı', st: D.length ? 'warn' : 'ok', next: nx ? fmtD(nx) : '—', nt: nx ? pd(nx).getTime() : 9e15, last: D.length ? `bekleyen: ${D.map(x => `${PAY[x.k].n} ${fmtD(x.cut)}`).join(', ')}` : 'bütün ekstreler yüklü', msg:'' }; }
     const slot = off => { const d = new Date(now.getFullYear(), now.getMonth(), now.getDate()+off, t.hh, t.mm); return t.at(d) ? d : null; };
     let next = null, prev = null; for (let i=0;i<40 && !next;i++){ const d = slot(i); if (d && d > now) next = d; }
     for (let i=0;i>-40 && !prev;i--){ const d = slot(i); if (d && d <= now) prev = d; }
@@ -3950,7 +3906,7 @@ function tercihSub(){ const curAc = lsGet('kasa.acc') || 'gold', md = themeMode(
 function tercihBody(){
   const curAc = lsGet('kasa.acc') || 'gold';
   const segs = (act, cur, opts) => `<div class="seg sm">${opts.map(([v,l])=>`<button type="button" data-act="${act}" data-v="${v}" aria-pressed="${cur===v}">${l}</button>`).join('')}</div>`;
-  const md = themeMode(), sL = skinL(), sD = skinD(), nm = (A,k) => (A.find(x=>x[0]===k)||A[0])[1].replace(' siyah','');
+  const md = themeMode(), sL = skinL(), sD = skinD();
   const sw = (A, cur) => `<div class="sw5">${A.map(([k,n,bg,sf,ln])=>`<button class="sws" data-act="skin" data-v="${k}" aria-pressed="${cur===k}" aria-label="${n}"><span class="swc" style="background:linear-gradient(145deg,${ln} 0%,${sf} 48%,${bg} 100%);--ln:${ln}"><em></em></span><small>${n.replace(' siyah','')}</small></button>`).join('')}</div>`;
   const sv = lsGet('kasa.startv') || 'kayit', VN = { kayit:'Kayıtlar', grafik:'Grafikler', varlik:'Varlıklar', ayar:'Ayarlar' };
   return     `<div class="srow" style="margin-top:0;margin-bottom:16px"><span>Mod</span>${segs('tmode', md, [['auto','Otomatik'],['light','Açık'],['dark','Koyu']])}</div>
@@ -4090,7 +4046,7 @@ function trWords(str){ // "iki yüz elli" → 250 ; rakamları da okur
   W.forEach((w, i) => { const m = w.match(/^(\d+(?:[.,]\d{1,2})?)(?:tl|₺)?$/); if (m) { flush(i-1); const v = parseFloat(m[1].replace(',','.')); if (!best || v > best.v) best = { v, i0:i, i1:i }; return; }
     if (w in U) { if (!any) i0 = i; any = true; cur += U[w]; } else if (w === 'yüz') { if (!any) i0 = i; any = true; cur = (cur || 1) * 100; } else if (w === 'bin') { if (!any) i0 = i; any = true; tot += (cur || 1) * 1000; cur = 0; } else if (w === 'kuruş' && best) { /* yok say */ } else flush(i-1); });
   flush(W.length-1); return best; }
-function quickParse(txt){ const d = SH.d, f = fold(txt), W = txt.split(/\s+/), am = trWords(txt);
+function quickParse(txt){ const f = fold(txt), W = txt.split(/\s+/), am = trWords(txt);
   let pay = /ziraat/.test(f) ? 'ziraat' : /yapi ?kredi|world/.test(f) ? 'yk' : /nakit/.test(f) ? 'nakit' : null;
   const drop = new Set(['lira','tl','₺','kart','kartla','karttan','ile','nakit','ziraat','yapı','kredi','world','kuruş']); const rest = W.filter((w, i) => !(am && i >= am.i0 && i <= am.i1) && !drop.has(w.toLocaleLowerCase('tr'))).join(' ').trim();
   return { amount: am ? r2(am.v) : null, pay, text: rest }; }
@@ -4179,7 +4135,7 @@ function shTx(){
     dateRow + metaPick(d) +
     `<div class="field"><label for="f_note">Açıklama</label><textarea class="inp ta" id="f_note" rows="1" placeholder="${esc(c.n||'')}">${esc(d.note||'')}</textarea><div id="nsug" class="qsug"></div></div>` +
     `<button type="button" class="morebtn" data-act="shmore" aria-expanded="${moreOn}"><span>${moreSum}</span>${ico('chev')}</button><div class="moreb"${moreOn ? '' : ' hidden'}>${moreBody}</div>` + `</div>` +
-    (SH.id && SH.orig && SH.orig.created ? (() => { const C = new Date(+SH.orig.created), imp = /^imp_|^zrt_/.test(SH.id), P = PEOPLE[SH.orig.by]; return `<div class="txadded">${ico('cal')}<span>${imp ? 'İçe aktarıldı' : 'Eklendi'} · ${C.getDate()} ${MON[C.getMonth()]} ${C.getFullYear()}${imp ? '' : ` · ${String(C.getHours()).padStart(2,'0')}:${String(C.getMinutes()).padStart(2,'0')}`}${SH.orig.auto ? ' · otomatik' : SH.orig.recId ? ' · tekrarlayan' : ''}</span></div>`; })() : '') +
+    (SH.id && SH.orig && SH.orig.created ? (() => { const C = new Date(+SH.orig.created), imp = /^imp_|^zrt_/.test(SH.id); return `<div class="txadded">${ico('cal')}<span>${imp ? 'İçe aktarıldı' : 'Eklendi'} · ${C.getDate()} ${MON[C.getMonth()]} ${C.getFullYear()}${imp ? '' : ` · ${String(C.getHours()).padStart(2,'0')}:${String(C.getMinutes()).padStart(2,'0')}`}${SH.orig.auto ? ' · otomatik' : SH.orig.recId ? ' · tekrarlayan' : ''}</span></div>`; })() : '') +
     (SH.id && SH.orig && (SH.orig.type === 'gelir' || SH.orig.type === 'gider') && S.canWrite ? (() => { const D = donemCalc(), it = D && D.items.find(i => i.t.id === SH.id); if (!it) return ''; const lk = (D.P.link||{})[SH.id], l = lk && D.lines.find(x => x.id === lk);
       return `<button type="button" class="txrf txpl${l ? ' on' : ''}" data-act="txplan" data-id="${esc(SH.id)}">${ico('link')}<span>${l ? `Harcanabilir · <b>${esc(lineNmM(l.n))}</b> ile eşli` : it.why && !it.eff ? `Harcanabilir · ${esc(lineNmM(it.why))} ile sayılıyor` : 'Harcanabilir’de bir kalemle eşle'}</span>${ico('right')}</button>`; })() : '') +
     (SH.id && SH.orig && SH.orig.ok ? `<div class="txadded txok">${ico('check')}<span>Ekstreyle doğrulandı · ${esc(PAY[SH.orig.pay]?.n||'')} ${fmtD(SH.orig.ok)}</span></div>` : '') +
@@ -4222,8 +4178,8 @@ function instFull(o){
   return out;
 }
 function instPlan(){
-  const o = SH.orig, G = groupOf(o), F = instFull(o), t0 = today(), rest = G.filter(x=>x.inst.i>=o.inst.i);
-  const tot = r2(F.reduce((a,x)=>a+x.amount,0)), left = r2(F.filter(x=>x.date>t0).reduce((a,x)=>a+x.amount,0)), paidN = F.filter(x=>x.date<=t0).length, miss = F.some(x=>x.miss);
+  const o = SH.orig, G = groupOf(o), F = instFull(o), t0 = today();
+  const tot = r2(F.reduce((a,x)=>a+x.amount,0)), left = r2(F.filter(x=>x.date>t0).reduce((a,x)=>a+x.amount,0)), paidN = F.filter(x=>x.date<=t0).length;
   return `<div class="iplan">
     <button type="button" class="iph iptg" data-act="iptog" aria-expanded="${!!SH.ipOpen}"><b>Taksit ${o.inst.i}/${o.inst.n}</b><span class="iptot">Toplam <b class="num">${fmt(tot)}</b>${ico('right','i ipch')}</span></button>
     <div class="ipseg">${F.map(x=>`<i class="${x.id===o.id?'cur':x.date<=t0?'paid':''}${x.miss?' miss':''}"></i>`).join('')}</div>
@@ -4325,7 +4281,7 @@ function monthVals(Y, mode){
     if (mode==='net') { if (t.type==='gelir') o[m] = { v:(o[m]?.v||0) + +t.amount }; else if (t.type==='gider') o[m] = { v:(o[m]?.v||0) - +t.amount }; }
     else if (t.type===mode) o[m] = { v:(o[m]?.v||0) + +t.amount }; });
   else if (mode==='yat') { S.tx.forEach(t => { if (!inY(t.date) || !isSav(t)) return; const m = ym(t); (o[m] ||= { v:0, c:0, w:0 }); o[m].v += (t.type==='cekim'?-1:1) * +t.amount; });
-    for (const x of S.inv) { const D = S.market?.assets?.[assetCode(x)]?.daily || {}, ks = Object.keys(D).sort(), now = invStats(x).now; if (!now) continue;
+    for (const x of S.inv) { const D = S.market?.assets?.[assetCode(x)]?.daily || {}, now = invStats(x).now; if (!now) continue;
       const lots = (x.lots||[]).filter(l => l.date && l.date.slice(0,4)===String(Y) && +l.units > 0);
       for (const l of lots) { const m = +l.date.slice(5,7)-1; (o[m] ||= { v:0, c:0, w:0 }); o[m].c += +l.total || (+l.units * +l.price); o[m].w += +l.units * now; } }
     for (const m in o) { o[m].v = r2(o[m].v); if (o[m].c) { o[m].pl = r2(o[m].w - o[m].c); o[m].pp = o[m].pl / o[m].c * 100; } } }
@@ -4338,16 +4294,14 @@ function shMonth(){
   const Y = SH.y, T = new Date(), md = SH.mode || 'net', V = monthVals(Y, md), curYM = ymStr(T.getFullYear(), T.getMonth());
   const MODES = [['net','Net'],['gelir','Gelir'],['gider','Gider'],['yat','Yatırım'],['har','Harcanabilir']];
   const fut = i => ymStr(Y, i) > curYM;
-  const mx = Math.max(1, ...Object.values(V).map(x => Math.abs(x.v)));
-  const barC = x => md==='gelir' ? 'var(--inc)' : md==='gider' ? 'var(--exp)' : md==='yat' ? 'var(--gold)' : md==='har' ? 'var(--accent)' : (x.v>=0 ? 'var(--inc)' : 'var(--exp)');
   const cell = (x) => { if (!x) return '<small class="mv0">—</small><small class="mpl"></small>'; const v = x.v, k = fmtT0(Math.abs(v)).replace(/\s?₺/,'');
     if (md==='gelir') return `<small class="num pos">${k}</small><small class="mpl"></small>`;
     if (md==='gider') return `<small class="num neg">${k}</small><small class="mpl"></small>`;
     if (md==='yat') return `<small class="num gold">${v<0?'−':''}${k}</small>${x.pl!=null?`<small class="num mpl ${x.pl>=0?'pos':'neg'}">${x.pl>=0?'+':'−'}${tlN(Math.abs(x.pl))}</small>`:'<small class="mpl"></small>'}`;
     if (md==='har') return `<small class="num">${k}</small><small class="mpl"></small>`;
     return `<small class="num ${v>=0?'pos':'neg'}">${v<0?'−':'+'}${k}</small><small class="mpl"></small>`; };
-  const past = Object.entries(V).filter(([i]) => !fut(+i)).map(([,x]) => x), futV = Object.entries(V).filter(([i]) => fut(+i)).map(([,x]) => x);
-  const tot = past.reduce((a,x)=>a+x.v,0), plT = past.reduce((a,x)=>a+(x.pl||0),0), cT = past.reduce((a,x)=>a+(x.c||0),0), ftot = futV.reduce((a,x)=>a+x.v,0);
+  const past = Object.entries(V).filter(([i]) => !fut(+i)).map(([,x]) => x);
+  const tot = past.reduce((a,x)=>a+x.v,0), plT = past.reduce((a,x)=>a+(x.pl||0),0), cT = past.reduce((a,x)=>a+(x.c||0),0);
   const sgn = (n, force) => (n<0 ? '−' : force ? '+' : '');
   const hv = Object.values(V), foot = md==='har' ? (hv.length ? `<div class="mpt"><span>${Y} Ortalama</span><b class="num">${fmt(hv.reduce((s,x)=>s+x.v,0)/hv.length)}</b></div>` : '') : !past.length ? '' : `<div class="mpt"><span>${Y} Toplam</span><b class="num ${md==='net'?(tot>=0?'pos':'neg'):''}">${sgn(tot, md==='net')}${fmt(Math.abs(tot))}${md==='yat'&&cT?` <small class="${plT>=0?'pos':'neg'}">${plT>=0?'+':'−'}${fmt(Math.abs(plT))}</small>`:''}</b></div>`;
   const an = SH.anim || 'in'; SH.anim = '';
@@ -4705,7 +4659,7 @@ document.addEventListener('click', async e => {
       const a2 = ad && document.querySelector(`.day[data-date="${ad}"]`); if (a2) scrollBy(0, a2.getBoundingClientRect().top - t0); break; } // bugüne en yakın gün yerinde kalır, liste yukarı doğru açılır
     case 'close': closeSheet(); break;
     case 'newtx': { if (!S.db) { toast(OFFMSG()); break; } if (FAB.lp) { FAB.lp = false; break; } fabMenu(false); buzz();
-      if (val === 'quick') { openSheet(newQuickState()); setTimeout(() => document.getElementById('q_in')?.focus(), 80); break; } const inMonth = S.y===now.getFullYear() && S.m===now.getMonth(), ty = ['gider','gelir','birikim'].includes(val) ? val : 'gider';
+      if (val === 'quick') { openSheet(newQuickState()); setTimeout(() => document.getElementById('q_in')?.focus(), 80); break; } const ty = ['gider','gelir','birikim'].includes(val) ? val : 'gider';
       openSheet(newTxState(ty)); break; }
     case 'edittx': { if (S.searchOpen) srSave(S.q); const t = S.tx.find(x=>x.id===id); if (!t || !S.canWrite) return;
       openSheet({ kind:'tx', step:2, id, orig:t, d:{ type:t.type, dir: t.type==='cekim'?'out':'in', invId:t.invId||'', cat:t.cat, sub:t.sub||'', shared:!!t.shared, by:t.by, date:t.date, amount:t.amount, note:t.note, pay:t.pay||'', puan: +t.puan > 0 ? +t.puan : null, split: t.split && !t.split.paid ? { on:true, who:t.split.who, amount:t.split.amount } : null } }); break; }
@@ -4754,7 +4708,7 @@ document.addEventListener('click', async e => {
       { const mine = M[SH.key], sk = SH.key; if (!(await saveCfg(c => ({ subsMeta:{ ...(c.subsMeta||{}), [sk]: mine } })))) break; } toast('Kaydedildi'); openSheet({ kind:'subd', key:SH.key }); break; }
     case 'wtype': S.wType = val; renderMain(); break;
     case 'gtype': S.gType = val; S.openCat = null; renderMain(); break;
-    case 'gtab': { const TB = ['kat','duz','kis','def'], a0 = TB.indexOf(gTabOf()), a1 = TB.indexOf(val); S.tabDir = a1 > a0 ? 'r' : a1 < a0 ? 'l' : ''; } S.gTab = val; S.openCat = null; S.tabAnim = true; window.scrollTo(0,0); renderMain(); S.tabAnim = false; break;
+    case 'gtab': { const TB = GTABS, a0 = TB.indexOf(gTabOf()), a1 = TB.indexOf(val); S.tabDir = a1 > a0 ? 'r' : a1 < a0 ? 'l' : ''; } S.gTab = val; S.openCat = null; S.tabAnim = true; window.scrollTo(0,0); renderMain(); S.tabAnim = false; break;
     case 'shinst': { SH.more = true; const am = fAmt(); if (am>0) SH.d.amount = am; SH.d.inst = !SH.d.inst; drawSheet(); break; }
     case 'shinstn': { SH.d.instN = +val; const f = document.getElementById('f_n'); if (f) f.value = val; drawSheet(); break; }
     case 'shdate': { SH.d.date = val; const f = document.getElementById('f_date'); if (f) f.value = val; drawSheet(); break; }
@@ -5345,7 +5299,7 @@ function stmMatch(R){ const k = R.card, cut = R.cut, C = (S.cfg.cards||{})[k] ||
   rows.forEach(r => exact(r, 0));
   // 2) aynı gün, aynı yer: toplamı tek kayıt olarak girilmiş olabilir
   const G = {}; rows.forEach(r => { if (!r.st && !r.inst && !r.refund && !r.lira) (G[r.date + '|' + stmKey(r.desc)] ||= []).push(r); });
-  const agg = []; Object.values(G).forEach(a => { if (a.length < 2) return; const sum = r2(a.reduce((s, r) => s + r.amount, 0)), t = pool.find(t => !used.has(t.id) && eq(+t.amount, sum) && Math.abs(dayDiff(t.date, a[0].date)) <= 2);
+  Object.values(G).forEach(a => { if (a.length < 2) return; const sum = r2(a.reduce((s, r) => s + r.amount, 0)), t = pool.find(t => !used.has(t.id) && eq(+t.amount, sum) && Math.abs(dayDiff(t.date, a[0].date)) <= 2);
     if (t) { a.forEach(r => { r.st = 'ok'; r.tx = t; }); used.add(t.id); if (!t.ok) ok.push(t.id); learn[stmKey(a[0].desc)] = { cat:t.cat, sub:t.sub||'', note:t.note||'' }; }
     else if (a.every(r => eq(r.amount, a[0].amount))) { a.slice(1).forEach(r => { r.st = 'agg'; }); a[0].cnt = a.length; a[0].unit = a[0].amount; a[0].amount = sum; } });
   rows.forEach(r => exact(r, 1)); rows.forEach(r => exact(r, 4));
@@ -5561,14 +5515,14 @@ function vHero(fr){ const ST = S.inv.map(x => [x, invStats(x)]), tv = r2(ST.redu
     ${real != null ? `<div class="vreal ${real >= 0 ? 'up' : 'dn'}">${ico(real >= 0 ? 'up' : 'down')}<span>Enflasyonun <b class="num">${fmtT0(Math.abs(real))}</b> ${real >= 0 ? 'üstünde' : 'gerisinde'}</span></div>` : ''}
     ${chart ? `<div class="vh2c"><span class="vro">${def}</span>${IG ? '<span class="vleg"><i></i>Enflasyon</span>' : ''}</div>${chart}` : ''}
     ${cells ? `<div class="vh2s">${cells}</div>` : ''}`;
-  if (one) { const x = one, o = ST[0][1], col = invCol(x), unit = x.kind === 'altin' ? 'gr' : 'adet';
+  if (one) { const x = one, o = ST[0][1], unit = x.kind === 'altin' ? 'gr' : 'adet';
     h += `<div class="vh2f" data-act="ihist" data-id="${esc(x.id)}" role="button">${invIc(x)}
       <span class="h2n"><b>${esc(x.code||x.name||'')}${(dipOf(x)||{}).dip ? ' <em class="dipb">Fırsat</em>' : ''}</b><small class="num">${fmtN(+x.units||0, x.kind === 'altin' ? 2 : 0)} ${unit}</small></span>
       ${S.canWrite ? `<button class="btn pri vbuy" data-act="trade" data-id="${esc(x.id)}">${ico('plus')}Alım</button><button class="btn ghost vmor" data-act="ihist" data-id="${esc(x.id)}" aria-label="Varlık ayrıntısı"><i></i><i></i><i></i></button>` : ''}</div>${invStaleNote(x, o.D)}
 `; }
   else h += `<div class="vdist">${ST.map(([x,o]) => `<i style="--w:${tv ? o.val/tv*100 : 0}%;background:${invCol(x)}"></i>`).join('')}</div>`;
   h += `</div>`;
-  if (!one) { h += `<div class="card vrows">${ST.map(([x,o]) => { const col = invCol(x); return `<div class="vrow">${invIc(x)}
+  if (!one) { h += `<div class="card vrows">${ST.map(([x,o]) => { return `<div class="vrow">${invIc(x)}
       <button class="h2n" data-act="ihist" data-id="${esc(x.id)}"><b>${esc(assetCode(x) === 'KZL' ? 'Altın' : (x.code||x.name))}${(dipOf(x)||{}).dip ? ' <em class="dipb">Fırsat</em>' : ''}</b><small class="num">%${fmt0(tv ? o.val/tv*100 : 0)} · ${o.gain != null ? `<span class="${o.gain < 0 ? 'neg' : 'pos'}">${vSg(o.gain)}</span>` : 'maliyet yok'}</small></button>
       <b class="num vrv">${tlN(o.val)}</b>${invStaleNote(x, o.D)}</div>`; }).join('')}
       ${S.canWrite ? `<button class="vnew" data-act="newinv">${ico('plus')}Varlık ekle</button>` : ''}</div>`; }
