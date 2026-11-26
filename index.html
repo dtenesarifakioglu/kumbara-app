@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="tr"><head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#1D2838">
 <script src="ornek-veri.js"></script>
 <script src="runtime.js"></script>
@@ -9,6 +8,7 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0iIzFEMjgzOCIvPjxyZWN0IHg9IjE0MiIgeT0iMTIwIiB3aWR0aD0iNTYiIGhlaWdodD0iMjg4IiByeD0iMjgiIGZpbGw9IiNFREU3REEiLz48cGF0aCBkPSJNMTc4IDI4MUwzMjggMTMxIiBmaWxsPSJub25lIiBzdHJva2U9IiNFREU3REEiIHN0cm9rZS13aWR0aD0iNTYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjMwMiIgY3k9IjMzOCIgcj0iNzAiIGZpbGw9IiNGMEI0NEMiLz48L3N2Zz4=">
 <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
 <link rel="manifest" href="manifest.webmanifest">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#1D2838">
 <meta name="apple-mobile-web-app-title" content="Kumbara">
 <meta name="application-name" content="Kumbara">
@@ -2144,17 +2144,17 @@ const fig = (k, size=16) => { const p = PEOPLE[k]; if (!p) return '';
 const $ = s => document.querySelector(s);
 const esc = s => String(s??'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const NF = {}, nfOf = (a,b) => NF[a+'|'+b] || (NF[a+'|'+b] = new Intl.NumberFormat('tr-TR',{minimumFractionDigits:a,maximumFractionDigits:b}));
-const fmtN = (n,d=2) => nfOf(d,d).format(Number(n)||0);
+const fmtN = (n,d=2) => nfOf(d,d).format(Number(n)||0).replace(/^-(?=[0.,]*$)/, ''); // eksi sıfır ("-0,00") yazılmaz
 // Görünüm: kuruş yalnız gerektiğinde (,00 gösterilmez); kuruşlu tutarda kuruş küçük ve soluk.
 // T17: tek para yazımı: lira büyük, kuruş ve ₺ küçük (kuruş yalnız gerekiyorsa). Metin olarak yazılan tutarlar (fmtT0, tlN) için moneyize() aynı biçimi sonradan uygular.
-const fmtM = n => { if (lsGet('kasa.kr') === 'off') return `<span class="mv">${fmtN(Math.round(+n||0), 0)}<span class="tl">\u00A0₺</span></span>`; const t = fmtN(n), k = t.lastIndexOf(','), kr = t.slice(k); return `<span class="mv">${t.slice(0,k)}${kr === ',00' ? '' : `<span class="kr">${kr}</span>`}<span class="tl">\u00A0₺</span></span>`; };
+const fmtM = n => { if (lsGet('kasa.kr') === 'off') return `<span class="mv">${fmtN(rnd0(n), 0)}<span class="tl">\u00A0₺</span></span>`; const t = fmtN(n), k = t.lastIndexOf(','), kr = t.slice(k); return `<span class="mv">${t.slice(0,k)}${kr === ',00' ? '' : `<span class="kr">${kr}</span>`}<span class="tl">\u00A0₺</span></span>`; };
 const fmt = (n,d) => d===undefined ? fmtM(n) : fmtN(n,d);
 const tlN = (n,d) => fmtN(n,d).replace(/,00$/, '')+'\u00A0₺';
 const nSfx = n => { n = Math.abs(Math.round(+n||0)); const S1 = {1:"'i",2:"'si",3:"'ü",4:"'ü",5:"'i",6:"'sı",7:"'si",8:"'i",9:"'u"}, S10 = {1:"'u",2:"'si",3:"'u",4:"'ı",5:"'si",6:"'ı",7:"'i",8:"'i",9:"'ı"};
   if (n === 0) return "'ı"; if (n % 100 === 0) return n % 1000 === 0 ? "'i" : "'ü"; const u = n % 10, t = Math.floor(n/10) % 10; return u ? S1[u] : S10[t]; };
 const datSfx = w => { const s = String(w||'').trim(), V = s.toLocaleLowerCase('tr').match(/[aeıioöuü]/g), lv = V ? V[V.length-1] : 'e', back = 'aıou'.includes(lv), endV = /[aeıioöuü]$/i.test(s.toLocaleLowerCase('tr')); return `'${endV ? 'y' : ''}${back ? 'a' : 'e'}`; };
 const fmtT0 = n => fmt0(n)+'\u00A0₺';
-const fmt0 = n => nfOf(0,0).format(Number(n)||0);
+const fmt0 = n => fmtN(rnd0(n), 0);
 // T17: metin olarak yazılmış tutarlar ("1.450,75 ₺") ekranda fmt() ile aynı görünsün: lira büyük, kuruş ve ₺ küçük. Yalnız görünür metin düğümlerine dokunur; metin içeriği değişmez.
 // Giriş kutuları (input, textarea, select), betikler ve svg atlanır: düzenleme formundaki tutar ham kalır.
 const MONEY_RE = /(\d{1,3}(?:\.\d{3})+|\d+)(,\d{1,2})?([\u00A0\u202F ])₺/g, MONEY_SKIP = 'input,textarea,select,option,script,style,svg,.mv,.mt,[contenteditable],[data-raw]';
@@ -2178,7 +2178,13 @@ function krTone(root){ if (!root || root.nodeType !== 1) return; const L = root.
   const seen = new Map(); for (const e of L) { const c = getComputedStyle(e).color; let v = seen.get(c); if (v === undefined) seen.set(c, v = krChroma(c) > 40); e.classList.toggle('mc', v); } }
 const krQ = new Set(); let krT = 0;
 function krQueue(n){ if (n && n.nodeType === 1) krQ.add(n); if (krT || !krQ.size) return; krT = requestAnimationFrame(() => { krT = 0; const q = [...krQ]; krQ.clear(); for (const n of q) if (n.isConnected && !q.some(o => o !== n && o.contains(n))) krTone(n); }); }
-const r2 = n => Math.round(n*100)/100;
+const r2 = n => Math.round(+(n*100).toPrecision(15))/100; // 1.005*100 = 100.49999999999999 → 15 anlamlı basamakla 100.5 olur; yarım kuruş sınırı doğru yuvarlanır
+const rnd0 = n => { n = +n || 0; return n < 0 ? -Math.round(-n) : Math.round(n); }; // lira yuvarlama: yarım sıfırdan uzağa (simetrik); fmtM/money/fmt0/fmtT0 tek bunu kullanır
+const INST_MIN_MSG = 'Taksit tutarı 0,01 ₺\'den az olamaz; taksit sayısını azalt.';
+// Taksit dağıtımı (kuruş cinsinden tamsayı): taksit başı = tabana yuvarlanmış kuruş, kalan kuruşlar SON taksite. saveTx, ldPlan ve lgSave aynısını kullanır. Taksit başı 0,01'in altına düşerse null (kayıt yazılmaz).
+const instSplit = (total, n, near) => { const c = Math.round(+((+total || 0) * 100).toPrecision(15)), per = Math.floor(c / n); if (!(per >= 1)) return null; // 0,01 alt sınırı ortak
+  if (near) { const o2 = x => Math.round(x*100)/100, T = +total, e = o2(T/n), l = o2(T - e*(n-1)); if (l >= 0.01) return Array.from({ length:n }, (_, i) => i === n-1 ? l : e); } // BİREBİR eski formül (toPrecision yok): yarım kuruş sınırlarında eski taksitlerle aynı // saveTx (kart/kayıt taksiti): eski kural, her taksit r2(tutar/n), son taksit farkı alır (banka ekstresi eşleşmesi için); son taksit 0'a düşecekse tabana dönülür
+  return Array.from({ length:n }, (_, i) => (i === n-1 ? c - per*(n-1) : per) / 100); };
 function num(s){ s=String(s??'').trim().replace(/\s|₺|TL/gi,''); if(!s) return NaN;
   if (s.includes(',')) s = s.replace(/\./g,'').replace(',','.'); else if ((s.match(/\./g)||[]).length>1 || /^-?[1-9]\d{0,2}\.\d{3}$/.test(s)) s = s.replace(/\./g,'');
   return Number(s); }
@@ -2602,7 +2608,7 @@ function goToday(instant){ miniHold = true; { const t = $('#top'); if (t && t.cl
   window.scrollTo({ top: Math.max(0,y), behavior: instant || matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   if (!instant) { target.classList.remove('flash'); void target.offsetWidth; target.classList.add('flash'); }
 }
-function money(n){ if (lsGet('kasa.kr') === 'off') return `<span class="mv">${fmtN(Math.round(+n||0), 0)}<span class="tl">\u202F₺</span></span>`; const s = fmtN(n), k = s.lastIndexOf(','), dc = s.slice(k); return `<span class="mv">${s.slice(0,k)}${dc === ',00' ? '' : `<span class="dec">${dc}</span>`}<span class="tl">\u202F₺</span></span>`; }
+function money(n){ if (lsGet('kasa.kr') === 'off') return `<span class="mv">${fmtN(rnd0(n), 0)}<span class="tl">\u202F₺</span></span>`; const s = fmtN(n), k = s.lastIndexOf(','), dc = s.slice(k); return `<span class="mv">${s.slice(0,k)}${dc === ',00' ? '' : `<span class="dec">${dc}</span>`}<span class="tl">\u202F₺</span></span>`; }
 function isCurMonth(){ const T = new Date(); return S.y===T.getFullYear() && S.m===T.getMonth(); }
 function recVirt(){ const ym = ymStr(S.y, S.m), t0 = today(), out = [], y = S.y, m = S.m, last = dim(y, m);
   S.rec.forEach(r => { if (!r.active) return; const ds0 = [];
@@ -3047,7 +3053,7 @@ function subsSummary(){
     const y1 = addMon(t, -12), p12 = past.filter(x => x.date >= y1), p0 = p12[0], rise = !commit && p0 && amt > +p0.amount + .005 ? { pct: (amt - +p0.amount)/ +p0.amount*100, mo: Math.max(1, Math.round(-daysTo(p0.date)/30.4)), from: +p0.amount } : null;
     let missed = 0; if (!commit && !active && last) { let d = addMonDay(last.date, per, anc), k = 0; while (d <= t && k++ < 60) { missed++; d = addMonDay(d, per, anc); } }
     const full = +M.full > 0 ? +M.full : null;
-    return { key, day:anc, name, origName: ref.note || name, cat:ref.cat, sub:ref.sub, monthly, amt, per, rise, missed, trial: M.trial || null, renew: M.renew || null, afterPrice: +M.afterPrice || null, ended, full, yearly: r2(monthly*12), status, active, inst, commit, hidden: !!M.hidden,
+    return { key, day:anc, name, origName: ref.note || name, cat:ref.cat, sub:ref.sub, monthly, amt, per, rise, missed, trial: M.trial || null, renew: M.renew || null, afterPrice: +M.afterPrice || null, ended, full, yearly: r2(amt*12/per), status, active, inst, commit, hidden: !!M.hidden,
       cancelDate: cx && !forced ? cx : null, next, left: future.length, end:(future[future.length-1] || last || ref).date, lastDate: last?.date, lastTx:last, pay:(last||ref).pay,
       spent: r2(past.reduce((a,x)=>a+ +x.amount,0)), payN: past.length, hist: past.slice().reverse(), up: prev!=null && monthly > prev + .005 ? r2(monthly - prev) : 0 };
   });
@@ -3062,7 +3068,7 @@ function subsSummary(){
   const subM = r2(vis.filter(x=>x.active && !x.commit).reduce((a,x)=>a+x.monthly,0));
   const comM = r2(vis.filter(x=>x.active && x.commit).reduce((a,x)=>a+x.monthly,0));
   const off = vis.filter(x=>!x.active && !x.commit);
-  return { list, subs: vis.filter(x=>!x.commit && x.active), commits: vis.filter(x=>x.commit && x.active), off, hidden: list.filter(x=>x.hidden), subM, comM, monthly:r2(subM+comM), yearly:r2(subM*12 + vis.filter(x=>x.active && x.commit).reduce((a,x)=>a + x.monthly*Math.min(12, x.left),0)), saved: r2(off.reduce((a,x)=>a+x.monthly,0)), savedTot: r2(off.reduce((a,x)=>a + x.missed*x.amt,0)) };
+  return { list, subs: vis.filter(x=>!x.commit && x.active), commits: vis.filter(x=>x.commit && x.active), off, hidden: list.filter(x=>x.hidden), subM, comM, monthly:r2(subM+comM), yearly:r2(vis.filter(x=>x.active && !x.commit).reduce((a,x)=>a+x.yearly,0) + vis.filter(x=>x.active && x.commit).reduce((a,x)=>a + x.monthly*Math.min(12, x.left),0)), saved: r2(off.reduce((a,x)=>a+x.monthly,0)), savedTot: r2(off.reduce((a,x)=>a + x.missed*x.amt,0)) };
 }
 function recRow(r){ const nx = r.active ? recNext(r) : null, n = nx ? Math.round((nx - pd(today()))/864e5) : null;
     return `<div class="subrow2${r.active?'':' dim'}"><button class="srm" data-act="editrec" data-id="${esc(r.id)}">${rowIc(r)}<span class="sb"><b>${esc(r.note||CAT[r.cat]?.n||'')}</b><small>${nx?`<span class="${n<=3?'soon':''}">${nx.getDate()} ${MON[nx.getMonth()].slice(0,3)} · ${relDay(n)}</span>`:'durduruldu'}</small></span>
@@ -3223,11 +3229,13 @@ function tempoCard(){ const y = S.y, m = S.m, cur = isCurMonth(), n = dim(y, m),
     ${cur && b > 0 ? `<span class="tmpo" style="left:${px(xd)};top:${py(Y(b))}"></span>` : ''}<span class="tmpdot" style="left:${px(xd)};top:${py(Y(a))}"></span>${pj ? `<span class="tmpe" style="left:${px(X(n))};top:${py(Y(pj))}"></span>` : ''}</div>
     <div class="tmpf">${pj ? `<div><span>Ay sonu tahmini</span><b class="num tmpj">~${fmtT0(pj)}</b></div>` : ''}<div><span>${pm} toplamı</span><b class="num">${fmtT0(bT)}</b></div></div>
     ${pj ? `<p class="tmpn">Tahmin kira, abonelik ve taksiti günlere yaymaz; yalnız değişen harcamaların temposunu uzatır.</p>` : cur && dN < n ? `<p class="tmpn tmpw0">Tahmin için birkaç gün daha gerekli</p>` : ''}</div></div>`; }
+/* Kategori bütçe limitleri (kategori -> tutar). Şu an hiçbir yerden yazılmıyor; limit varsa aşan kategori katlanmaz. */
+function catLimits(){ return {}; }
 function vGrafik(){
   const T = S.gType || 'gider', isG = T==='gider';
   const mt = monthTx(), gid = mt.filter(t=>t.type===T), tot = sumOf(mt,T), totG = sumOf(mt,'gider');
   const byCat = {}; gid.forEach(t => byCat[t.cat] = r2((byCat[t.cat]||0) + +t.amount));
-  const B = {};
+  const B = catLimits();
   const cats = Object.keys({...byCat, ...Object.fromEntries(Object.keys(B).filter(k=>+B[k]>0).map(k=>[k,1]))})
     .filter(k=>CAT[k]).sort((a,b)=>(byCat[b]||0)-(byCat[a]||0));
   const TAB = gTabOf();
@@ -3241,7 +3249,8 @@ function vGrafik(){
   // Kategoriler (+ bütçe)
   h += `<div class="sec"><div class="sech"><h2>${MON[S.m]} ${isG?'giderleri':'gelirleri'}</h2><div class="gtg sm t-${T}">${[['gider','Gider'],['gelir','Gelir']].map(([v,l])=>`<button type="button" data-act="gtype" data-v="${v}" aria-pressed="${T===v}">${l}</button>`).join('')}<i></i></div></div><div class="card legend">`;
   if (!cats.length) h += `<span class="note">${isG?'Gider':'Gelir'} eklendikçe kategoriler burada sıralanır.</span>`;
-  const smallK = tot ? (cats.length > 6 ? cats.slice(5) : cats.filter(k => (byCat[k]||0)/tot < .02)) : [], useSmall = smallK.length > 1, // görünüm: ilk 5 kategori, kalanı katlanır
+  const overK = k => +B[k] > 0 && (byCat[k]||0) > +B[k], // limiti aşan kategori her zaman görünür kısımda kalır
+    smallK = tot ? (cats.length > 6 ? cats.slice(5) : cats.filter(k => (byCat[k]||0)/tot < .02)).filter(k => !overK(k)) : [], useSmall = smallK.length > 1, // görünüm: ilk 5 kategori, kalanı katlanır
     smallOpen = S.openCat==='__small';
   const smallTot = r2(smallK.reduce((a,k)=>a+(byCat[k]||0),0));
   let smallDone = false;
@@ -3375,7 +3384,13 @@ function valSeries0(x){ const D = invDaily(x).map(([d,p]) => [d, +p]), L = invLo
   const R = []; D.forEach(([d,p]) => { let u = 0, c = 0, z = 0; if (L.length) L.forEach(l => { if (l.date <= d) { u += l.units; c += l.total; if (l.units < 0) z += l.got + l.total; } }); else { u = +x.units||0; c = +x.cost||0; }
     if (u > 1e-9 || R.length) R.push([d, r2(Math.max(u, 0)*p), r2(c), r2(z)]); });
   return R; }
-const invCol = x => x.kind==='altin' ? '#E7C46A' : x.kind==='hisse' ? '#7DB7FF' : x.kind==='doviz' ? (String(x.code||'').toUpperCase()==='EUR' ? '#5B82E6' : '#3DBB7A') : '#4FD1A1';
+// Aynı türden birden çok fon/hisse varsa her birine paletten ayrı renk (kod/ad sırasına göre, kararlı); tek ise eski tür rengi. 8'den fazlada palet başa döner.
+const INV_PAL = { fon: ['#4FD1A1','#B48CFF','#FF8A6B','#5FD0E0','#F28CB8','#A5D65C','#FFB86B','#7C9CFF'], hisse: ['#7DB7FF','#FFB86B','#B48CFF','#F28CB8','#5FD0E0','#A5D65C','#FF8A6B','#4FD1A1'] };
+const invCol = x => { if (x.kind==='altin') return '#E7C46A'; if (x.kind==='doviz') return String(x.code||'').toUpperCase()==='EUR' ? '#5B82E6' : '#3DBB7A';
+  const k = x.kind==='hisse' ? 'hisse' : 'fon', pal = INV_PAL[k], G = S.inv.filter(y => (y.kind==='hisse' ? 'hisse' : 'fon') === k && !['altin','doviz'].includes(y.kind));
+  if (G.length < 2) return pal[0];
+  const key = y => String(y.code || y.name || '') + '\u0000' + String(y.id || ''), i = G.slice().sort((a, b) => key(a) < key(b) ? -1 : key(a) > key(b) ? 1 : 0).findIndex(y => y === x || (x.id && y.id === x.id));
+  return pal[(i < 0 ? 0 : i) % pal.length]; };
 function shVdist(){
   const ST = S.inv.map(x => [x, invStats(x)]).sort((a,b)=>b[1].val-a[1].val), tv = r2(ST.reduce((a,[,o])=>a+o.val,0));
   const KN = { fon:'Fonlar', altin:'Altın', hisse:'Hisseler', doviz:'Döviz' }, byK = {}; ST.forEach(([x,o]) => { const k = x.kind||'fon'; byK[k] = r2((byK[k]||0)+o.val); });
@@ -3563,8 +3578,8 @@ async function lpSave(){ lpRead(); const nw = (v('lp_new')||'').trim(); if (nw) 
     toast('Kişiler kaydedildi'); closeSheet(); }); }
 function ldKeep(){ const d = SH.d, g = id => document.getElementById(id); if (g('ld_who')) d.who = g('ld_who').value; if (g('ld_note')) d.note = g('ld_note').value; if (g('ld_date')) d.date = g('ld_date').value;
   if (g('ld_amt')) { const a = num(g('ld_amt').value); d.amount = a > 0 ? a : null; } if (g('ld_n')) { const n = Math.round(+g('ld_n').value); d.n = n >= 2 ? Math.min(n, 48) : d.n; } }
-function ldPlan(d){ const n = Math.max(2, d.n || 3), tot = +d.amount || 0, per = Math.floor(tot / n * 100) / 100, last = r2(tot - per*(n-1)), s = d.date || today(), D = pd(s), day = D.getDate();
-  return Array.from({ length:n }, (_, i) => { const y = D.getFullYear(), m = D.getMonth() + i; return { i:i+1, n, a: i === n-1 ? last : per, date: ds(new Date(y, m, Math.min(day, dim(new Date(y, m, 1).getFullYear(), new Date(y, m, 1).getMonth())))) }; }); }
+function ldPlan(d){ const n = Math.max(2, d.n || 3), tot = +d.amount || 0, A = instSplit(tot, n) || Array.from({ length:n }, () => 0), s = d.date || today(), D = pd(s), day = D.getDate();
+  return Array.from({ length:n }, (_, i) => { const y = D.getFullYear(), m = D.getMonth() + i; return { i:i+1, n, a: A[i], date: ds(new Date(y, m, Math.min(day, dim(new Date(y, m, 1).getFullYear(), new Date(y, m, 1).getMonth())))) }; }); }
 function shLedEdit(){
   const d = SH.d, W = whoList(), isB = d.dir==='borc', mode = SH.id ? 'one' : (d.mode || 'one');
   if (SH.id) { const nx = d.inst;
@@ -3591,7 +3606,7 @@ function shLedEdit(){
     ${mode==='inst' ? `<div class="ldplan" id="ldplan">${ldPlanHtml(d)}</div>` : mode==='mon' ? `<div class="ldinfo">Her ay aynı gün kendiliğinden yeni kayıt açılır; istediğinde durdurursun.</div>` : ''}
     <div class="foot"><button class="btn pri" data-act="ldsave">${P ? `${P.length} taksiti kaydet` : 'Kaydet'}</button></div>`;
 }
-function ldPlanHtml(d){ if (!(d.amount > 0)) return `<span class="note">Toplam tutarı yazınca taksitler burada görünür.</span>`; const P = ldPlan(d), f = P[0], l = P[P.length-1], dd = s => { const D = pd(s); return `${D.getDate()} ${MON[D.getMonth()].slice(0,3)} ${D.getFullYear()}`; };
+function ldPlanHtml(d){ if (!(d.amount > 0)) return `<span class="note">Toplam tutarı yazınca taksitler burada görünür.</span>`; if (!instSplit(d.amount, Math.max(2, d.n || 3))) return `<span class="note" role="alert">${INST_MIN_MSG}</span>`; const P = ldPlan(d), f = P[0], l = P[P.length-1], dd = s => { const D = pd(s); return `${D.getDate()} ${MON[D.getMonth()].slice(0,3)} ${D.getFullYear()}`; };
   return `<div class="ldph"><b class="num">${P.length} × ${fmt(f.a)}</b><span>${dd(f.date)} → ${dd(l.date)}</span></div>${f.a !== l.a ? `<small>Son taksit ${fmt(l.a)} (kuruş farkı)</small>` : ''}<div class="ldpd">${P.map(p => `<i title="${p.i}. taksit · ${dd(p.date)}">${MON[pd(p.date).getMonth()].slice(0,3)}</i>`).join('')}</div>`; }
 document.addEventListener('input', e => { const t = e.target; if (!t || !SH || SH.kind !== 'ledit' || !(t.dataset.ldamt || t.dataset.ldn || t.id === 'ld_date')) return; ldKeep();
   if (t.dataset.ldn) document.querySelectorAll('.ldn0 button').forEach(b => b.setAttribute('aria-pressed', 'false'));
@@ -3666,12 +3681,13 @@ function shLedGrp(){ const d = SH.d, isB = d.dir==='borc', A = (S.led||[]).filte
 function lgKeep(){ const g = id => document.getElementById(id); if (g('lg_who')) SH.d.who = g('lg_who').value; if (g('lg_note')) SH.d.note = g('lg_note').value; if (g('lg_rest')) SH.d.rest = g('lg_rest').value; }
 async function lgSave(){ lgKeep(); const d = SH.d, who = (d.who||'').trim(), note = (d.note||'').trim(); if (!who) return toast('Kimi yaz.');
   const A = (S.led||[]).filter(z => z.inst && z.inst.g === SH.g).sort((a,b)=>a.inst.i-b.inst.i), rest = A.filter(z=>!z.paid), pdA = r2(A.filter(z=>z.paid).reduce((a,z)=>a+ +z.amount,0));
-  let R = rest.map(z => +z.amount); if (rest.length && d.rest != null) { const t = num(d.rest); if (!(t > 0)) return toast('Kalan tutarı yaz.'); const per = Math.floor(t / rest.length * 100) / 100; R = rest.map((_, i) => i === rest.length-1 ? r2(t - per*(rest.length-1)) : per); }
+  let R = rest.map(z => +z.amount); if (rest.length && d.rest != null) { const t = num(d.rest); if (!(t > 0)) return toast('Kalan tutarı yaz.'); if (rest.length > 1) { const sp = instSplit(t, rest.length); if (!sp) return toast(INST_MIN_MSG); R = sp; } else R = [r2(t)]; }
   const total = r2(pdA + R.reduce((a,x)=>a+x,0));
   await guard(async () => { for (const z of A) { const j = rest.indexOf(z); await S.db.doc('led/'+z.id).update({ who, note, dir:d.dir, inst:{ ...z.inst, total }, ...(j >= 0 ? { amount:R[j] } : {}) }); } toast('Taksitler güncellendi'); closeSheet(); }); }
 async function ledSave(){
   ldKeep(); const d = SH.d, who = (d.who||'').trim(), amount = +d.amount, note = (d.note||'').trim(), date = d.date || '', mode = SH.id ? 'one' : (d.mode || 'one');
   if (!who) return toast('Kimi yaz.'); if (!(amount>0)) return toast('Tutarı yaz.'); if (mode === 'inst' && !note) return toast('Ne için olduğunu yaz.');
+  if (mode === 'inst' && !SH.id && !instSplit(amount, Math.max(2, d.n || 3))) return toast(INST_MIN_MSG);
   await guard(async () => {
     const base = { who, dir:d.dir, amount:r2(amount), note, date, by:S.me };
     if (SH.id) { await S.db.doc('led/'+SH.id).update(base);
@@ -4096,9 +4112,9 @@ const qSugText = q => { try { return quickParse(q).text; } catch(_) { return q; 
 function sugHtml(q, type, cat, mode){ const L = sugList(mode === 'qs' ? qSugText(q) : q, type, cat); SH._sg = L.map(x => x.t); if (!L.length) return '';
   return L.map((x, i) => { const t = x.t, C = CAT[t.cat], sub = t.sub && subName ? subName(t.cat, t.sub) : ''; return `<button type="button" class="qsb" data-act="qsug" data-v="${i}" data-id="${mode}" style="--cc:${C.c}"><i class="qsic">${ico(t.cat)}</i><span><b>${esc(t.note)}</b><small>${esc(C.n)}${sub ? ' › ' + esc(sub) : ''}${x.n > 1 ? ` · ${x.n} kez` : ''}</small></span><em class="num">${fmtN(t.amount)} ₺</em></button>`; }).join(''); }
 function instPrev(){ const d = SH.d, am = fAmt() || +d.amount || 0, n = Math.max(2, Math.min(36, parseInt(v('f_n')) || d.instN || 3));
-  if (!(am>0)) return `${n} taksit`; const D = pd(v('f_date') || d.date), L = new Date(D.getFullYear(), D.getMonth()+n-1, 1);
+  if (!(am>0)) return `${n} taksit`; const AP = instSplit(am, n, true); if (!AP) return `<span class="ipt"><b class="num" role="alert" style="color:var(--bad,#c0392b)">${INST_MIN_MSG}</b></span>`; const D = pd(v('f_date') || d.date), L = new Date(D.getFullYear(), D.getMonth()+n-1, 1);
   const sh = Math.min(n, 12), ms = Array.from({ length:sh }, (_, i) => { const m = new Date(D.getFullYear(), D.getMonth()+i, 1); return `<i class="${i ? '' : 'on'}" style="--d:${i*35}ms"><em>${MON[m.getMonth()].slice(0,3)}</em></i>`; }).join('');
-  return `<span class="ipm">${ms}${n > sh ? `<small>+${n - sh}</small>` : ''}</span><span class="ipt"><b class="num">${n} × ${fmtN(r2(am/n))} ₺</b><span>her ay · son taksit ${MON[L.getMonth()].slice(0,3)} ${L.getFullYear()}</span></span>`; }
+  return `<span class="ipm">${ms}${n > sh ? `<small>+${n - sh}</small>` : ''}</span><span class="ipt"><b class="num">${AP[0] === AP[n-1] ? `${n} × ${fmtN(AP[0])} ₺` : AP.length === n && AP.slice(0, -1).every(x => x === AP[0]) ? `${n-1} × ${fmtN(AP[0])} + ${fmtN(AP[n-1])} ₺` : `${n} taksit`}</b><span>her ay · son taksit ${MON[L.getMonth()].slice(0,3)} ${L.getFullYear()}</span></span>`; }
 /* T11: Hızlı ekle. Tek kutu; yazdığını anladığını önizleme kartında gösterir; Kaydet aynı saveTx yolunu kullanır (T20 uyarıları dahil); Ayrıntı forma geçer. */
 function newQuickState(){ const st = newTxState('gider'); st.quick = true; st.q = ''; st.qo = {}; st.qbase = { date: st.d.date, pay: st.d.pay, by: st.d.by }; return st; }
 function quickModel(q){ const d = SH.d, P = quickParse(q || ''), M = { amount:P.amount, cat:null, sub:'', note:'', pay:P.pay || '', shared:null, best:null };
@@ -4481,6 +4497,7 @@ async function saveTx(){
     const chg = ['amount','cat','sub','note','by','shared','pay'].some(k => String(base[k] ?? '') !== String(k==='amount' ? r2(+o[k]) : k==='shared' ? !!o[k] : k==='sub' ? (subName(o.cat,o.sub) ? o.sub : '') : (o[k] ?? '')));
     if (chg && rest.length > 1) { SH.askApply = true; drawSheet(); setTimeout(()=>document.querySelector('.idel')?.scrollIntoView({block:'end',behavior:'smooth'}),50); return; }
     d.applyAll = false; }
+  if (!SH.id && d.inst) { const n0 = Math.max(2, Math.min(36, parseInt(v('f_n'))||3)); if (!instSplit(amount, n0, true)) return toast(INST_MIN_MSG); } // 0 tutarlı taksit kaydı yazılmaz
   await guard(async () => {
     if (SH.id && SH.orig.inst && d.applyAll) {
       const rest = groupOf(SH.orig).filter(x=>x.inst.i>=SH.orig.inst.i);
@@ -4490,9 +4507,9 @@ async function saveTx(){
     }
     else if (SH.id) { const { id:_i, ...rest } = SH.orig; await S.db.doc('tx/'+SH.id).set(noNull({ ...rest, ...base })); await spLed(SH.id); logAct('edit', [SH.orig], [{ ...rest, ...base, id:SH.id }]); flashNew([SH.id]); toast('Güncellendi'); }
     else if (d.inst) {
-      const n = Math.max(2, Math.min(36, parseInt(v('f_n'))||3)), g = opId(), each = r2(amount/n), D = pd(date);
+      const n = Math.max(2, Math.min(36, parseInt(v('f_n'))||3)), g = opId(), A = instSplit(amount, n, true), D = pd(date); if (!A) return toast(INST_MIN_MSG);
       const aft = []; try { for (let i=0;i<n;i++){ const y=D.getFullYear(), m=D.getMonth()+i, dd=new Date(y,m,Math.min(D.getDate(),dim(y,m)));
-        const nd = noNull({ ...base, date:ds(dd), amount: i===n-1 ? r2(amount-each*(n-1)) : each, inst:{i:i+1,n,g}, created:Date.now() });
+        const nd = noNull({ ...base, date:ds(dd), amount: A[i], inst:{i:i+1,n,g}, created:Date.now() });
         await S.db.collection('tx').doc(`${g}_${i+1}`).set(nd); aft.push({ ...nd, id:`${g}_${i+1}` }); } }
       catch(e){ console.error(e); throw rollMsg(e, await undoWrites(Array.from({length:n},(_,i)=>`tx/${g}_${i+1}`)), 'Taksitler'); }
       logAct('add', [], aft);
@@ -4642,19 +4659,27 @@ async function saveCfg(patch, quiet){
 async function runRecurring(){
   if (S.recDone || !S.loaded.tx || !S.loaded.rec || !S.canWrite || !S.db) return;
   S.recDone = true;
-  const t = today(), T = pd(t);
+  const t = today(), T = pd(t), MAXP = 60; let added = 0; // güvenlik sınırı: kayıt başına en çok 60 dönem; kalanı sonraki açılışta
+  const have = new Set((S.tx || []).map(x => x.id));
+  const tell = () => { if (added > 0) toast(`${added} tekrarlayan kayıt eklendi`); }; // sessiz kayıp yok: eklenenler bir kez bildirilir
   for (const r of S.rec) {
     if (!r.active) continue;
     const from = r.lastRun || t; if (from >= t) continue;
-    const D = pd(from); let guardN = 0;
-    for (D.setDate(D.getDate()+1); D <= T && guardN < 400; D.setDate(D.getDate()+1), guardN++) {
+    const D = pd(from); let made = 0, stopAt = null;
+    for (D.setDate(D.getDate()+1); D <= T; D.setDate(D.getDate()+1)) {
       const hit = r.freq==='weekly' ? D.getDay()===+r.weekday : D.getDate()===Math.min(+r.day||1, dim(D.getFullYear(),D.getMonth()));
       if (!hit) continue;
-      const day = ds(D);
-      try { await S.db.collection('tx').doc(`r_${r.id}_${day}`).set({ type:r.type, amount:r.amount, cat:r.cat, sub:r.sub||'', note:r.note||'', date:day, by:r.by, recId:r.id, created:Date.now() }); } catch(e){ console.error(e); return; }
+      if (made >= MAXP) break; // 61. dönem: dur; lastRun üretilen son döneme kadar ilerler
+      const day = ds(D), id = `r_${r.id}_${day}`;
+      if (!have.has(id)) {
+        try { await S.db.collection('tx').doc(id).set({ type:r.type, amount:r.amount, cat:r.cat, sub:r.sub||'', note:r.note||'', date:day, by:r.by, recId:r.id, created:Date.now() }); added++; have.add(id); } catch(e){ console.error(e); tell(); return; }
+      }
+      made++; stopAt = day;
     }
-    try { await S.db.doc('rec/'+r.id).update({ lastRun:t }); } catch(e){ console.error(e); }
+    const capped = D <= T; // döngü sınırdan çıktıysa kalan dönemler var
+    try { await S.db.doc('rec/'+r.id).update({ lastRun: capped && stopAt ? stopAt : t }); } catch(e){ console.error(e); }
   }
+  tell();
 }
 
 /* ---------- Olaylar ---------- */
@@ -5174,12 +5199,14 @@ function kisayolAc(){ if (!KISAYOL || S.kisayolDone) return; S.kisayolDone = tru
   if (KISAYOL === 'gider') { openSheet(newQuickState()); setTimeout(() => document.getElementById('q_in')?.focus(), 80); }
   else { S.view = 'varlik'; render(); openSheet({ kind:'inv', d:{ kind:'fon' } }); } }
 try { moneyize(document.body); krQueue(document.body); new MutationObserver(ms => { for (const m of ms) m.addedNodes.forEach(n => { if (n.nodeType === 1 || n.nodeType === 3) { const e = n.nodeType === 3 ? n.parentElement : n; moneyize(e); krQueue(e); } }); }).observe(document.body, { childList: true, subtree: true }); } catch (e) { console.error(e); }
-applyTheme();
-loadCache();
-document.body.classList.toggle('booting', S.status!=='ready');
-render(); firstScroll();
-document.fonts && document.fonts.ready.then(() => { fitTop(); fitNums(); stickOff(); });
+/* İlk çizim betiğin en sonunda (bootDraw): önbellekli ilk render, aşağıda tanımlanan const'lardan (monLoc, vGain...) önce çalışırsa "before initialization" hatası verirdi. */
+function bootDraw(){ applyTheme();
+  loadCache();
+  document.body.classList.toggle('booting', S.status!=='ready');
+  render(); firstScroll();
+  document.fonts && document.fonts.ready.then(() => { fitTop(); fitNums(); stickOff(); }); }
 (async () => {
+  await 0; // betiğin geri kalanı (bootDraw dahil) bitsin
   const C = window.claude;
   /* Başlatma: yetenek alma ve kullanıcı sorguları hata atabilir; db alınamazsa "Veriler açılamadı" ekranı, user alınamazsa salt okunur + bant. */
   let db = null, user = null, userFail = false;
@@ -5443,7 +5470,8 @@ function aggSeries(){ const A = S.inv.map(valSeries).filter(a => a.length), D = 
 const vGain = p => r2(p[1] - p[2] + p[3]);
 function invSince(cut){ let g = 0, den = 0, any = false; S.inv.forEach(x => { const a = valSeries(x); if (a.length < 2) return; let B = a[0]; for (const p of a) { if (p[0] < cut) B = p; else break; } const L = a[a.length-1]; any = true; g += vGain(L) - vGain(B); den += B[1] + (L[2] - B[2]); }); return any ? { g:r2(g), p: den > 0 ? g/den*100 : 0 } : null; }
 // Gün gün kazanç: her varlık kendi önceki gününe göre; yeni eklenen varlığın ilk günü sayılmaz
-function gainDays(){ const G = {}; S.inv.forEach(x => { const a = valSeries(x); for (let i = 1; i < a.length; i++) G[a[i][0]] = r2((G[a[i][0]]||0) + vGain(a[i]) - vGain(a[i-1])); }); return G; }
+function gainDays(){ const G = {}, td = today(); // bugünden sonraki günler (saat farkı, "updated" damgası) dışarıda: takvimde sıfırlı dolu hücre olmasın
+  S.inv.forEach(x => { const a = valSeries(x); for (let i = 1; i < a.length && a[i][0] <= td; i++) G[a[i][0]] = r2((G[a[i][0]]||0) + vGain(a[i]) - vGain(a[i-1])); }); return G; }
 const vDl = d => `${+d.slice(8)} ${MON[+d.slice(5,7)-1].slice(0,3)}`, vSg = n => `${n >= 0 ? '+' : '−'}${fmtN(Math.abs(n)).replace(/,00$/, '')} ₺`, vPc = (n, d = 1) => `${n < 0 ? '−' : '+'}%${fmt(Math.abs(n), d)}`;
 /* ---------- Yatırım analizleri: enflasyon, karşılaştırma, şirket, valör ---------- */
 // Aylık getiri haritasıyla (YYYY-MM → %) iki tarih arasındaki büyüme; ay içi kısmi günler orantılanır.
@@ -5653,5 +5681,6 @@ function vVarlik(){ const fr = S.vFresh !== false; S.vFresh = false;
   const Hh = vHero(fr); try { vMile(Hh.tv); } catch (e) { console.error(e); }
   return Hh.h + safeSec(() => vSave(Hh.tv, fr)) + safeSec(() => vCal(Hh.A)) + safeSec(vAlt) + safeSec(() => vFut(Hh.tv)); }
 
+bootDraw();
 </script>
 </body></html>
