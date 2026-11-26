@@ -2191,6 +2191,8 @@ const calcRaw = n => String(Math.round((Number(n) || 0) * 100) / 100).replace('.
 const pad = n => String(n).padStart(2,'0');
 const ds = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 const today = () => ds(new Date());
+// Grafikler sekmesi: tanımsız ya da eski bir değer (ör. kaldırılmış 'ozet') Kategoriler'e düşer
+const GTABS = ['kat','duz','kis','def'], gTabOf = () => GTABS.includes(S.gTab) ? S.gTab : 'kat';
 const pd = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y,m-1,d); };
 const MON = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
 const DAY = ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'];
@@ -2211,7 +2213,7 @@ const lsGet = k => { if (LSC.has(k)) return LSC.get(k); let v = null; try { v = 
 const lsSet = (k,v) => { LSC.set(k, v == null ? null : String(v)); try { localStorage.setItem(k,v); } catch(e){} };
 addEventListener('storage', e => { if (e.key) LSC.delete(e.key); else LSC.clear(); });
 // eski sürümlerden kalan yerel verileri temizle
-try { const KEEP = new Set(['kasa.okdim','kasa.priv','kasa.kr','kasa.instv','kasa.acc','kasa.cache.v2','kasa.me','kasa.mode','kasa.mpmode','kasa.pay','kasa.seen','kasa.skin','kasa.skinD','kasa.skinL','kasa.snap','kasa.srh','kasa.startv','kasa.swiped','kasa.splitx','kasa.mile','kasa.fcalc']);
+try { const KEEP = new Set(['kasa.okdim','kasa.priv','kasa.kr','kasa.instv','kasa.acc','kasa.cache.v2','kasa.me','kasa.mode','kasa.mpmode','kasa.pay','kasa.seen','kasa.skin','kasa.skinD','kasa.skinL','kasa.snap','kasa.srh','kasa.startv','kasa.swiped','kasa.splitx','kasa.mile','kasa.fcalc','kasa.ekstre.on','kasa.ekstre.gun','kasa.ekstre.ok']);
   for (let i = localStorage.length - 1; i >= 0; i--) { const k = localStorage.key(i); if (k && /^(kasa|okasa|ortakkasa)\./.test(k) && !KEEP.has(k)) localStorage.removeItem(k); } } catch(_){}
 
 /* ---------- Tema ---------- */
@@ -2340,7 +2342,7 @@ document.addEventListener('pointerdown', e => { const f = e.target.closest('.fab
 { let sx = 0, sy = 0, st = 0; const m0 = () => document.getElementById('main');
   addEventListener('touchstart', e => { if (S.view!=='grafik' || SH || e.touches.length>1 || e.target.closest('.upkg,.soon,.w3tb,.trend')) { st = 0; return; } sx = e.touches[0].clientX; sy = e.touches[0].clientY; st = Date.now(); }, { passive:true });
   addEventListener('touchend', e => { if (!st || Date.now()-st > 600) return; const t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy; st = 0;
-    if (Math.abs(dx) < 70 || Math.abs(dy) > Math.abs(dx)*.6) return; const TB = ['kat','duz','kis','def'], cur = TB.indexOf((S.gTab && S.gTab!=='ozet') ? S.gTab : 'kat'), nx = cur + (dx < 0 ? 1 : -1);
+    if (Math.abs(dx) < 70 || Math.abs(dy) > Math.abs(dx)*.6) return; const TB = ['kat','duz','kis','def'], cur = TB.indexOf(gTabOf()), nx = cur + (dx < 0 ? 1 : -1);
     if (nx < 0 || nx >= TB.length) return; S.gTab = TB[nx]; S.openCat = null; S.tabAnim = true; S.tabDir = dx < 0 ? 'r' : 'l'; buzz(); renderMain(); S.tabAnim = false; }, { passive:true }); }
 function renderNav(){
   const nv = $('#nav'); if (S.navAnim) { nv.classList.add('navanim'); S.navAnim = false; clearTimeout(renderNav.t); renderNav.t = setTimeout(()=>nv.classList.remove('navanim'), 500); }
@@ -2388,7 +2390,7 @@ function renderMain0(){
     if (key !== S.lastList) { S.lastList = key; if (!S.boot) listAnim(m); } }
   else if (S.view!=='kayit') S.lastList = null;
   if (S.view!=='grafik') S.lastAnim = null;
-  if (S.view==='grafik') { const key = [S.gTab||'kat', S.y, S.m, S.gType, S.wType, S.status].join('|');
+  if (S.view==='grafik') { const key = [gTabOf(), S.y, S.m, S.gType, S.wType, S.status].join('|');
     if (key !== S.lastAnim) { const tabOnly = S.lastAnim && S.lastAnim.split('|').slice(1).join('|') === key.split('|').slice(1).join('|'); S.lastAnim = key;
       if (!S.boot) { if (tabOnly) { clearTimeout(playAnim.t); m.classList.remove('anim'); countUps(m); } else playAnim(m); } } }
 }
@@ -2604,6 +2606,7 @@ function vKayit(){
     : `<div class="chips fchips" style="margin-top:6px"><button class="chip fchip" data-act="filtopen" aria-pressed="${(S.filter||'all')!=='all'}" aria-expanded="false" aria-label="Filtre: ${curF[1]}, değiştirmek için dokun">${curF[2]?`<span class="pd" style="background:${curF[2]}"></span>`:''}${curF[1]}<span class="fcar">▾</span></button></div>`;
   const NW = newFromOther(); if (NW.length) h += `<button class="newbadge" data-act="newchg"><span class="nbd" style="background:${PEOPLE[NW[0].who]?.c||'var(--accent)'}"></span><b>${esc(PEOPLE[NW[0].who]?.n||'')}</b> ${NW.length} yeni değişiklik<span class="nbg">Gör ${ico('right')}</span></button>`;
   if (!S.canWrite) h += `<div class="banner">Bu sayfayı yalnızca görüntüleyebiliyorsun. Kayıt eklemek için sahibinden düzenleme izni iste.</div>`;
+  if (S.status==='ready') h += ekstreCard(); // ekstre hatırlatıcısı: ay boşken de görünür (kesim ay başına denk gelebilir)
   if (S.status==='loading') return h + `<div class="empty">Kayıtlar yükleniyor…</div>`;
   if (!mt.length) return h + `<div class="empty"><b>${MON[S.m]} ayında kayıt yok</b>Ortadaki + düğmesiyle ilk gideri ya da geliri ekle. Ekleyenin adı kaydın altında görünür.</div>`;
   const by = {}; mt.sort((a,b)=> b.date.localeCompare(a.date) || (b.created||0)-(a.created||0)).forEach(t => (by[t.date] ||= []).push(t));
@@ -3201,7 +3204,7 @@ function vGrafik(){
   const B = {};
   const cats = Object.keys({...byCat, ...Object.fromEntries(Object.keys(B).filter(k=>+B[k]>0).map(k=>[k,1]))})
     .filter(k=>CAT[k]).sort((a,b)=>(byCat[b]||0)-(byCat[a]||0));
-  const TAB = (S.gTab && S.gTab!=='ozet') ? S.gTab : 'kat';
+  const TAB = gTabOf();
   const TABS = [['kat','Kategoriler'],['duz','Düzenli'],['kis','Kişiler'],['def','Borç / Alacak']];
   const tdir = S.tabDir || ''; S.tabDir = '';
   let h = `<div class="gtabs${S.tabAnim?' tabanim':''}" role="tablist">${TABS.map(([k,l])=>`<button role="tab" data-act="gtab" data-v="${k}" aria-selected="${TAB===k}">${l}</button>`).join('')}</div><div class="gbody${tdir?` gsw-${tdir}`:''}">`;
@@ -3418,13 +3421,14 @@ function statusCard(){ const T = S.tasksDoc || {}, TK = taskRows(), tb = TK.filt
   const L0 = S.log && S.log[0], D = stmDue(), dBad = dn?.ok === false;
   const R = [ // 'none' = kontrol gerektirmez, yalnızca yenilik olunca nokta çıkar
     ['tema', 'palette', 'Tercihler', tercihSub(), 'none', '@tema'],
+    ...(S.canWrite ? [['kat', 'tag', 'Kategoriler', `${Object.keys(CAT).length} kategori · ekle, düzenle, gizle`, 'none', '!setcat'], ['kisi', 'list', 'Kişiler', `${whoList().length} kişi · Borç/Alacak listesi`, 'none', '!ledppl']] : []),
     ['log', 'hist', 'Değişiklikler', L0 ? (() => { const d = new Date(L0.t); return `son ${d.getDate()} ${MON[d.getMonth()].slice(0,3)} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`; })() : 'henüz yok', 'none', '@log'],
     ['ekstre', 'card', 'Kartlar', D.length ? `${D.map(x => PAY[x.k].n).join(', ')} ekstresi yüklenmedi` : `Ziraat · Yapı Kredi · sıradaki ekstre ${dShort(stmNext())}`, D.length ? 'warn' : 'ok', '@kart'],
     ['audit', 'check', 'Hesap denetimi', [ab ? `${ab} rakam tutmuyor` : `${AR.length} anlık kontrol tutuyor`, dn?.at ? `derin ${dd(dn.at)}${dBad ? ' · tutmayan var' : ' · tutuyor'}` : "derin denetim ayın 11'inde"].join(' · '), ab || dBad ? 'bad' : 'ok', '@audit'],
     ['tasks', 'repeat', 'Otomatik görevler', tb ? `${tb} görev dikkat istiyor` : `${TK.length} görev · sorun yok`, tb ? 'warn' : 'ok', '@tasks'],
     ['backup', 'download', 'Yedek', yk?.at ? (yk.ok === false ? `${dd(yk.at)} · başarısız` : `son ${dd(yk.at)} · her pazar`) : 'henüz yok', yk?.ok === false ? 'bad' : yk?.at ? 'ok' : 'warn', '@yedek']];
   const bad = R.filter(x => x[4] === 'bad' || x[4] === 'warn').length;
-  return `<div class="stc${bad ? ' w' : ''}"><div class="stch"><span class="stcd"></span><b>${bad ? `${bad} konu dikkat istiyor` : 'Her şey yolunda'}</b></div>${R.map(([k, ic, n, sub, st, sec, tab]) => `<button type="button" class="stcr s-${st}" data-act="stgo" data-v="${sec}" ${tab ? `data-id="${tab}"` : ''}>${ico(ic)}<span><b>${n}</b><small>${esc(sub)}</small></span><i></i></button>`).join('')}</div>`; }
+  return `<div class="stc${bad ? ' w' : ''}"><div class="stch"><span class="stcd"></span><b>${bad ? `${bad} konu dikkat istiyor` : 'Her şey yolunda'}</b></div>${R.map(([k, ic, n, sub, st, sec, tab]) => `<button type="button" class="stcr s-${st}" data-act="${sec[0] === '!' ? sec.slice(1) : 'stgo'}" data-v="${sec[0] === '!' ? '' : sec}" ${tab ? `data-id="${tab}"` : ''}>${ico(ic)}<span><b>${n}</b><small>${esc(sub)}</small></span><i></i></button>`).join('')}</div>`; }
 function kartBody(){ const C = S.cfg.cards || {}, card = k => { const c = C[k] || {}, P = cardPeriod(k), L = (c.statements||[]).filter(s => s.at || s.amount).slice(-1)[0], open = L && L.at ? (S.cfg.stmtSug||[]).filter(s => String(s.key).startsWith(`${k}${L.cut.replace(/-/g,'')}_`) && !(S.cfg.sugOk||[]).includes('stmt|' + s.key)).length : 0;
     const dl = Math.round((pd(P.nextDue) - pd(today())) / 864e5), lastDue = L && L.due ? Math.round((pd(L.due) - pd(today())) / 864e5) : null;
     const pend = stmDue().find(x => x.k === k);
@@ -3722,10 +3726,8 @@ async function catSave(){
   const bk = SH.back; closeSheet(); if (bk) openSheet({ kind:'catmsh' }); toast('Kaydedildi');
 }
 const TASKS = [
-  { k:'fiyat', n:'Fiyatlar ve piyasa', when:'Hafta içi 09:30', at:(d)=> d.getDay()>0 && d.getDay()<6, hh:9, mm:30 },
+  { k:'fiyat', n:'Fiyatlar ve piyasa', when:'Her gün 09:30', at:(d)=> d.getDay()>0 && d.getDay()<6, hh:9, mm:30 },
   { k:'yedek', n:'Tam yedek (Drive)', when:'Her pazar 03:17', at:(d)=> d.getDay()===0, hh:3, mm:17 },
-  { k:'ozet', n:'Haftalık özet bildirimi', when:'Pazartesi 00:00', at:(d)=> d.getDay()===1, hh:0, mm:0 },
-  { k:'rapor', n:'Aylık rapor', when:'Ayın 1\'i 08:36', at:(d)=> d.getDate()===1, hh:8, mm:36 },
   { k:'enf', n:'Enflasyon ve AIS getirisi', when:'Ayın 3–5\'i 10:32', at:(d)=> d.getDate()>=3 && d.getDate()<=5, hh:10, mm:32 },
   { k:'denetim', n:'Derin hesap denetimi', when:'Ayın 11\'i 10:47', at:(d)=> d.getDate()===11, hh:10, mm:47 },
   { k:'ekstre', n:'Ekstre hatırlatıcı', when:'Her kart için kesimden 1 gün sonra', local:true },
@@ -3919,6 +3921,8 @@ function tercihBody(){
     <div class="srow"><span>Kuruşlar<small class="nocap">Kapalıyken tutarlar yuvarlanır.</small></span>${segs('setkr', lsGet('kasa.kr')==='off'?'off':'on', [['on','Göster'],['off','Gizle']])}</div>
     <div class="srow"><span>Doğrulananlar<small class="nocap">${lsGet('kasa.okdim')==='off' ? 'Ekstreyle eşleşen kayıtlar normal görünür.' : 'Ekstreyle eşleşen kayıtlar soluk görünür; yeniler öne çıkar.'}</small></span>${segs('setokdim', lsGet('kasa.okdim')==='off'?'off':'on', [['on','Soluk'],['off','Normal']])}</div>
     <div class="srow"><span>Taksitler<small class="nocap">${lsGet('kasa.instv')==='toplam' ? 'Alım ayında toplam tutar görünür.' : 'Her ay o ayın taksiti görünür.'}</small></span>${segs('setinstv', lsGet('kasa.instv')==='toplam'?'toplam':'aylik', [['aylik','Aylık'],['toplam','Toplam']])}</div>
+    <div class="srow"><span>Ekstre hatırlatıcısı<small class="nocap">Kart kesilince Kayıtlar'da tutarı ve son ödeme gününü hatırlatır.</small></span>${segs('setek', ekOn()?'on':'off', [['on','Açık'],['off','Kapalı']])}</div>
+    ${ekOn() ? `<div class="srow"><span>Kesimden sonra<small class="nocap">Kesimden kaç gün sonra çıksın (gün).</small></span>${segs('setekg', String(ekGun()), [['1','1'],['2','2'],['3','3']])}</div>` : ''}
     <div class="vsep"></div>
 `
       + `<div class="field"><label>Açılış sekmesi</label><div class="chips">${Object.entries(VN).map(([k,n])=>`<button type="button" class="chip" data-act="setsv" data-v="${k}" aria-pressed="${sv===k}">${n}</button>`).join('')}</div></div>`; }
@@ -4683,7 +4687,7 @@ document.addEventListener('click', async e => {
       { const mine = M[SH.key], sk = SH.key; if (!(await saveCfg(c => ({ subsMeta:{ ...(c.subsMeta||{}), [sk]: mine } })))) break; } toast('Kaydedildi'); openSheet({ kind:'subd', key:SH.key }); break; }
     case 'wtype': S.wType = val; renderMain(); break;
     case 'gtype': S.gType = val; S.openCat = null; renderMain(); break;
-    case 'gtab': { const TB = ['kat','duz','kis','def'], a0 = TB.indexOf((S.gTab && S.gTab!=='ozet') ? S.gTab : 'kat'), a1 = TB.indexOf(val); S.tabDir = a1 > a0 ? 'r' : a1 < a0 ? 'l' : ''; } S.gTab = val; S.openCat = null; S.tabAnim = true; window.scrollTo(0,0); renderMain(); S.tabAnim = false; break;
+    case 'gtab': { const TB = ['kat','duz','kis','def'], a0 = TB.indexOf(gTabOf()), a1 = TB.indexOf(val); S.tabDir = a1 > a0 ? 'r' : a1 < a0 ? 'l' : ''; } S.gTab = val; S.openCat = null; S.tabAnim = true; window.scrollTo(0,0); renderMain(); S.tabAnim = false; break;
     case 'shinst': { SH.more = true; const am = fAmt(); if (am>0) SH.d.amount = am; SH.d.inst = !SH.d.inst; drawSheet(); break; }
     case 'shinstn': { SH.d.instN = +val; const f = document.getElementById('f_n'); if (f) f.value = val; drawSheet(); break; }
     case 'shdate': { SH.d.date = val; const f = document.getElementById('f_date'); if (f) f.value = val; drawSheet(); break; }
@@ -4740,6 +4744,10 @@ document.addEventListener('click', async e => {
     case 'setokdim': lsSet('kasa.okdim', val); renderMain(); break;
     case 'setinstv': lsSet('kasa.instv', val); S.lastList = null; renderMain(); break;
     case 'setsv': lsSet('kasa.startv', val); renderMain(); break;
+    case 'setek': lsSet('kasa.ekstre.on', val === 'off' ? 'off' : 'on'); renderMain(); break;
+    case 'setekg': lsSet('kasa.ekstre.gun', ['1','2','3'].includes(val) ? val : '1'); renderMain(); break;
+    case 'ekok': lsSet('kasa.ekstre.ok', JSON.stringify([...new Set([...ekOkList(), val])].slice(-24))); renderMain(); break;
+    case 'setcat': S.catFromSet = true; S.catmT = 'gider'; S.catBackT = 'gider'; openSheet({ kind:'catmsh' }); break;
     case 'sgdel': { const t = S.tx.find(x=>x.id===id); if (!t) return; if (!armSure(b)) break;
       await deleteRecords([{ ...t }], delLabel(t)); break; }
     case 'sgcat': { const [tid, cat] = val.split('|'), t = S.tx.find(x=>x.id===tid); if (!t) return; const old = { cat:t.cat, sub:t.sub||'' };
@@ -4802,8 +4810,8 @@ document.addEventListener('click', async e => {
     case 'newchg': openSheet({ kind:'newchg' }); break;
     case 'seenok': lsSet('kasa.seen', String(Date.now())); closeSheet(); renderMain(); break;
     case 'catmt': S.catmT = val; renderMain(); break;
-    case 'catmsh': S.catmT = val || 'gider'; S.catBackT = val || 'gider'; openSheet({ kind:'catmsh' }); break;
-    case 'catmdone': closeSheet(); setTimeout(() => { const f = document.querySelector('[data-act=newtx]'); if (f) f.click(); setTimeout(() => { if (SH && SH.kind === 'tx' && S.catBackT && SH.d.type !== S.catBackT) { SH.d.type = S.catBackT; drawSheet(); } }, 60); }, 220); break;
+    case 'catmsh': S.catFromSet = false; S.catmT = val || 'gider'; S.catBackT = val || 'gider'; openSheet({ kind:'catmsh' }); break;
+    case 'catmdone': closeSheet(); if (S.catFromSet) { S.catFromSet = false; break; } setTimeout(() => { const f = document.querySelector('[data-act=newtx]'); if (f) f.click(); setTimeout(() => { if (SH && SH.kind === 'tx' && S.catBackT && SH.d.type !== S.catBackT) { SH.d.type = S.catBackT; drawSheet(); } }, 60); }, 220); break;
     case 'catnew': openSheet({ back: SH && SH.kind === 'catmsh', kind:'catedit', k:null, t:S.catmT||'gider', custom:true, d:{ n:'', c:CPAL[9], ic:'diger' } }); break;
     case 'catedit': { if (!S.canWrite) break; const c = CAT[val], cu = (S.cfg.catm?.custom||[]).find(x=>x.k===val); openSheet({ back: SH && SH.kind === 'catmsh', kind:'catedit', k:val, t:c.t, custom:!!cu, d:{ n:c.n, c:c.c, ic:cu?.ic } }); break; }
     case 'cecol': SH.d.n = v('ce_n'); SH.d.c = val; drawSheet(); break;
@@ -5114,6 +5122,13 @@ function loadCache(){ try { const c = JSON.parse(localStorage.getItem(CK) || 'nu
 function softRender(){ if (softRender.q) return; softRender.q = requestAnimationFrame(() => { softRender.q = 0; render(); if (SH) { if (SH.kind==='dedit') dRead(); drawSheet(); } if (S.searchOpen) drawSrBody(); saveCache(); }); }
 function firstScroll(){ if (S.autoScrolled || S.status!=='ready' || S.view!=='kayit') return; S.autoScrolled = true; goToday(true); }
 S.boot = true;
+/* T15: telefon ana ekranı kısayolları (manifest shortcuts): ?k=gider -> Hızlı ekle, ?k=yatirim -> yatırım ekleme formu. Parametre yoksa hiçbir şey değişmez. */
+const KISAYOL = (() => { try { const k = new URLSearchParams(location.search).get('k'); return k === 'gider' || k === 'yatirim' ? k : ''; } catch(_) { return ''; } })();
+function kisayolAc(){ if (!KISAYOL || S.kisayolDone) return; S.kisayolDone = true;
+  try { history.replaceState(null, '', location.pathname + location.hash); } catch(_) {}
+  if (!S.db || !S.canWrite) { toast('Bu kısayol için kayıt ekleme izni gerekiyor'); return; }
+  if (KISAYOL === 'gider') { openSheet(newQuickState()); setTimeout(() => document.getElementById('q_in')?.focus(), 80); }
+  else { S.view = 'varlik'; render(); openSheet({ kind:'inv', d:{ kind:'fon' } }); } }
 try { moneyize(document.body); new MutationObserver(ms => { for (const m of ms) m.addedNodes.forEach(n => { if (n.nodeType === 1 || n.nodeType === 3) moneyize(n.nodeType === 3 ? n.parentElement : n); }); }).observe(document.body, { childList: true, subtree: true }); } catch (e) { console.error(e); }
 applyTheme();
 loadCache();
@@ -5137,7 +5152,7 @@ document.fonts && document.fonts.ready.then(() => { fitTop(); fitNums(); stickOf
   const ready = () => { if (!live.tx || !live.inv || !live.cfg) return false;
     if (S.status!=='ready' || S.fromCache) { S.status = 'ready'; S.fromCache = false; document.body.classList.remove('booting'); }
     return true; };
-  const changed = () => { if (!ready()) return; softRender(); setTimeout(runRecurring, 1500); setTimeout(runSubs, 2500); setTimeout(runLedger, 1800); saveSnap(); setTimeout(pruneLog, 7000); requestAnimationFrame(firstScroll); setTimeout(() => { S.boot = false; }, 1200); if (!S.sheenDone) { S.sheenDone = true; setTimeout(() => { document.body.classList.add('sheen1'); setTimeout(() => document.body.classList.remove('sheen1'), 3000); }, 1300); } };
+  const changed = () => { if (!ready()) return; softRender(); setTimeout(runRecurring, 1500); setTimeout(runSubs, 2500); setTimeout(runLedger, 1800); saveSnap(); setTimeout(pruneLog, 7000); requestAnimationFrame(firstScroll); setTimeout(() => { S.boot = false; }, 1200); if (KISAYOL && !S.kisayolDone && !S.kisayolT) S.kisayolT = setTimeout(kisayolAc, 1400); if (!S.sheenDone) { S.sheenDone = true; setTimeout(() => { document.body.classList.add('sheen1'); setTimeout(() => document.body.classList.remove('sheen1'), 3000); }, 1300); } };
   const set = (k, v) => { const was = live[k]; live[k] = true; S.loaded[k] = true; delete S.lerr[k]; if (was && sameJ(S[k], v)) return; if (!was && S.fromCache && sameJ(S[k], v)) { changed(); return; } S[k] = v; changed(); };
   S.lerr = {}; S.txTrunc = {}; S.absent = {};
   const errFor = key => e => { console.error(e);
@@ -5322,6 +5337,21 @@ function stmDue(){ const t = today(); return CARDS.map(k => { const P = cardPeri
     if (!cut || cut >= t) return null; if (st.some(s => s.cut && Math.abs(dayDiff(s.cut, cut)) <= 5)) return null;
     return { k, cut, due: P.rolled ? '' : P.nextDue }; }).filter(Boolean); }
 function stmNext(){ return CARDS.map(k => { const d = pd(cardPeriod(k).nextCut); d.setDate(d.getDate() + 1); return ds(d); }).sort()[0]; }
+/* Ekstre hatırlatıcısı (cihaz içi ayar: kasa.ekstre.on / .gun / .ok; veritabanına yazmaz): kartın kesiminden N gün sonra, son ödeme gününe kadar Kayıtlar'da küçük kart.
+   Tutar var olan stmtSum ile hesaplanır (kesilen dönemin kart + taksit harcaması). "Tamam" o kartın o kesimini kapatır. */
+const ekOn = () => lsGet('kasa.ekstre.on') !== 'off';
+const ekGun = () => { const n = Math.round(+lsGet('kasa.ekstre.gun')); return n >= 1 && n <= 3 ? n : 1; };
+const ekOkList = () => { try { const a = JSON.parse(lsGet('kasa.ekstre.ok') || '[]'); return Array.isArray(a) ? a.filter(x => typeof x === 'string') : []; } catch(_) { return []; } };
+function ekstreRem(){ if (!ekOn()) return []; const t = today(), N = ekGun(), C = (S.cfg && S.cfg.cards) || {}, ok = ekOkList(), T = pd(t), out = [];
+  CARDS.forEach(k => { const c = C[k] || {}, cd = Math.round(+c.cut), dd = Math.round(+c.due); if (!(cd >= 1 && cd <= 31)) return;
+    for (const off of [0, -1]) { const cu = clampDate(T.getFullYear(), T.getMonth() + off, cd), cut = ds(cu), lo = ds(clampDate(cu.getFullYear(), cu.getMonth() - 1, cd)), from = new Date(cu); from.setDate(from.getDate() + N);
+      let due; if (dd >= 1 && dd <= 31) due = ds(wkShift(clampDate(cu.getFullYear(), cu.getMonth() + (dd < cd ? 1 : 0), dd))); else { const f = new Date(cu); f.setDate(f.getDate() + 14); due = ds(f); }
+      const st = (c.statements || []).find(x => x && x.cut && x.due && Math.abs(dayDiff(x.cut, cut)) <= 5); if (st) due = st.due;
+      if (t < ds(from) || t > due) continue; const key = k + '|' + cut; if (ok.includes(key)) break;
+      const sm = stmtSum({ cuts:{ [k]:cut }, prevCuts:{ [k]:lo } }); out.push({ k, cut, due, key, amt:r2(sm.card + sm.inst) }); break; } });
+  return out; }
+function ekstreCard(){ if (S.q || !isCurMonth()) return ''; let L = []; try { L = ekstreRem(); } catch(_) { return ''; } if (!L.length) return '';
+  return `<div class="sal ekr">${L.map((x, i) => `<div class="salr a" style="--d:${i*60}ms"><span class="salic">${ico('card')}</span><span class="salt"><b>${esc(PAY[x.k].n)} ekstresi kesildi${x.amt > 0 ? ` · ${fmt(x.amt)}` : ''}</b><small>${x.amt > 0 ? '' : 'Kayıtlarda bu dönem için tutar yok · '}Son ödeme ${fmtD(x.due)}</small></span><button class="btn sm" data-act="ekok" data-v="${esc(x.key)}">Tamam</button></div>`).join('')}</div>`; }
 document.addEventListener('change', e => { const t = e.target; if (t && t.classList && t.classList.contains('stmfile') && t.files && t.files[0]) { const f = t.files[0]; t.value = ''; stmImport(f); } });
 
 
