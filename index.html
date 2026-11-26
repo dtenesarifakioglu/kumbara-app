@@ -310,7 +310,7 @@ nav .wrap{display:grid;align-items:center}
 .tag.sh svg{width:10px;height:10px}
 .sw{position:relative;overflow:hidden}
 .swdel{position:absolute;top:0;right:0;bottom:0;width:88px;background:var(--exp);color:#2A0D08;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:12px;font-weight:700}
-.swdel svg{width:20px;height:20px}
+.swdel svg{width:20px;height:20px}.swdel.sure{background:#fff;color:#7a1308;box-shadow:inset 0 0 0 2px var(--exp)}.btn.sure,.idopt.sure{outline:2px solid var(--exp)}
 .sw .row{position:relative;background:var(--bg);transition:transform .24s cubic-bezier(.2,.8,.2,1);touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .sw.drag .row{transition:none}
 .sw.gone{transition:height .24s ease .12s}
@@ -916,6 +916,25 @@ body.booting::after{content:"";position:fixed;left:50%;top:42%;width:14px;height
 .txfoot{position:sticky;bottom:-18px;margin:18px -4px 0;padding:12px 4px calc(4px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--surface) 78%,transparent)}
 .txsave{background:var(--tc)!important;color:#0b0d10!important;font-weight:700;font-size:15px;box-shadow:0 6px 20px -8px var(--tc)}
 .txsave:active{transform:scale(.97)}
+.amtpv{min-height:20px;text-align:center;font-size:13.5px;font-weight:650;margin:2px 0 0;color:var(--muted)}.amtpv .pvok{color:var(--tc,var(--fg))}.amtpv .pvb{color:var(--exp)}
+.amt2[data-len="l"] input{font-size:32px}.amt2[data-len="xl"] input{font-size:24px}.amt2 input{caret-color:var(--tc)}
+.morebtn{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:16px;padding:12px 14px;border-radius:13px;border:1px dashed var(--line);font-size:13.5px;font-weight:650;color:var(--muted)}.morebtn svg{width:16px;height:16px;transition:transform .2s}.morebtn[aria-expanded="true"] svg{transform:rotate(180deg)}.moreb[hidden]{display:none}
+.qk .qbig{font-size:18px;font-weight:650;padding-top:14px;padding-bottom:14px}.qhint{font-size:12.5px;color:var(--muted);margin:8px 2px 0}
+.qcard{background:var(--surface2);border-radius:20px;padding:14px;margin-top:12px}.qparts{display:flex;gap:6px;flex-wrap:wrap}.qparts:empty{display:none}
+.qp{font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--surface);color:var(--fg)}.qp.a{background:color-mix(in srgb,var(--inc) 18%,transparent);color:var(--inc)}.qp.p{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+.qmain{display:flex;align-items:center;gap:12px;margin:10px 0}.qmain>span{flex:1;min-width:0}.qmain b{display:block;font-size:16px}.qmain small{font-size:12.5px;color:var(--muted)}.qamt{font-style:normal;font-size:22px;font-weight:750;white-space:nowrap}
+.qchips{flex-wrap:wrap}.qchips .chip{padding:7px 12px;font-size:13px;background:var(--surface);border-color:var(--line)}
+.qbtns{display:grid;grid-template-columns:1fr 1.7fr;gap:8px;margin-top:12px}.qbtns .btn{justify-content:center;padding:14px}.qbtns .btn[disabled]{opacity:.45}
+.qfh{font-size:12.5px;font-weight:700;color:var(--muted);margin:18px 2px 8px}.qfg{display:grid;grid-template-columns:1fr 1fr;gap:8px}.qfb{display:flex;align-items:center;gap:8px;padding:10px;border-radius:14px;border:1px solid var(--line);background:var(--surface);text-align:left;min-width:0}.qfb b{flex:1;min-width:0;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.qfb em{font-style:normal;font-size:13px;font-weight:650;color:var(--muted)}
+.qarow{display:flex;align-items:center;gap:10px;width:100%;margin:4px 0 6px;padding:10px 12px;border-radius:14px;border:1px dashed var(--line);text-align:left;color:var(--fg)}.qarow>span{flex:1;min-width:0}.qarow b{display:block;font-size:14px}.qarow small{font-size:12px;color:var(--muted)}.qarow svg{width:18px;height:18px;color:var(--muted)}
+.txdelrow{margin-top:14px}.txdelrow .btn{width:100%;justify-content:center}
+.kp{position:sticky;bottom:-18px;margin:12px -4px 0;padding:8px 4px calc(6px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--surface) 90%,transparent);z-index:3}
+.kpo,.kpg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.kpo{margin-bottom:6px}
+.kk{min-height:46px;border-radius:14px;background:var(--surface2);border:1px solid var(--line);color:var(--fg);font-size:21px;font-weight:600;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform .08s,background .15s}.kk:active{transform:scale(.95)}
+.kk.op{min-height:38px;font-size:20px;color:var(--tc);background:color-mix(in srgb,var(--tc) 10%,var(--surface2))}.kk.fn{background:transparent;font-size:17px;color:var(--muted)}.kpg .kk.op.eq{min-height:46px}
+.kpsave{grid-row:span 2;font-size:16px;gap:2px;border-color:transparent}.kpsave small{font-size:12px;font-weight:600;opacity:.9}
+.wpan .wmsg{font-size:13.5px;line-height:1.4;margin:0 0 8px;padding:10px 12px;border-radius:12px;background:color-mix(in srgb,var(--exp) 10%,var(--surface2))}.wpan .wmsg.dup{background:color-mix(in srgb,var(--gold) 14%,var(--surface2))}
+
 @media (prefers-reduced-motion:reduce){.tcats .cat,.txin *,.txin2{animation:none!important}}
 .amt2 input{field-sizing:content;width:auto;min-width:2ch;max-width:78%;text-align:left}.txin2 .chips{flex-wrap:nowrap}.txin2 .chip{min-width:0;flex:1;padding:8px 0}.txn{width:52px!important}
 /* alt gezinme + bugün */
@@ -1403,20 +1422,8 @@ body:not(.kv) #top.mini .hero>*{animation:none}
 .futc{flex:none;color:var(--muted);transition:transform .25s cubic-bezier(.3,1.3,.5,1)}.futc svg{width:16px;height:16px}.futb.open .futc{transform:rotate(180deg)}
 .day.futd{animation:none}.futg.fan>*{animation:futUp .38s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--fi,0) * 55ms)}@keyframes futUp{from{opacity:0;transform:translateY(14px)}}
 @media (prefers-reduced-motion:reduce){.futg.fan>*{animation:none}}
-.selm #main .sw:not(.nosel) .row{padding-left:40px;transition:padding .2s ease,transform .24s cubic-bezier(.2,.8,.2,1)}
-.selm .sw:not(.nosel)::before{content:"";position:absolute;left:8px;top:50%;width:20px;height:20px;margin-top:-10px;border-radius:50%;border:2px solid color-mix(in srgb,var(--fg) 28%,transparent);z-index:2;box-sizing:border-box;animation:selPop .25s cubic-bezier(.3,1.5,.5,1) both}@keyframes selPop{from{opacity:0;transform:scale(.4)}}
-.selm .sw.sel::before{border-color:var(--accent);background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/13px no-repeat}
-.selm .sw.sel .row{background:color-mix(in srgb,var(--accent) 9%,var(--bg))}.selm .sw.nosel{opacity:.4}.selm .sw.fut .row>*{opacity:.75}
-.selm nav{transform:translateY(120%);opacity:0;pointer-events:none}nav{transition:transform .28s cubic-bezier(.2,.8,.2,1),opacity .2s}
-.selm .todaybtn{display:none}
-#selbar{position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));height:62px;z-index:21;display:flex;align-items:center;gap:4px;padding:0 8px;border-radius:24px;background:var(--surface);border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line));box-shadow:0 10px 30px -10px rgba(0,0,0,.6);transform:translateY(130%);opacity:0;transition:transform .32s cubic-bezier(.3,1.2,.4,1),opacity .2s}
-#selbar.in{transform:none;opacity:1}
-.sbx{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:var(--muted)}.sbx svg{width:18px;height:18px}
-.sbt{flex:1;min-width:0;line-height:1.15}.sbt b{display:block;font-size:14px;font-weight:700;white-space:nowrap}.sbt small{display:block;font-size:12px;color:var(--muted);white-space:nowrap}
-.sba{flex:none;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:54px;padding:6px 4px;border-radius:14px;font-size:10.5px;font-weight:600;color:var(--fg)}.sba:active{background:color-mix(in srgb,var(--fg) 8%,transparent)}
-.sba svg{width:22px;height:22px}.sba.del{color:var(--exp)}.sba.del svg{width:19px;height:19px;margin:1.5px 0}.sba.del.sure{background:var(--exp);color:#fff}
-.selw{display:grid;gap:8px;margin-top:14px}.selw .btn{justify-content:flex-start;gap:10px}.selw .btn i{width:10px;height:10px;border-radius:50%}
-@media (prefers-reduced-motion:reduce){#selbar,nav,.futc,.day.futd,.sw.fut{transition:none;animation:none}}
+nav{transition:transform .28s cubic-bezier(.2,.8,.2,1),opacity .2s}
+@media (prefers-reduced-motion:reduce){nav,.futc,.day.futd,.sw.fut{transition:none;animation:none}}
 .vln.rng .vlx{left:0!important;margin-left:-.5px}.vlr{position:absolute;top:0;bottom:0;background:color-mix(in srgb,var(--lc) 14%,transparent);pointer-events:none;opacity:0}.vln.rng .vlr{opacity:1}.vln:not(.rng) .vlx2,.vln:not(.rng) .vld2{opacity:0!important}.vln.rng .vle{opacity:0}
 .vh2s div[role=button]{cursor:pointer;-webkit-tap-highlight-color:transparent;border-radius:10px;transition:background .15s}.vh2s div[role=button]:active{background:color-mix(in srgb,var(--fg) 7%,transparent)}.vgc{font-style:normal;opacity:.6;font-size:12px}
 .vgh{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0 12px}.vgh>div{padding:12px 14px;border-radius:14px;background:var(--surface2);display:flex;flex-direction:column;gap:5px;line-height:1}.vgh small{font-size:11.5px;color:var(--muted)}.vgh b{font-size:18px;font-weight:700;letter-spacing:-.02em}.vgh div+div b{font-size:15px;color:var(--fg);padding-top:3px}
@@ -2144,6 +2151,43 @@ const r2 = n => Math.round(n*100)/100;
 function num(s){ s=String(s??'').trim().replace(/\s|₺|TL/gi,''); if(!s) return NaN;
   if (s.includes(',')) s = s.replace(/\./g,'').replace(',','.'); else if ((s.match(/\./g)||[]).length>1 || /^-?[1-9]\d{0,2}\.\d{3}$/.test(s)) s = s.replace(/\./g,'');
   return Number(s); }
+/* CALC-BEGIN: tutar hesap makinesi. Kendi küçük ayrıştırıcı (eval/Function yok).
+   Kurallar: rakam, ondalık VİRGÜL, + − × ÷ (ve * / -), parantez; × ÷ önce. "." yalnız binlik ayracı: 1.234 ya da 1.234.567 (üçlü gruplar), virgülden önce;
+   başka her nokta (1.5, 1234.56, 1,234.56) geçersizdir (sessizce yanlış okunmaz). Eksi işaretli sayı yok. Sonuç kuruşa yuvarlanır; sıfır, negatif, ÷0 ve çok büyük sonuç geçersiz.
+   calcEval(metin) → { ok, value, err, msg, op } ; err: bos | sozdizim | eksik | nokta | sifirabolme | negatif | sifir | buyuk | ondalik | uzun | derin
+   Sınırlar: girdi en çok 200 karakter, parantez derinliği en çok 20, kullanıcının yazdığı her sayıda virgülden sonra en çok 2 hane (250,555 reddedilir; işlem sonucu 100÷3 gibi yine kuruşa yuvarlanır); binlik grup 0 ile başlayamaz (0.500 geçersiz). */
+const CALC_MSG = { bos:'Tutarı yaz.', sozdizim:'İşlem anlaşılamadı. Rakam, virgül ve + − × ÷ kullan.', eksik:'İşlem yarım kaldı.', nokta:'Ondalık için virgül kullan; nokta yalnız binlik ayracı (1.250).', sifirabolme:'Sıfıra bölünemez.', negatif:'Sonuç eksi olamaz.', sifir:'Tutar sıfırdan büyük olmalı.', buyuk:'Tutar çok büyük.', ondalik:'Kuruş için en çok 2 hane yazılır (virgülden sonra).', uzun:'İşlem çok uzun (en çok 200 karakter).', derin:'Parantez en çok 20 kat iç içe olabilir.' };
+function calcEval(src){
+  const fail = (err, op) => ({ ok:false, value:NaN, err, msg:CALC_MSG[err], op:!!op });
+  if (String(src == null ? '' : src).length > 200) return fail('uzun');
+  let s = String(src == null ? '' : src).replace(/[\s₺]|TL/gi, '').replace(/[−–—]/g, '-').replace(/\*/g, '×').replace(/\//g, '÷');
+  if (!s) return fail('bos');
+  const op = /[+\-×÷]/.test(s.replace(/^\(+/, ''));
+  { let dp = 0, mx = 0; for (const c of s) { if (c === '(') mx = Math.max(mx, ++dp); else if (c === ')') dp--; } if (mx > 20) return fail('derin', op); }
+  const T = []; let i = 0;
+  while (i < s.length) { const c = s[i];
+    if ('+-×÷()'.includes(c)) { T.push(c); i++; continue; }
+    const m = /^([1-9]\d{0,2}(?:\.\d{3})+|\d+)?(?:,(\d*))?/.exec(s.slice(i)); const w = m ? m[0] : '';
+    if (!w || (m[1] == null && !m[2])) return fail(/[.]/.test(c) ? 'nokta' : 'sozdizim', op);
+    if (s[i + w.length] === '.' || (m[1] != null && /^[\d]/.test(s.slice(i + w.length)))) return fail('nokta', op);
+    const ip = (m[1] || '0').replace(/\./g, ''), fp = m[2] || '';
+    if (ip.length > 15) return fail('buyuk', op); if (fp.length > 2) return fail('ondalik', op); // yazılan sayıda en çok 2 ondalık hane (sessiz yuvarlama yok); ara sonuçlar yine kuruşa yuvarlanır
+    T.push({ n: Number(ip + (fp ? '.' + fp : '')) }); i += w.length; }
+  let k = 0, incomplete = false; const peek = () => T[k], eat = () => T[k++];
+  const E = () => { let a = Tm(); if (a == null) return null; while (peek() === '+' || peek() === '-') { const o = eat(), b = Tm(); if (b == null) return null; a = o === '+' ? a + b : a - b; } return a; };
+  const Tm = () => { let a = F(); if (a == null) return null; while (peek() === '×' || peek() === '÷') { const o = eat(), b = F(); if (b == null) return null; if (o === '÷') { if (b === 0) { bad = 'sifirabolme'; return null; } a = a / b; } else a = a * b; if (!isFinite(a)) { bad = 'buyuk'; return null; } } return a; };
+  const F = () => { const t = peek(); if (t === undefined) { incomplete = true; return null; } if (t && typeof t === 'object') { k++; return t.n; }
+    if (t === '(') { k++; const a = E(); if (a == null) return null; if (peek() !== ')') { if (peek() === undefined) incomplete = true; return null; } k++; return a; } return null; };
+  let bad = null; const r = E();
+  if (r == null) return fail(bad || (incomplete ? 'eksik' : 'sozdizim'), op);
+  if (k < T.length) return fail('sozdizim', op);
+  if (!isFinite(r) || Math.abs(r) > 1e12) return fail('buyuk', op);
+  const v = Math.round(+(r * 100).toPrecision(12)) / 100;
+  if (v < 0) return fail('negatif', op); if (v === 0) return fail('sifir', op); if (v > 999999999.99) return fail('buyuk', op);
+  return { ok:true, value:v, err:null, msg:'', op };
+}
+const calcRaw = n => String(Math.round((Number(n) || 0) * 100) / 100).replace('.', ','); // düzenleme formuna ham sayı: 1450,75 (biçimsiz, binlik ayracı yok)
+/* CALC-END */
 const pad = n => String(n).padStart(2,'0');
 const ds = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 const today = () => ds(new Date());
@@ -2305,7 +2349,7 @@ function renderNav(){
   const off = !S.db && (S.status==='offline' || S.status==='error'), nk = nw + '|' + (S.canWrite ? 1 : 0) + '|' + (off ? 1 : 0);
   if (renderNav.k === nk && nv.querySelector('.npill')) nv.querySelectorAll('.nb').forEach(x => { if (x.dataset.v === S.view) x.setAttribute('aria-current', 'page'); else x.removeAttribute('aria-current'); });
   else { renderNav.k = nk; nv.innerHTML = b('kayit','list','Kayıtlar') + b('grafik','pie','Grafikler') +
-    (S.canWrite ? `<button class="fab${off ? ' off' : ''}" data-act="newtx" aria-label="${off ? 'Kayıt ekle (bağlantı yok)' : 'Kayıt ekle'}"${off ? ' aria-disabled="true"' : ''}>${ico('plus')}</button>` : '<span></span>') +
+    (S.canWrite ? `<button class="fab${off ? ' off' : ''}" data-act="newtx" data-v="quick" aria-label="${off ? 'Kayıt ekle (bağlantı yok)' : 'Kayıt ekle'}"${off ? ' aria-disabled="true"' : ''}>${ico('plus')}</button>` : '<span></span>') +
     b('varlik','vault','Varlıklar') + b('ayar','gear','Ayarlar') + '<i class="npill"></i>'; navPill.last = null; }
   navPill(nv.classList.contains('navanim'));
 }
@@ -2356,7 +2400,7 @@ function instPill(I){ if (I.folded) return `<span class="ipill last" aria-label=
 function txRow(t){
   const c = CAT[t.cat] || CAT.diger, p = PEOPLE[t.by] || {n:t.by||'?',c:'var(--muted)'};
   const title = t.note || subName(t.cat,t.sub) || c.n, rf = RFM.get(t.id);
-  return `<div class="sw${t.date>today()?' fut':''}${S.sel && S.sel.has(t.id)?' sel':''}${t.virt||t.vrec?' nosel':''}${S.flashIds && S.flashIds.has(t.id)?' newrow':''}${PAY[t.pay]?' paid':''}${t.ok && lsGet('kasa.okdim') !== 'off' ? ' okdim' : ''}"${PAY[t.pay]?` style="--pc:${PAY[t.pay].c}"`:''}>${S.canWrite && !t.virt && !t.vrec?`<button class="swdup" data-act="swdup" data-id="${esc(t.id)}" tabindex="-1">${ico('repeat')}<span>Tekrar ekle</span></button><button class="swdel" data-act="swdel" data-id="${esc(t.id)}" tabindex="-1">${ico('trash')}<span>Sil</span></button>`:''}<button class="row" ${t.virt?`data-act="subd" data-v="${esc(t.virt)}"`:t.vrec?`data-act="editrec" data-id="${esc(t.vrec)}"`:`data-act="edittx" data-id="${esc(t.id)}"`}>
+  return `<div class="sw${t.date>today()?' fut':''}${S.flashIds && S.flashIds.has(t.id)?' newrow':''}${PAY[t.pay]?' paid':''}${t.ok && lsGet('kasa.okdim') !== 'off' ? ' okdim' : ''}"${PAY[t.pay]?` style="--pc:${PAY[t.pay].c}"`:''}>${S.canWrite && !t.virt && !t.vrec?`<button class="swdup" data-act="swdup" data-id="${esc(t.id)}" tabindex="-1">${ico('repeat')}<span>Tekrar ekle</span></button><button class="swdel" data-act="swdel" data-id="${esc(t.id)}" tabindex="-1">${ico('trash')}<span>Sil</span></button>`:''}<button class="row" ${t.virt?`data-act="subd" data-v="${esc(t.virt)}"`:t.vrec?`data-act="editrec" data-id="${esc(t.vrec)}"`:`data-act="edittx" data-id="${esc(t.id)}"`}>
     ${rowIc(t)}
     <span class="rbody"><span class="rt" style="display:block">${esc(title)}${t.ok?`<span class="okb" role="img" aria-label="Ekstreyle doğrulandı">${ico('check')}</span>`:''}</span>
       <span class="rs">${(()=>{ const sn=subName(t.cat,t.sub); const lbl = sn ? `${c.n} › ${sn}` : c.n; return (t.note||sn)?`<span>${esc(lbl)}</span>`:''; })()}${whoBadge(t.by, t.shared)}${t.recId?`<span class="rrep" role="img" aria-label="Tekrarlayan">${ico('repeat')}</span>`:''}${rf?`<span class="tag rfg">${ico('s_iade')}iade · ${fmtD(rf.date)}</span>`:''}${t.inst?instPill(t.inst):''}${+t.puan>0?`<span class="putag">Puanla</span>`:''}${t.split?`<span class="sptag${t.split.paid?' ok':''}">${t.split.paid?ico('check'):''}${esc(t.split.who)} ${fmt0(t.split.amount)}\u00A0₺</span>`:''}</span></span>
@@ -2573,12 +2617,18 @@ function vKayit(){
   if (fold6) { const FL6 = FD.flatMap(d => by[d]), fg = sumOf(FL6,'gider'), fi = sumOf(FL6,'gelir'), ng = FL6.filter(t => t.type==='gider').length, nx = FL6.length - ng;
     h += `<button class="futb${S.futOpen?' open':''}" data-act="futopen" aria-expanded="${!!S.futOpen}"><span class="futi">${ico('calendar')}</span><span class="futt"><b>Yaklaşan</b><small>${ng ? `${ng} ödeme` : ''}${ng && nx ? ' · ' : ''}${nx ? `${nx} gelir` : ''}</small></span><span class="futa num">${fg ? `<b>${fmtT0(fg)}</b>` : ''}${fi ? `<small>+${fmtT0(fi)}</small>` : ''}</span><span class="futc">${ico('chev')}</span></button>`; }
   const nF = FD.length; let fk = 0;
+  // T11: bugünün yerinde "Hızlı ekle" satırı (bugünün başlığının altında; bugün kaydı yoksa geçmiş günlerin üstünde)
+  const qaRow = S.canWrite && isCurMonth() && !S.q ? `<button type="button" class="qarow" data-act="newtx" data-v="quick">${ico('spark')}<span><b>Hızlı ekle</b><small>market 250 gibi yaz, anlasın</small></span>${ico('right')}</button>` : '';
+  let qaDone = !qaRow; if (!qaDone && !DS.some(d => d <= t0)) { h += qaRow; qaDone = true; }
   for (const d of DS) { if (fold6 && d > t0 && !S.futOpen) continue;
+    if (!qaDone && d < t0) { h += qaRow; qaDone = true; }
     const L = by[d], D = pd(d), isF = fold6 && d > t0;
     if (isF) h += `<div class="futg${S.futAnim ? ' fan' : ''}" style="--fi:${nF - 1 - fk++}">`;
     h += `<div class="day${d>today()?' fut':''}${isF ? ' futd' : ''}" data-date="${d}"><span class="dyl"><b>${D.getDate()} ${MON[D.getMonth()]}</b> <span class="dyd" data-s="${['Paz','Pzt','Sal','Çar','Per','Cum','Cmt'][D.getDay()]}">${DAY[D.getDay()]}</span></span>${(() => { const dg = sumOf(L,'gider'), di = sumOf(L,'gelir'); return dg || di ? `<span class="dyt num">${dg ? `<span class="ex">−${tlN(dg)}</span>` : ''}${di ? `<span class="in">+${tlN(di)}</span>` : ''}</span>` : ''; })()}</div>`;
+    if (!qaDone && d === t0) { h += qaRow; qaDone = true; }
     h += L.map(txRow).join(''); if (isF) h += `</div>`;
   }
+  if (!qaDone) h += qaRow;
   S.futAnim = false; return h;
 }
 
@@ -3913,22 +3963,6 @@ function auditBody(){ const R = auditRun(), ok = R.filter(r => r.ok).length, n =
     h += `<div class="audl ${r.ok ? '' : r.soft ? 'soft' : 'bad'}" style="--d:${i*28}ms"><i>${ico(r.ok ? 'check' : r.soft ? 'edit' : 'x')}</i><span>${esc(r.n)}${r.ok ? '' : `<small>${r.soft && !r.ok ? r.soft + ' · ' : ''}${val(r)} ≠ ${val({ ...r, a:r.b })}</small>`}</span><b class="num">${r.ok ? val(r) : ''}</b></div>`; });
   return h + `<p class="audn">Her satır aynı rakamı iki ayrı yoldan hesaplar. Ekran her açıldığında güncel kayıtlarla yeniden çalışır.</p>`; }
 
-/* ---------- Çoklu seçim (Kayıtlar) ---------- */
-function selSet(ids){ S.sel = ids && ids.size ? ids : null; document.body.classList.toggle('selm', !!S.sel);
-  document.querySelectorAll('#main .sw').forEach(sw => { const r = sw.querySelector('.row'); sw.classList.toggle('sel', !!(S.sel && r && r.dataset.act === 'edittx' && S.sel.has(r.dataset.id))); }); selBar(); }
-function selTog(id){ const n = new Set(S.sel || []); if (n.has(id)) n.delete(id); else n.add(id); buzz(); selSet(n); }
-const selList = () => S.sel ? S.tx.filter(t => S.sel.has(t.id)) : [];
-function selBar(){ let b = document.getElementById('selbar'); if (!S.sel) { if (b) { b.classList.remove('in'); setTimeout(() => { if (!S.sel) b.remove(); }, 220); } return; }
-  if (!b) { b = document.createElement('div'); b.id = 'selbar'; document.body.appendChild(b); requestAnimationFrame(() => b.classList.add('in')); }
-  const L = selList(), g = sumOf(L,'gider'), i = sumOf(L,'gelir'), net = r2(g - i), sure = b.dataset.sure === String(L.length);
-  b.innerHTML = `<button class="sbx" data-act="selx" aria-label="Seçimi kapat">${ico('x')}</button><span class="sbt"><b>${L.length} seçili</b><small class="num">${net < 0 ? '+' : ''}${fmtT0(Math.abs(net))}</small></span>
-    <button class="sba" data-act="selcat">${ico('s_paket','i')}<span>Kategori</span></button><button class="sba" data-act="selwho">${ico('sosyal','i')}<span>Kişi</span></button><button class="sba del${sure?' sure':''}" data-act="seldel">${ico0('trash')}<span>${sure ? 'Emin misin?' : 'Sil'}</span></button>`; }
-async function selApply(patch, msg){ const L = selList(); if (!L.length) return; const olds = L.map(t => ({ ...t })); closeSheet(); selSet(null); let ok = false;
-  await guard(async () => { await Promise.all(L.map(t => S.db.doc('tx/' + t.id).update(patch(t)))); ok = true; }); if (!ok) return;
-  logAct('edit', olds, olds.map(t => ({ ...t, ...patch(t) }))); flashNew(olds.map(t => t.id));
-  toast(`${olds.length} kayıt ${msg}`, 'Geri al', () => guard(async () => { await Promise.all(olds.map(({ id, ...d }) => S.db.doc('tx/' + id).set(d))); toast('Geri alındı'); })); }
-function shSelCat(){ const L = selList(), ty = L[0] ? L[0].type : 'gider'; return head(`Kategori · ${L.length} kayıt`) + `<div class="cats">${(CATS[ty]||CATS.gider).map(([k,n]) => `<button type="button" class="cat" data-act="selcatset" data-v="${k}">${chipIc(k)}<span>${esc(n)}</span></button>`).join('')}</div>`; }
-function shSelWho(){ const L = selList(); return head(`Kişi · ${L.length} kayıt`) + `<div class="selw">${['k1','k2'].map(k => `<button class="btn" data-act="selwhoset" data-v="${k}"><i style="background:${PEOPLE[k].c}"></i>${PEOPLE[k].n}</button>`).join('')}<button class="btn" data-act="selwhoset" data-v="ortak"><i style="background:var(--gold)"></i>Ortak</button></div>`; }
 
 function shVgDay(){ const GD = gainDays(), from = SH.from, td = today(), D = Object.keys(GD).filter(d => (from === 'all' || d >= from) && d <= td).sort(), A = aggSeries();
   const ttl = from === 'all' ? 'Başlangıçtan beri' : from.slice(8) === '01' && from.slice(0,7) === td.slice(0,7) && SH.lbl === 'ay' ? `${MON[+from.slice(5,7)-1]} ayı` : 'Bu hafta';
@@ -3966,12 +4000,12 @@ function drawSheet(){
   const key = [SH.kind, SH.step, SH.d?.type, SH.d?.cat==='birikim', SH.type, SH.cat].join('|');
   const swap = !SH._fresh && SH._key && SH._key !== key; SH._key = key;
   el.innerHTML = `<div class="scrim${SH._fresh?' in':''}" data-act="scrim"><div class="sheet" role="dialog" aria-modal="true">
-    <div class="grab"></div><div class="shbody">${({tx:shTx, inv:shInv, price:shPrice, trade:shTrade, rec:shRec, subs:shSubs, subedit:shSubEdit, subd:shSubD, vdist:shVdist, w3x:shW3x, wif:shWif, karne:shKarne, catedit:shCatEdit, restore:shRestore, newchg:shNewRec, msum:shMsum, ihist:shIHist, payx:shPayX, ledit:shLedEdit, ledgrp:shLedGrp, dled:shDled, savedit:shSavEd, goal:shGoal, split:shSplit, plink:shPlink, ledppl:shLedPpl, catmsh:shCatm, sugs:shSugs, kcfg:shKcfg, stsh:shStsh, ledpay:shLedPay, catx:shCatX, upcm:shUpcM, upca:shUpcA, subnew:shSubNew, month:shMonth, donem:shDonem, dedit:shDonemEdit, stm:shStm, selcat:shSelCat, selwho:shSelWho, vgday:shVgDay}[SH.kind])()}</div></div></div>`;
+    <div class="grab"></div><div class="shbody">${({tx:shTx, inv:shInv, price:shPrice, trade:shTrade, rec:shRec, subs:shSubs, subedit:shSubEdit, subd:shSubD, vdist:shVdist, w3x:shW3x, wif:shWif, karne:shKarne, catedit:shCatEdit, restore:shRestore, newchg:shNewRec, msum:shMsum, ihist:shIHist, payx:shPayX, ledit:shLedEdit, ledgrp:shLedGrp, dled:shDled, savedit:shSavEd, goal:shGoal, split:shSplit, plink:shPlink, ledppl:shLedPpl, catmsh:shCatm, sugs:shSugs, kcfg:shKcfg, stsh:shStsh, ledpay:shLedPay, catx:shCatX, upcm:shUpcM, upca:shUpcA, subnew:shSubNew, month:shMonth, donem:shDonem, dedit:shDonemEdit, stm:shStm, vgday:shVgDay}[SH.kind])()}</div></div></div>`;
   titleize(el); SH._fresh = false;
   const noKeep = SH.kind==='dedit'; el.querySelectorAll('input,select,textarea').forEach(i => { if (i.id in keep && !(noKeep && i.id.startsWith('dl_'))) i.value = keep[i.id]; });
   el.querySelectorAll('textarea.ta').forEach(taFit);
   const sh = el.querySelector('.sheet'); if (sh && !swap) sh.scrollTop = oldSc; if (sh && SH._quiet) sh.classList.add('quiet');
-  sheetMotion(sh, swap, oldH);
+  sheetMotion(sh, swap, oldH); amtUpdate();
 }
 /* ---------- Rehber balonu ---------- */
 function coachOff(){ const c = document.getElementById('coach'); if (c) { c.classList.add('out'); setTimeout(() => c.remove(), 220); } }
@@ -4017,7 +4051,7 @@ function quickParse(txt){ const d = SH.d, f = fold(txt), W = txt.split(/\s+/), a
 function quickApply(txt){ const P = quickParse(txt), d = SH.d;
       const L = P.text ? sugList(P.text, d.type, null) : [], best = L[0] && L[0].t, cm = !best && P.text ? CATS[d.type].find(([k, n]) => fold(P.text).includes(fold(n)) || fold(n).includes(fold(P.text))) : null;
       if (best || cm) { if (best) { d.cat = best.cat; d.sub = best.sub || ''; d.note = best.note; if (best.pay) d.pay = best.pay; if (best.shared != null) d.shared = best.shared; } else { d.cat = cm[0]; d.sub = ''; d.note = P.text.replace(/^./, c => c.toLocaleUpperCase('tr')); }
-        if (P.amount) d.amount = P.amount; else if (best) d.amount = +best.amount; if (P.pay) d.pay = P.pay; SH.q = ''; SH.step = 2; drawSheet(); return true; }
+        if (P.amount || best) delete d.amtRaw; if (P.amount) d.amount = P.amount; else if (best) d.amount = +best.amount; if (P.pay) d.pay = P.pay; SH.q = ''; SH.step = 2; drawSheet(); return true; }
       else { SH.q = P.text || txt; if (P.amount) d.amount = P.amount; drawSheet(); const qi = document.getElementById('f_q'); if (qi) { qi.value = SH.q; qi.dispatchEvent(new Event('input', { bubbles:true })); } toast('Kategoriyi seç'); return false; } }
 function catOrder(type){ // kategoriler kullanım sıklığına göre (son 120 gün, taksitlerin yalnızca ilki); sayfa açıkken sabit kalır
   if (SH && SH._co && SH._co.t === type) return SH._co.L; const c = {}, lim = ds(new Date(Date.now() - 120*864e5));
@@ -4028,17 +4062,51 @@ function sugList(q, type, cat){ const f = fold(q).trim(); if (f.length < 2) retu
     const n = fold(t.note), at = n.startsWith(f) ? 0 : n.split(/\s+/).some(w => w.startsWith(f)) ? 1 : n.includes(f) ? 2 : -1; if (at < 0) return;
     const o = M.get(k); if (o) o.n++; else M.set(k, { t, n:1, at, same: cat && t.cat === cat ? 0 : 1 }); });
   return [...M.values()].sort((a,b) => a.same-b.same || a.at-b.at || b.n-a.n).slice(0, 4); }
-function sugHtml(q, type, cat, mode){ const L = sugList(q, type, cat); SH._sg = L.map(x => x.t); if (!L.length) return '';
+const qSugText = q => { try { return quickParse(q).text; } catch(_) { return q; } }; // T23: öneriler tutar/kart/nakit sözcükleri çıkarılmış metinle aranır ("market 250" → "market")
+function sugHtml(q, type, cat, mode){ const L = sugList(mode === 'qs' ? qSugText(q) : q, type, cat); SH._sg = L.map(x => x.t); if (!L.length) return '';
   return L.map((x, i) => { const t = x.t, C = CAT[t.cat], sub = t.sub && subName ? subName(t.cat, t.sub) : ''; return `<button type="button" class="qsb" data-act="qsug" data-v="${i}" data-id="${mode}" style="--cc:${C.c}"><i class="qsic">${ico(t.cat)}</i><span><b>${esc(t.note)}</b><small>${esc(C.n)}${sub ? ' › ' + esc(sub) : ''}${x.n > 1 ? ` · ${x.n} kez` : ''}</small></span><em class="num">${fmtN(t.amount)} ₺</em></button>`; }).join(''); }
-function instPrev(){ const d = SH.d, am = num(v('f_amt')) || +d.amount || 0, n = Math.max(2, Math.min(36, parseInt(v('f_n')) || d.instN || 3));
+function instPrev(){ const d = SH.d, am = fAmt() || +d.amount || 0, n = Math.max(2, Math.min(36, parseInt(v('f_n')) || d.instN || 3));
   if (!(am>0)) return `${n} taksit`; const D = pd(v('f_date') || d.date), L = new Date(D.getFullYear(), D.getMonth()+n-1, 1);
   const sh = Math.min(n, 12), ms = Array.from({ length:sh }, (_, i) => { const m = new Date(D.getFullYear(), D.getMonth()+i, 1); return `<i class="${i ? '' : 'on'}" style="--d:${i*35}ms"><em>${MON[m.getMonth()].slice(0,3)}</em></i>`; }).join('');
   return `<span class="ipm">${ms}${n > sh ? `<small>+${n - sh}</small>` : ''}</span><span class="ipt"><b class="num">${n} × ${fmtN(r2(am/n))} ₺</b><span>her ay · son taksit ${MON[L.getMonth()].slice(0,3)} ${L.getFullYear()}</span></span>`; }
+/* T11: Hızlı ekle. Tek kutu; yazdığını anladığını önizleme kartında gösterir; Kaydet aynı saveTx yolunu kullanır (T20 uyarıları dahil); Ayrıntı forma geçer. */
+function newQuickState(){ const st = newTxState('gider'); st.quick = true; st.q = ''; st.qo = {}; st.qbase = { date: st.d.date, pay: st.d.pay, by: st.d.by }; return st; }
+function quickModel(q){ const d = SH.d, P = quickParse(q || ''), M = { amount:P.amount, cat:null, sub:'', note:'', pay:P.pay || '', shared:null, best:null };
+  if (SH.qfix && q === SH.qfix.note) { const f = SH.qfix; return { amount:f.amount, cat:f.cat, sub:f.sub, note:f.note, pay:f.pay || '', shared:f.shared != null ? f.shared : null, best:null, fix:true }; }
+  const L = P.text ? sugList(P.text, d.type, null) : [], best = L[0] && L[0].t, ft = fold(P.text || '').trim();
+  const cm = !best && ft.length >= 2 ? CATS[d.type].find(([k, n]) => ft.includes(fold(n)) || fold(n).includes(ft)) : null;
+  if (best) { M.cat = best.cat; M.sub = best.sub || ''; M.note = best.note; M.best = best; if (!M.pay && best.pay) M.pay = best.pay; if (best.shared != null) M.shared = best.shared; M.sug = +best.amount; }
+  else if (cm) { M.cat = cm[0]; M.note = P.text.replace(/^./, c => c.toLocaleUpperCase('tr')); }
+  { // tek sayı kuralı: yazılan düz sayı sözcükleri formdaki calcEval'den geçer ("12.50", "1,234.56", çok büyük → geçersiz, tutar alınmaz)
+    const toks = String(q || '').split(/\s+/).map(w => w.replace(/(tl|₺)$/i, '')).filter(w => /^[\d.,]+$/.test(w)); let top = null;
+    for (const w of toks) { const r = calcEval(w); if (r.ok) top = Math.max(top || 0, r.value); else if (['nokta', 'sozdizim', 'buyuk', 'ondalik'].includes(r.err)) { M.err = r.msg; top = null; break; } }
+    if (M.err) M.amount = null; else if (toks.length) M.amount = top; }
+  if (M.amount == null && SH.qo && SH.qo.amount > 0) M.amount = SH.qo.amount; // kullanıcı öneriye dokundu
+  return M; }
+function quickSync(M){ const d = SH.d, o = SH.qo || {}, B = SH.qbase; d.cat = M.cat; d.sub = M.sub || ''; d.note = M.note || ''; d.amount = M.amount > 0 ? M.amount : null;
+  d.pay = o.pay || M.pay || B.pay; d.shared = o.shared != null ? o.shared : (M.shared != null ? M.shared : false); d.by = o.by || B.by; d.date = o.date || B.date; d.inst = false; d.split = null; d.puan = null; }
+function quickCard(M){ const d = SH.d, ok = !!(M.cat && M.amount > 0), C = CAT[M.cat], P = SH.q ? quickParse(SH.q) : {}, T0 = today(), Y0 = ds(new Date(Date.now() - 864e5)), pk = PEOPLE[d.by];
+  const parts = [P.amount && !M.err ? `<span class="qp a">${fmtN(P.amount)} ₺</span>` : '', P.pay ? `<span class="qp p">${esc(PAY[P.pay].n)}</span>` : '', M.cat ? `<span class="qp c">${esc(C.n)}${M.sub && subName(M.cat, M.sub) ? ' › ' + esc(subName(M.cat, M.sub)) : ''}</span>` : ''].join('');
+  const amt = M.amount > 0 ? `${fmtN(M.amount)} ₺` : '— ₺', sugBtn = !(M.amount > 0) && M.sug > 0 && !M.err ? `<button type="button" class="chip qsug2" data-act="qsugamt" data-v="${M.sug}">Önerilen tutar ${fmtN(M.sug)} ₺ · dokun</button>` : '';
+  const main = M.cat ? `<i class="qsic" style="--cc:${C.c}">${ico(M.cat)}</i><span><b>${esc(C.n)}</b><small>${M.err ? `<span class="pvb">${esc(M.err)}</span>` : M.best ? `“${esc(M.best.note)}” kaydına benziyor` : M.fix ? 'sık girdiklerinden' : esc(M.note)}</small></span><em class="num qamt">${amt}</em>`
+    : `<span><b>${SH.q && SH.q.trim() ? 'Kategori bulunamadı' : 'Ne eklemek istiyorsun?'}</b><small>${SH.q && SH.q.trim() ? 'Ayrıntı’ya dokunup kategori seç' : 'Örnek: market 250'}</small></span><em class="num qamt">${amt}</em>`;
+  const chips = `<button type="button" class="chip" data-act="qdate">${d.date === T0 ? 'Bugün' : d.date === Y0 ? 'Dün' : fmtD(d.date)}</button><button type="button" class="chip" data-act="qwho"><span class="pd" style="background:${d.shared ? 'var(--gold)' : pk.c}"></span>${d.shared ? 'Ortak' : esc(pk.n)}</button>${d.type === 'gider' ? `<button type="button" class="chip" data-act="qpay">${esc((PAY[d.pay] || PAY.nakit).n)}</button>` : ''}<button type="button" class="chip" data-act="qtype">${d.type === 'gelir' ? 'Gelir' : 'Gider'}</button>`;
+  return `<div class="qcard"><div class="qparts">${parts}</div><div class="qmain">${main}</div><div class="chips qchips">${chips}</div>${sugBtn}` +
+    (SH.warn ? warnPanel() : `<div class="qbtns"><button type="button" class="btn" data-act="qdet">Ayrıntı</button><button type="button" class="btn pri txsave" data-act="qsave" data-raw${ok ? '' : ' disabled'} style="--tc:${d.type === 'gelir' ? 'var(--inc)' : 'var(--exp)'}">Kaydet${ok ? ' · ' + amt : ''}</button></div>`) + `</div>`; }
+function quickFreq(){ const lim = ds(new Date(Date.now() - 120 * 864e5)), M = new Map(), ty = SH.d.type;
+  S.tx.forEach(t => { if (t.type !== ty || !t.note || (t.date || '') < lim || (t.inst && +t.inst.i > 1) || t.sub === 'iade' || !CAT[t.cat]) return; const k = fold(t.note) + '|' + t.cat, o = M.get(k); if (o) { o.n++; if ((t.date || '') > (o.t.date || '')) o.t = t; } else M.set(k, { t, n:1 }); });
+  const L = [...M.values()].sort((a, b) => b.n - a.n || (b.t.date || '').localeCompare(a.t.date || '')).slice(0, 4); SH._qf = L.map(x => x.t); if (!L.length) return '';
+  return `<p class="qfh">Sık girdiklerin</p><div class="qfg">${L.map((x, i) => `<button type="button" class="qfb" data-act="qfreq" data-v="${i}"><i class="qsic" style="--cc:${CAT[x.t.cat].c}">${ico(x.t.cat)}</i><b>${esc(x.t.note)}</b><em class="num">${fmtN(x.t.amount)}</em></button>`).join('')}</div>`; }
+function shQuick(){ const M = quickModel(SH.q || ''); quickSync(M);
+  return head('Hızlı ekle') + `<div class="qk"><div class="qsw"><span class="qsi">${ico('search')}</span><input class="inp qsin qbig" id="q_in" placeholder="market 250, iki yüz elli nakit…" autocomplete="off" enterkeyhint="done" value="${esc(SH.q || '')}"></div>
+    <p class="qhint">Yazdıkça anlar: tutar, kategori, ödeme. “iki yüz elli” ya da “nakit” de olur.</p><div id="qprev">${quickCard(M)}</div>${quickFreq()}</div>`; }
+function quickRedraw(){ const M = quickModel(SH.q || ''); quickSync(M); const el = document.getElementById('qprev'); if (el) el.innerHTML = quickCard(M); }
 function newTxState(ty){ const inMonth = S.y===now.getFullYear() && S.m===now.getMonth(), st = { kind:'tx', step:1, d:{ type: ty==='birikim' ? 'gider' : ty, cat:null, by:S.me, date: inMonth ? today() : ymStr(S.y,S.m)+'-01', inst:false, pay: defPay() } };
   if (ty==='birikim') { st.d.type='birikim'; st.d.cat='birikim'; st.d.dir='in'; st.step=2; } return st; }
 function sheetSwap(st){ const k = SH && SH._key, ti = SH && SH._ti; SH = st; SH._key = k; SH._ti = ti; drawSheet(); } // aynı sayfada yumuşak geçiş
 const TXTYPES = [['gider','Gider'],['gelir','Gelir'],['birikim','Birikim'],['led','Borç / Alacak']];
 function shTx(){
+  if (SH.quick) return shQuick();
   const d = SH.d, fr = SH._fresh;
   const TYPES = SH.id ? [['gider','Gider'],['gelir','Gelir'],['birikim','Birikim']] : TXTYPES;
   if (d.cat==='birikim') return shSave(TYPES);
@@ -4052,16 +4120,19 @@ function shTx(){
       <button type="button" class="chip" data-act="shdate" data-v="${T0}" aria-pressed="${dv===T0}">Bugün</button>
       <button type="button" class="chip" data-act="shdate" data-v="${Y0}" aria-pressed="${dv===Y0}">Dün</button>
       <label class="chip txdc" aria-pressed="${dv!==T0 && dv!==Y0}">${ico('cal')}<span id="f_date_t">${dv!==T0 && dv!==Y0 ? `${fmtD(dv)} ${dv.slice(0,4)}` : 'Tarih seç'}</span><input type="date" id="f_date" value="${dv}" aria-label="Tarih"></label></div></div>`;
-  return head(SH.id ? 'Kaydı düzenle' : (d.type==='gider'?'Yeni gider':'Yeni gelir')) + `<div class="txf${fr?' txin':''}" style="--tc:${tc};--cc:${c.c}">` +
-    `<button type="button" class="picked" data-act="shstep1">${chipIc(d.cat)}<span><b>${esc(c.n)}</b><small>${d.type==='gider'?'Gider':'Gelir'}</small></span><span class="chg">Değiştir</span></button>` +
-    `<div class="amt2"><span class="amtcur">₺</span><input id="f_amt" class="num" inputmode="decimal" placeholder="0" value="${d.amount!=null?fmtN(d.amount):''}" aria-label="Tutar" enterkeyhint="done"></div>` +
-    subPick(d.cat, d.sub) +
-    `<div class="field"><label for="f_note">Açıklama</label><textarea class="inp ta" id="f_note" rows="1" placeholder="${esc(c.n||'')}">${esc(d.note||'')}</textarea><div id="nsug" class="qsug"></div></div>` +
-    dateRow + metaPick(d) +
-    (d.type==='gider' && !d.inst && !(SH.id && SH.orig.inst) ? splitBlock(d) : '') +
+  const raw0 = d.amtRaw != null ? d.amtRaw : (d.amount != null && d.amount !== '' ? calcRaw(d.amount) : ''); delete d.amtRaw;
+  const inst0 = !!(SH.id && SH.orig.inst), moreOn = SH.more != null ? SH.more : !!(d.sub || d.inst || inst0 || (d.split && d.split.on) || (SH.id && SH.orig && SH.orig.split) || SH.addSub);
+  const moreSum = ['Alt kategori', d.type==='gider' ? 'Bölüş' : '', !SH.id && d.type==='gider' ? 'Taksit' : ''].filter(Boolean).join(' · ');
+  const moreBody = subPick(d.cat, d.sub) + (d.type==='gider' && !d.inst && !inst0 ? splitBlock(d) : '') +
     (!SH.id && d.type==='gider' ? `<div class="txinst${d.inst?' on':''}"><div class="check" style="margin:0"><span><b>Taksitli</b>${d.inst?'':'<small>Tutarı aylara böl</small>'}</span><button type="button" class="toggle" role="switch" aria-checked="${!!d.inst}" data-act="shinst" aria-label="Taksitli"></button></div>
       ${d.inst?`<div class="txin2"><div class="chips">${[2,3,6,9,12].map(k=>`<button type="button" class="chip" data-act="shinstn" data-v="${k}" aria-pressed="${(d.instN||3)===k}">${k}</button>`).join('')}<input class="inp txn" id="f_n" inputmode="numeric" value="${d.instN||3}" aria-label="Taksit sayısı"></div><div class="txip" id="f_instp">${instPrev()}</div></div>`:''}</div>` : '') +
-    (SH.id && SH.orig.inst ? instPlan() : '') + `</div>` +
+    (inst0 ? instPlan() : '');
+  return head(SH.id ? 'Kaydı düzenle' : (d.type==='gider'?'Yeni gider':'Yeni gelir')) + `<div class="txf${fr?' txin':''}" style="--tc:${tc};--cc:${c.c}">` +
+    `<button type="button" class="picked" data-act="shstep1">${chipIc(d.cat)}<span><b>${esc(c.n)}</b><small>${d.type==='gider'?'Gider':'Gelir'}</small></span><span class="chg">Değiştir</span></button>` +
+    `<div class="amt2"><span class="amtcur">₺</span><input id="f_amt" class="num" inputmode="none" autocomplete="off" placeholder="0" value="${esc(raw0)}" aria-label="Tutar"></div><div id="amtpv" class="amtpv" data-raw aria-live="polite">${amtPv(raw0)}</div>` +
+    dateRow + metaPick(d) +
+    `<div class="field"><label for="f_note">Açıklama</label><textarea class="inp ta" id="f_note" rows="1" placeholder="${esc(c.n||'')}">${esc(d.note||'')}</textarea><div id="nsug" class="qsug"></div></div>` +
+    `<button type="button" class="morebtn" data-act="shmore" aria-expanded="${moreOn}"><span>${moreSum}</span>${ico('chev')}</button><div class="moreb"${moreOn ? '' : ' hidden'}>${moreBody}</div>` + `</div>` +
     (SH.id && SH.orig && SH.orig.created ? (() => { const C = new Date(+SH.orig.created), imp = /^imp_|^zrt_/.test(SH.id), P = PEOPLE[SH.orig.by]; return `<div class="txadded">${ico('cal')}<span>${imp ? 'İçe aktarıldı' : 'Eklendi'} · ${C.getDate()} ${MON[C.getMonth()]} ${C.getFullYear()}${imp ? '' : ` · ${String(C.getHours()).padStart(2,'0')}:${String(C.getMinutes()).padStart(2,'0')}`}${SH.orig.auto ? ' · otomatik' : SH.orig.recId ? ' · tekrarlayan' : ''}</span></div>`; })() : '') +
     (SH.id && SH.orig && (SH.orig.type === 'gelir' || SH.orig.type === 'gider') && S.canWrite ? (() => { const D = donemCalc(), it = D && D.items.find(i => i.t.id === SH.id); if (!it) return ''; const lk = (D.P.link||{})[SH.id], l = lk && D.lines.find(x => x.id === lk);
       return `<button type="button" class="txrf txpl${l ? ' on' : ''}" data-act="txplan" data-id="${esc(SH.id)}">${ico('link')}<span>${l ? `Harcanabilir · <b>${esc(lineNmM(l.n))}</b> ile eşli` : it.why && !it.eff ? `Harcanabilir · ${esc(lineNmM(it.why))} ile sayılıyor` : 'Harcanabilir’de bir kalemle eşle'}</span>${ico('right')}</button>`; })() : '') +
@@ -4069,7 +4140,7 @@ function shTx(){
     (SH.id && SH.orig ? (() => { const o = SH.orig, t0 = pd(o.date).getTime(), near = S.tx.filter(x => Math.abs(pd(x.date).getTime() - t0) < 20*864e5), R = refundPairs(near);
       let r = R.by.get(SH.id), g = null; if (!r && o.sub==='iade') for (const [gi, rr] of R.by) if (rr.id===SH.id) g = S.tx.find(x=>x.id===gi);
       const x = r || g; return x ? `<button type="button" class="txrf" data-act="edittx" data-id="${esc(x.id)}">${ico(r ? 's_iade' : 'list')}<span>${r ? 'İade' : 'Asıl kayıt'} · ${r?'+':'−'}${fmtN(x.amount)} ₺ · ${fmtD(x.date)}</span>${ico('right')}</button>` : ''; })() : '') +
-    (SH.askApply ? instAsk() : SH.delOpen ? instDel() : `<div class="foot txfoot">${SH.id ? (SH.orig.inst ? `<button class="btn danger" data-act="shdel">Sil</button>` : `<button class="btn danger" data-act="deltx" data-v="one">Sil</button>`) : ''}<button class="btn pri txsave" data-act="savetx" style="--tc:${tc}">${SH.id ? 'Kaydet' : d.type==='gider' ? 'Gideri kaydet' : 'Geliri kaydet'}</button></div>`);
+    (SH.askApply ? instAsk() : SH.delOpen ? instDel() : SH.warn ? warnPanel() : (SH.id ? `<div class="txdelrow">${SH.orig.inst ? `<button class="btn danger" data-act="shdel">Sil</button>` : `<button class="btn danger" data-act="deltx" data-v="one">Sil</button>`}</div>` : '') + kpHtml(tc));
 }
 // Bankkart Lira: harcamanın puanla ödenen kısmı
 // Bankkart Lira: dönem başında girilen puan bakiyesi bir cüzdan gibi; puanla ödenen harcamalar ondan düşer
@@ -4077,9 +4148,9 @@ function puanBal(skipId){ const P = S.donem && S.donem.cur; if (!P) return null;
   const pc = (P.prevCuts||{}).ziraat, cu = (P.cuts||{}).ziraat, inW = d => (pc ? d > pc : d >= P.start) && (cu ? d <= cu : d <= P.end);
   const used = r2(S.tx.filter(t => t.id !== skipId && t.type==='gider' && t.pay==='ziraat' && +t.puan > 0 && inW(t.date)).reduce((a,t) => a + +t.amount, 0));
   return { bal:+L.a||0, used, left:r2((+L.a||0) - used), inW }; }
-function puanBtn(d){ const on = d.puan != null, B = puanBal(SH && SH.id), am = num(document.getElementById('f_amt')?.value || '') || +d.amount || 0, inw = !B || B.inW(d.date || today()), no = !on && B && inw && am > B.left + .005;
+function puanBtn(d){ const on = d.puan != null, B = puanBal(SH && SH.id), am = fAmt() || +d.amount || 0, inw = !B || B.inW(d.date || today()), no = !on && B && inw && am > B.left + .005;
   return `<span id="pubw" class="pubw"><button type="button" class="pubtn${on?' on':''}" id="pubtn" data-act="shpuan" aria-pressed="${on}"${no ? ' disabled' : ''} title="${no ? 'Puan yetmiyor' : 'Bankkart Lira ile öde'}">${ico('spark')}<span>${on ? 'Puanla ödendi' : 'Puanla öde'}</span>${B && inw ? `<small>${on ? `kalan ${fmtN(Math.max(0, r2(B.left - am)))}` : fmtN(Math.max(0, B.left))} ₺</small>` : ''}</button>${no ? `<span class="puno">Puan yetmiyor</span>` : ''}</span>`; }
-const puRead = () => { const am = document.getElementById('f_amt'); if (am && am.value) SH.d.amount = num(am.value); };
+const puRead = () => { const am = document.getElementById('f_amt'); if (am && am.value) { const x = fAmt(); if (x > 0) SH.d.amount = x; } };
 function splitBlock(d){ const sp = d.split, on = !!(sp && sp.on), os = SH.id && SH.orig.split;
   if (os && os.paid) return `<div class="txinst on txsp"><div class="spdone">${ico('check')}<span><b>${esc(os.who)} payını ödedi</b><small>${fmtN(os.amount)} ₺ · ${fmtD(os.paidDate)} · toplam ${fmtN(os.gross)} ₺</small></span></div></div>`;
   const W = [...new Set([...['k1','k2'].filter(k=>k!==d.by).map(k=>PEOPLE[k].n), ...whoList()])].slice(0,6);
@@ -4087,7 +4158,7 @@ function splitBlock(d){ const sp = d.split, on = !!(sp && sp.on), os = SH.id && 
     ${on ? `<div class="txin2"><div class="field" style="margin-top:0"><label for="f_spwho">Kim ödeyecek</label><input class="inp" id="f_spwho" value="${esc(sp.who||'')}" placeholder="örn. Kişi 2" autocomplete="off">${W.length?`<div class="chips" style="margin-top:6px;flex-wrap:wrap">${W.map(w=>`<button type="button" class="chip" data-act="spwho" data-v="${esc(w)}" aria-pressed="${sp.who===w}">${esc(w)}</button>`).join('')}</div>`:''}</div>
       <div class="field"><label for="f_spamt">Onun payı</label><div class="sprow"><input class="inp num" id="f_spamt" inputmode="decimal" value="${sp.amount!=null?fmtN(sp.amount):''}" placeholder="0,00"><button type="button" class="chip" data-act="sphalf">Yarısı</button><button type="button" class="chip" data-act="spall">Tamamı</button></div></div>
       ${os && !os.paid ? `<button type="button" class="btn sppay" data-act="sppaid">${ico('check')}Ödeme geldi</button>` : ''}</div>` : ''}</div>`; }
-function spRead(){ const d = SH.d; if (!d.split) return; const w = document.getElementById('f_spwho'), a = document.getElementById('f_spamt'); if (w) d.split.who = w.value.trim(); if (a && a.value) d.split.amount = num(a.value); const am = document.getElementById('f_amt'); if (am && am.value) d.amount = num(am.value); }
+function spRead(){ const d = SH.d; if (!d.split) return; const w = document.getElementById('f_spwho'), a = document.getElementById('f_spamt'); if (w) d.split.who = w.value.trim(); if (a && a.value) d.split.amount = num(a.value); const am = document.getElementById('f_amt'); if (am && am.value) { const x = fAmt(); if (x > 0) d.amount = x; } }
 async function splitPaid(txId, pdate){ const t = S.tx.find(x=>x.id===txId); if (!t || !t.split || t.split.paid) return;
   const sp = t.split, gross = +t.amount, net = Math.max(0, r2(gross - +sp.amount)), { id:_i, ...rest } = t, nd = { ...rest, amount:net, split:{ ...sp, paid:true, paidDate:pdate||today(), gross } };
   await guard(async () => { await S.db.doc('tx/'+txId).set(nd); if (sp.ledId) { try { await S.db.doc('led/'+sp.ledId).update({ paid:true, paidDate:pdate||today(), txId }); } catch(_){} }
@@ -4138,19 +4209,19 @@ function shSave(TYPES){
   const sel = d.invId || (em && em.id) || '';
   return head(SH.id ? 'Birikimi düzenle' : 'Yeni kayıt') + (SH.id ? '' : `<div class="tseg t-birikim">${seg('shtype', 'birikim', TYPES)}</div>`) +
     `<div style="margin-top:10px">${seg('shdir', out?'out':'in', [['in','Birikime yatır'],['out','Birikimden çek']])}</div>` +
-    `<div class="amtin"><input id="f_amt" class="num" inputmode="decimal" placeholder="0,00" value="${d.amount!=null?fmtN(d.amount):''}" aria-label="Tutar" enterkeyhint="done"><span>₺</span></div>` +
+    `<div class="amtin"><input id="f_amt" class="num" inputmode="none" autocomplete="off" placeholder="0,00" value="${d.amount!=null?calcRaw(d.amount):''}" aria-label="Tutar"><span>₺</span></div><div id="amtpv" class="amtpv" data-raw aria-live="polite"></div>` +
     (S.inv.length ? `<div class="field"><label for="f_inv">Hangi yatırım</label><select class="inp" id="f_inv"><option value="">Belirtme</option>${S.inv.map(x=>`<option value="${esc(x.id)}" ${sel===x.id?'selected':''}>${esc(x.code||x.name)}${(() => { const g = goalsOf().find(g => (g.inv||[]).includes(x.id)); return g ? ' → ' + esc(g.name) : ''; })()}</option>`).join('')}</select></div>` : '') +
     (!SH.id && S.inv.length ? `<div class="field"><label for="f_units">Pay / gram adedi (isteğe bağlı)</label><input class="inp num" id="f_units" inputmode="decimal" placeholder="Girersen yatırımdaki adet de güncellenir"></div>` : '') +
     `<div class="field"><label for="f_note">Açıklama</label><textarea class="inp ta" id="f_note" rows="1" placeholder="${out?'Birikimden çekim':'Birikim'}">${esc(d.note||'')}</textarea></div>
      <div class="field"><label for="f_date">Tarih</label><input class="inp" type="date" id="f_date" value="${d.date}"></div>` +
     whoPick(d.by, !!d.shared) +
     
-    `<div class="foot">${SH.id?`<button class="btn danger" data-act="deltx" data-v="one">Sil</button>`:''}<button class="btn pri" data-act="savetx">Kaydet</button></div>`;
+    (SH.id ? `<div class="txdelrow"><button class="btn danger" data-act="deltx" data-v="one">Sil</button></div>` : '') + kpHtml('var(--gold)');
 }
 function shRec(){
   const d = SH.d;
   return head(SH.id ? 'Tekrarlayanı düzenle' : 'Tekrarlayan işlem') + seg('shtype', d.type, [['gider','Gider'],['gelir','Gelir']]) +
-    `<div class="amtin"><input id="f_amt" class="num" inputmode="decimal" placeholder="0,00" value="${d.amount!=null?fmtN(d.amount):''}" aria-label="Tutar"><span>₺</span></div>` +
+    `<div class="amtin"><input id="f_amt" class="num" inputmode="none" autocomplete="off" placeholder="0,00" value="${d.amount!=null?calcRaw(d.amount):''}" aria-label="Tutar"><span>₺</span></div><div id="amtpv" class="amtpv" data-raw aria-live="polite"></div>` +
     catGrid(d.type, d.cat) + subPick(d.cat, d.sub) +
     `<div class="field"><label for="f_note">Açıklama</label><input class="inp" id="f_note" placeholder="örn. YouTube Premium" value="${esc(d.note||'')}"></div>
      <div class="field"><label>Sıklık</label>${seg('shfreq', d.freq, [['monthly','Her ay'],['weekly','Her hafta']])}</div>
@@ -4158,7 +4229,7 @@ function shRec(){
        : `<div class="field"><label for="f_day">Ayın kaçında</label><input class="inp" id="f_day" inputmode="numeric" value="${d.day||1}"></div>`}` +
     whoPick(d.by) +
     `<div class="check"><span><b style="font-size:14px">Taahhütlü</b></span><button type="button" class="toggle" role="switch" aria-checked="${!!d.commit}" data-act="shrcommit" aria-label="Taahhütlü"></button></div>` +
-    `<div class="foot">${SH.id?`<button class="btn danger" data-act="delrec">Sil</button>`:''}<button class="btn pri" data-act="saverec">Kaydet</button></div>`;
+    (SH.id ? `<div class="txdelrow"><button class="btn danger" data-act="delrec">Sil</button></div>` : '') + kpHtml('var(--accent)', 'saverec');
 }
 function shInv(){
   const d = SH.d;
@@ -4251,6 +4322,44 @@ document.addEventListener('input', e => { const t = e.target; if (!t || (t.id !=
 
 /* ---------- Kayıt işlemleri ---------- */
 const v = id => document.getElementById(id)?.value ?? '';
+
+/* T03: ekleme formunda tutar alanı bir hesap makinesi ifadesi tutabilir (örn. 250+100,5×2); kayda YALNIZ sayısal sonuç yazılır.
+   fAmt(): formdaki geçerli sonuç (geçersizse NaN). Hızlı ekle sayfasında tutar SH.d.amount'tur. Gider/gelir, birikim ve tekrarlayan formlar aynı calcEval yolunu kullanır; diğer sayfalarda eski num(). */
+const fAmt = () => { if (SH && SH.kind === 'tx' && SH.quick) return +SH.d.amount || NaN; if (SH && (SH.kind === 'tx' || SH.kind === 'rec')) { const r = calcEval(v('f_amt')); return r.ok ? r.value : NaN; } return num(v('f_amt')); };
+const amtPv = (t, r) => { if (!String(t).trim()) return ''; r = r || calcEval(t);
+  if (r.ok) return r.op ? `<span class="pvok">= ${fmtN(r.value)} ₺</span>` : '';
+  return ['sozdizim', 'nokta', 'sifirabolme', 'negatif', 'buyuk', 'ondalik', 'uzun', 'derin'].includes(r.err) ? `<span class="pvb">${esc(r.msg)}</span>` : ''; };
+function amtUpdate(){ const i = document.getElementById('f_amt'); if (!i || !SH || (SH.kind !== 'tx' && SH.kind !== 'rec') || SH.quick) return; const t = i.value, r = calcEval(t);
+  const pv = document.getElementById('amtpv'); if (pv) pv.innerHTML = amtPv(t, r);
+  const sv = document.getElementById('kpsv'); if (sv) sv.textContent = r.ok ? fmtN(r.value) + ' ₺' : '';
+  const w = i.closest('.amt2'); if (w) w.dataset.len = t.length > 18 ? 'xl' : t.length > 11 ? 'l' : ''; }
+function kpPress(k){ const i = document.getElementById('f_amt'); if (!i) return; let t = i.value; const last = t.slice(-1), isOp = c => '+-−×÷'.includes(c) && c !== '';
+  if (/^\d$/.test(k)) t += k;
+  else if (k === '000') { if (/\d$/.test(t)) t += '000'; }
+  else if (k === ',') { const seg = t.split(/[+\-−×÷()]/).pop(); if (!seg.includes(',')) t += seg ? ',' : '0,'; }
+  else if (k === 'bs') t = t.slice(0, -1);
+  else if (k === '=') { if (!t.trim()) return; const r = calcEval(t); if (r.ok) t = calcRaw(r.value); else { toast(r.msg); return; } }
+  else if ('+-×÷'.includes(k)) { if (!t) return; if (isOp(last)) t = t.slice(0, -1); else if (last === ',') t = t.slice(0, -1); t += k === '-' ? '−' : k; }
+  i.value = t; i.dispatchEvent(new Event('input', { bubbles:true })); buzz(); }
+const kpHtml = (tc, act = 'savetx') => { const k = (v, l, c = '', a = '') => `<button type="button" class="kk${c ? ' ' + c : ''}" data-act="kp" data-v="${v}"${a}>${l}</button>`;
+  return `<div class="kp" role="group" aria-label="Tuş takımı" style="--tc:${tc}"><div class="kpo">${k('+', '+', 'op', ' aria-label="Artı"')}${k('-', '−', 'op', ' aria-label="Eksi"')}${k('×', '×', 'op', ' aria-label="Çarpı"')}${k('÷', '÷', 'op', ' aria-label="Bölü"')}</div>
+    <div class="kpg">${['1','2','3'].map(x => k(x, x)).join('')}${k('bs', '⌫', 'fn', ' aria-label="Sil"')}${['4','5','6'].map(x => k(x, x)).join('')}${k('=', '=', 'op eq', ' aria-label="Hesapla"')}${['7','8','9'].map(x => k(x, x)).join('')}<button type="button" class="kk kpsave txsave" data-act="${act}"><b>Kaydet</b><small id="kpsv" data-raw></small></button>${k(',', ',', 'fn', ' aria-label="Virgül"')}${k('0', '0')}${k('000', '000', 'fn')}</div></div>`; };
+/* T20: yanlış girişi önle. (a) büyük tutar: katalogdaki kural: son 3 ayın en büyük tek kaydının (aynı tür, kategori ayrımı yok) 5 katından büyükse sorulur; son 3 ayda hiç kayıt yoksa makul taban olarak 50.000 ₺ kullanılır (BIG_CAP); (b) aynı gün + aynı tutar + aynı kategoride kayıt (çift kayıt olabilir).
+   İkisi de engel değil: sayfa içi onayla (Yine de kaydet) geçilir. Düzenlemede yalnız ilgili alan değiştiyse sorulur. Aynı kimlikle yeniden deneme (SH.gid) çift sayılmaz. */
+const BIG_CAP = 50000;
+function riskCheck(base, selfId, orig){ const out = [], T = today(), D = new Date(), lim = ds(clampDate(D.getFullYear(), D.getMonth() - 3, D.getDate())), gid = SH && SH.gid;
+  const skip = t => t.id === selfId || (gid && (t.id === 'n_' + gid || String(t.id).startsWith(gid + '_')));
+  const amtChg = !selfId || !orig || r2(+orig.amount) !== base.amount || orig.cat !== base.cat || orig.type !== base.type, dateChg = amtChg || orig.date !== base.date;
+  const same = S.tx.filter(t => !skip(t) && t.type === base.type), cn = (CAT[base.cat] || {}).n || '';
+  if (amtChg) { const hist = same.filter(t => t.date >= lim && t.date <= T), mx = hist.reduce((m, t) => Math.max(m, +t.amount || 0), 0), thr = mx > 0 ? mx * 5 : BIG_CAP;
+    if (base.amount > thr) out.push({ k:'big', msg: mx > 0 ? `${fmtN(base.amount)} ₺ büyük bir tutar: son 3 ayın en büyük kaydı ${fmtN(mx)} ₺, bu onun 5 katından fazla (sınır ${fmtN(thr)} ₺).` : `${fmtN(base.amount)} ₺ büyük bir tutar: son 3 ayda kayıt yok (sınır ${fmtN(thr)} ₺).` }); }
+  if (dateChg) { const dup = same.find(t => t.date === base.date && t.cat === base.cat && r2(+t.amount) === base.amount);
+    if (dup) out.push({ k:'dup', msg: `${fmtD(base.date)} günü ${cn} için ${fmtN(base.amount)} ₺ tutarında bir kayıt zaten var${dup.note ? ' (“' + dup.note + '”)' : ''}.` }); }
+  return out; }
+const warnPanel = () => { const W = SH.warn || [], big = W.some(x => x.k === 'big');
+  return `<div class="idel wpan"><p class="steph" style="margin:0 0 8px">${big ? 'Emin misin?' : 'Çift kayıt olabilir'}</p>${W.map(x => `<div class="wmsg ${x.k}">${esc(x.msg)}</div>`).join('')}
+    <button type="button" class="idopt ok" data-act="warnok"><b>Yine de kaydet</b><small>${W.map(x => x.k === 'big' ? 'tutar doğru' : 'ikinci kayıt isteniyor').join(' · ')}</small></button>
+    <button type="button" class="btn" data-act="warnx" style="width:100%;justify-content:center;margin-top:4px">Düzelt</button></div>`; };
 async function guard(fn){ try { await fn(); return true; } catch(e){ console.error(e);
   toast(e?.userMsg || (e?.code==='invalid_argument' ? 'Kaydedilemedi: bu sayfada düzenleme iznin yok.' : e?.code==='quota_exceeded' ? 'Depolama dolu; eski kayıtları silmek gerekiyor.' : 'Kaydedilemedi, bağlantını kontrol edip tekrar dene.')); return false; } }
 /* Ayar belgeleri: yazmadan hemen önce belgenin taze hâli okunur, değişiklik onun üstüne birleştirilir (bayat yerel kopya basılmaz). */
@@ -4296,7 +4405,7 @@ function tradeUpdate(x, side, tl, u, date){
 function flashNew(ids){ S.flashIds = new Set(ids); clearTimeout(flashNew.t); flashNew.t = setTimeout(()=>{ S.flashIds = null; }, 2200);
   setTimeout(()=>{ const el = document.querySelector('#main .sw.newrow'); if (el && S.view==='kayit') { const r = el.getBoundingClientRect(); if (r.top < stickH() + 10 || r.bottom > innerHeight - 90) el.scrollIntoView({ block:'center', behavior:'smooth' }); } }, 350); }
 async function saveSav(){
-  const d = SH.d, amount = num(v('f_amt'));
+  const d = SH.d, R = calcEval(v('f_amt')); if (!R.ok) return toast(R.msg); const amount = R.value;
   if (!(amount>0)) return toast('Tutarı yaz.');
   const out = d.dir==='out', invId = v('f_inv'), u = num(v('f_units')), x = S.inv.find(h=>h.id===invId);
   const date = v('f_date') || today(), note = v('f_note').trim();
@@ -4314,11 +4423,13 @@ async function saveSav(){
 }
 const noNull = o => { for (const k in o) if (o[k] === null || o[k] === undefined) delete o[k]; return o; };
 async function saveTx(){
-  const d = SH.d, amount = num(v('f_amt'));
+  const d = SH.d, Q = !!SH.quick;
   if (d.cat==='birikim') return saveSav();
+  let amount = NaN;
+  if (Q) amount = +d.amount; else { const R = calcEval(v('f_amt')); if (!R.ok) return toast(R.msg); amount = R.value; }
   if (!(amount>0)) return toast('Tutarı yaz.');
   if (!CAT[d.cat] || CAT[d.cat].t!==d.type) return toast('Bir kategori seç.');
-  const date = v('f_date') || today(), note = v('f_note').trim(), sugKey = SH.sugKey;
+  const date = Q ? (d.date || today()) : (v('f_date') || today()), note = Q ? String(d.note || '').trim() : v('f_note').trim(), sugKey = SH.sugKey;
   const base = { type:d.type, amount:r2(amount), cat:d.cat, sub: subName(d.cat,d.sub) ? d.sub : '', note, date, by:d.by, shared: !!d.shared, pay: d.type==='gider' ? (d.pay||'') : '' };
   base.puan = d.type==='gider' && d.pay==='ziraat' && d.puan != null ? r2(amount) : null;
   if (base.puan) { const B = puanBal(SH.id); if (B && B.inW(date) && amount > B.left + .005) return toast(`Puan yetmiyor: kalan ${fmtN(Math.max(0, B.left))} ₺.`); }
@@ -4334,6 +4445,8 @@ async function saveTx(){
     if (spOn) { await S.db.doc('led/'+lid).set({ who:base.split.who, dir:'alacak', amount:base.split.amount, note: note || CAT[d.cat]?.n || '', date:'', by:d.by, paid:false, txRef:txId, created: Date.now() });
       if (!base.split.ledId) { base.split.ledId = lid; await S.db.doc('tx/'+txId).update({ split:base.split }); } }
     else if (os && !os.paid && os.ledId) { try { await S.db.doc('led/'+os.ledId).delete(); } catch(_){} } };
+  { const wk = [base.type, base.cat, base.date, base.amount].join('|'); // T20: büyük tutar ve çift kayıt uyarısı (sayfa içi onay)
+    if (SH.warnOk !== wk) { const W = riskCheck(base, SH.id, SH.orig); if (W.length) { SH.warn = W; SH.warnKey = wk; drawSheet(); setTimeout(() => document.querySelector('.wpan')?.scrollIntoView({ block:'end', behavior:'smooth' }), 50); return; } } }
   if (SH.id && SH.orig.inst && !SH.askDone) { const o = SH.orig, rest = groupOf(o).filter(x=>x.inst.i>=o.inst.i);
     const chg = ['amount','cat','sub','note','by','shared','pay'].some(k => String(base[k] ?? '') !== String(k==='amount' ? r2(+o[k]) : k==='shared' ? !!o[k] : k==='sub' ? (subName(o.cat,o.sub) ? o.sub : '') : (o[k] ?? '')));
     if (chg && rest.length > 1) { SH.askApply = true; drawSheet(); setTimeout(()=>document.querySelector('.idel')?.scrollIntoView({block:'end',behavior:'smooth'}),50); return; }
@@ -4363,7 +4476,7 @@ async function saveTx(){
   });
 }
 async function saveRec(){
-  const d = SH.d, amount = num(v('f_amt'));
+  const d = SH.d, R = calcEval(v('f_amt')); if (!R.ok) return toast(R.msg); const amount = R.value;
   if (!(amount>0)) return toast('Tutarı yaz.');
   if (!CAT[d.cat] || CAT[d.cat].t!==d.type) return toast('Bir kategori seç.');
   const body = { type:d.type, amount:r2(amount), cat:d.cat, sub: subName(d.cat,d.sub) ? d.sub : '', note:v('f_note').trim(), by:d.by, freq:d.freq,
@@ -4458,6 +4571,10 @@ async function restoreDeleted(items, side){
   for (const { id, ...d } of items) await S.db.doc('tx/'+id).set(d);
   for (const y of (side && side.led) || []) await S.db.doc('led/'+y.id).set(y.d);
   for (const y of (side && side.inv) || []) await restoreInv(y); }
+/* T21: her silme yolunun ortak sayfa içi onayı: ilk dokunuş düğmeyi "Emin misin?" yapar (4 sn sonra geri döner), ikinci dokunuş silmeyi yürütür. Kaydırma, form, ayrıntı, taksit ve "fazla kayıt" aynı bileşeni kullanır. */
+function armSure(b){ if (b.dataset.sure) return true; const sp = b.querySelector('span') || b; b.dataset.sure = '1'; b._t0 = sp.textContent; sp.textContent = 'Emin misin?'; b.classList.add('sure'); buzz();
+  clearTimeout(b._st); b._st = setTimeout(() => { delete b.dataset.sure; sp.textContent = b._t0; b.classList.remove('sure'); }, 4000); return false; }
+const delLabel = t => `“${t.note || subName(t.cat,t.sub) || CAT[t.cat]?.n || 'Kayıt'}” silindi`; // her silme yolunda aynı ileti
 async function deleteRecords(L, label){ // toast + log + geri al; başarı sayısını döner
   const r = await delRecords(L);
   if (r.done.length) { const logId = await logAct('del', r.done, [], r.side);
@@ -4498,14 +4615,12 @@ async function runRecurring(){
 document.addEventListener('click', async e => {
   const swEl = e.target.closest('.sw');
   if (swEl && swEl.dataset.swiped) return;
-  if (S.sel && swEl) { const r = swEl.querySelector('.row'); if (r && r.dataset.act === 'edittx') selTog(r.dataset.id); return; }
-  if (S.sel && !e.target.closest('#selbar,#sheet,.toast')) selSet(null);
   if (swEl && swEl.classList.contains('open') && !e.target.closest('.swdel')) { closeSw(swEl); return; }
   const b = e.target.closest('[data-act]'); if (!b) return;
   const a = b.dataset.act, val = b.dataset.v, id = b.dataset.id;
   if (a==='scrim') { if (e.target===b) closeSheet(); return; }
   switch (a) {
-    case 'go': { buzz(); if (S.sel) selSet(null); if (val==='varlik') S.vFresh = true; fabMenu(false); if (SH) closeSheet(true); if (S.searchOpen) { S.q=''; S.searchOpen=false; drawSearch(); } const ORD = ['kayit','grafik','varlik','ayar'], from = ORD.indexOf(S.view), to = ORD.indexOf(val);
+    case 'go': { buzz(); if (val==='varlik') S.vFresh = true; fabMenu(false); if (SH) closeSheet(true); if (S.searchOpen) { S.q=''; S.searchOpen=false; drawSearch(); } const ORD = ['kayit','grafik','varlik','ayar'], from = ORD.indexOf(S.view), to = ORD.indexOf(val);
       S.view = val; S.navAnim = from!==to; try{ history.replaceState(null,'','#'+val);}catch(_){} window.scrollTo(0,0); render();
       if (from!==to && !matchMedia('(prefers-reduced-motion: reduce)').matches) { const m = $('#main'); m.classList.remove('vsw-r','vsw-l'); void m.offsetWidth; m.classList.add(to>from?'vsw-r':'vsw-l'); clearTimeout(S.vswT); S.vswT = setTimeout(()=>m.classList.remove('vsw-r','vsw-l'), 450); }
       if (val==='kayit') setTimeout(() => { if (S.view==='kayit' && !SH) goToday(); }, 220); break; }
@@ -4514,18 +4629,12 @@ document.addEventListener('click', async e => {
     case 'mon': { const d = new Date(S.y, S.m + +val, 1); S.y=d.getFullYear(); S.m=d.getMonth(); render(); break; }
     case 'filter': S.filter = val; S.filtOpen = false; renderMain(); break;
     case 'vgday': buzz(); openSheet({ kind:'vgday', from:val, lbl: val === 'all' ? 'all' : val.slice(8) === '01' && b.querySelector('small').textContent.includes('ay') ? 'ay' : 'hafta' }); break;
-    case 'selx': selSet(null); break;
-    case 'selcat': { const L = selList(), ty = new Set(L.map(t => t.type)); if (ty.size > 1 || !CATS[L[0]?.type]) { toast('Kategori için aynı türden kayıtlar seç'); break; } openSheet({ kind:'selcat' }); break; }
-    case 'selcatset': await selApply(() => ({ cat:val, sub:'' }), `${CAT[val]?.n || 'yeni kategoriye'} olarak değişti`); break;
-    case 'selwho': openSheet({ kind:'selwho' }); break;
-    case 'selwhoset': await selApply(t => val === 'ortak' ? { shared:true } : { by:val, shared:false }, `${val === 'ortak' ? 'Ortak' : PEOPLE[val].n} olarak değişti`); break;
-    case 'seldel': { const L = selList(), sb = document.getElementById('selbar'); if (!L.length) break; if (sb.dataset.sure !== String(L.length)) { sb.dataset.sure = String(L.length); selBar(); buzz(); setTimeout(() => { if (sb.isConnected) { delete sb.dataset.sure; if (S.sel) selBar(); } }, 3000); break; }
-      const olds = L.map(t => ({ ...t })); selSet(null); await deleteRecords(olds); renderMain(); break; }
     case 'filtopen': S.filtOpen = true; renderMain(); break;
     case 'futopen': { buzz(); const an = document.querySelector('.day:not(.futd)'), ad = an && an.dataset.date, t0 = an ? an.getBoundingClientRect().top : 0, y = scrollY; S.futOpen = !S.futOpen; S.futAnim = S.futOpen; renderMain(); scrollTo(0, y);
       const a2 = ad && document.querySelector(`.day[data-date="${ad}"]`); if (a2) scrollBy(0, a2.getBoundingClientRect().top - t0); break; } // bugüne en yakın gün yerinde kalır, liste yukarı doğru açılır
     case 'close': closeSheet(); break;
-    case 'newtx': { if (!S.db) { toast(OFFMSG()); break; } if (FAB.lp) { FAB.lp = false; break; } fabMenu(false); buzz(); const inMonth = S.y===now.getFullYear() && S.m===now.getMonth(), ty = ['gider','gelir','birikim'].includes(val) ? val : 'gider';
+    case 'newtx': { if (!S.db) { toast(OFFMSG()); break; } if (FAB.lp) { FAB.lp = false; break; } fabMenu(false); buzz();
+      if (val === 'quick') { openSheet(newQuickState()); setTimeout(() => document.getElementById('q_in')?.focus(), 80); break; } const inMonth = S.y===now.getFullYear() && S.m===now.getMonth(), ty = ['gider','gelir','birikim'].includes(val) ? val : 'gider';
       openSheet(newTxState(ty)); break; }
     case 'edittx': { if (S.searchOpen) srSave(S.q); const t = S.tx.find(x=>x.id===id); if (!t || !S.canWrite) return;
       openSheet({ kind:'tx', step:2, id, orig:t, d:{ type:t.type, dir: t.type==='cekim'?'out':'in', invId:t.invId||'', cat:t.cat, sub:t.sub||'', shared:!!t.shared, by:t.by, date:t.date, amount:t.amount, note:t.note, pay:t.pay||'', puan: +t.puan > 0 ? +t.puan : null, split: t.split && !t.split.paid ? { on:true, who:t.split.who, amount:t.split.amount } : null } }); break; }
@@ -4535,16 +4644,16 @@ document.addEventListener('click', async e => {
       if (SH.kind==='tx' && SH.d.cat==='birikim') { SH.d.cat=null; SH.step=1; }
       SH.d.type = val; if (!CAT[SH.d.cat] || CAT[SH.d.cat].t!==val) { SH.d.cat = (SH.kind==='tx') ? null : CATS[val][0][0]; SH.d.sub=''; } if (val==='gelir') SH.d.inst=false; drawSheet(); break;
     case 'qsgo': { const q = document.getElementById('f_q'); if (q && q.value.trim()) quickApply(q.value.trim()); break; }
-    case 'qsug': { const t = (SH._sg||[])[+val]; if (!t) break; const d = SH.d, am = num(v('f_amt'));
-      if (id === 'qs') { d.cat = t.cat; d.sub = t.sub || ''; d.note = t.note; d.amount = +t.amount; if (t.pay) d.pay = t.pay; if (t.shared != null) d.shared = t.shared; SH.q = ''; SH.step = 2; drawSheet(); }
+    case 'qsug': { const t = (SH._sg||[])[+val]; if (!t) break; const d = SH.d, am = fAmt(); delete d.amtRaw;
+      if (id === 'qs') { const P = SH.q ? quickParse(SH.q) : {}; d.cat = t.cat; d.sub = t.sub || ''; d.note = t.note; d.amount = P.amount || +t.amount; if (t.pay) d.pay = t.pay; if (P.pay) d.pay = P.pay; if (t.shared != null) d.shared = t.shared; SH.q = ''; SH.step = 2; drawSheet(); }
       else { const nt = document.getElementById('f_note'); d.note = t.note; if (t.cat === d.cat && t.sub) d.sub = t.sub; if (!(am > 0)) d.amount = +t.amount; else d.amount = am; if (t.pay && !SH.id) d.pay = t.pay; if (nt) nt.value = t.note; drawSheet(); }
-      const f = document.getElementById('f_amt'); if (f) { f.focus(); try { f.select(); } catch(_){} } break; }
+      const f = document.getElementById('f_amt'); if (f && !f.value.trim() && d.amount > 0) { f.value = calcRaw(d.amount); amtUpdate(); } if (f) { f.focus(); try { f.select(); } catch(_){} } break; }
     case 'shcat': if (SH.d.cat !== val) { SH.d.sub = ''; SH.addSub = false; } SH.d.cat = val;
       if (SH.kind==='tx') { SH.step = 2; drawSheet(); const f = document.getElementById('f_amt'); if (f) { f.focus(); try { f.setSelectionRange(f.value.length, f.value.length); } catch(_){} } }
       else drawSheet(); break;
-    case 'shstep1': { const am = num(v('f_amt')); if (am>0) SH.d.amount = am; const nt = document.getElementById('f_note'); if (nt) SH.d.note = nt.value; const dt = v('f_date'); if (dt) SH.d.date = dt; SH.step = 1; drawSheet(); break; }
+    case 'shstep1': { const am = fAmt(); if (am>0) SH.d.amount = am; else if (v('f_amt').trim()) SH.d.amtRaw = v('f_amt'); const nt = document.getElementById('f_note'); if (nt) SH.d.note = nt.value; const dt = v('f_date'); if (dt) SH.d.date = dt; SH.step = 1; drawSheet(); break; }
     case 'shsub': SH.d.sub = val; drawSheet(); break;
-    case 'shsubnew': SH.addSub = !SH.addSub; drawSheet(); if (SH.addSub) { const j=document.getElementById('f_newsub'); if (j) { j.value=''; j.focus(); } } break;
+    case 'shsubnew': SH.more = true; SH.addSub = !SH.addSub; drawSheet(); if (SH.addSub) { const j=document.getElementById('f_newsub'); if (j) { j.value=''; j.focus(); } } break;
     case 'shaddsub': { const nm = v('f_newsub'); const nid = await addSub(SH.d.cat, nm); if (nid) { SH.d.sub = nid; SH.addSub = false; drawSheet(); toast('Alt kategori eklendi'); } break; }
     case 'subs': openSheet({ kind:'subs', type:'gider', cat:'market' }); break;
     case 'shsubtype': SH.type = val; SH.cat = CATS[val][0][0]; drawSheet(); break;
@@ -4575,7 +4684,7 @@ document.addEventListener('click', async e => {
     case 'wtype': S.wType = val; renderMain(); break;
     case 'gtype': S.gType = val; S.openCat = null; renderMain(); break;
     case 'gtab': { const TB = ['kat','duz','kis','def'], a0 = TB.indexOf((S.gTab && S.gTab!=='ozet') ? S.gTab : 'kat'), a1 = TB.indexOf(val); S.tabDir = a1 > a0 ? 'r' : a1 < a0 ? 'l' : ''; } S.gTab = val; S.openCat = null; S.tabAnim = true; window.scrollTo(0,0); renderMain(); S.tabAnim = false; break;
-    case 'shinst': { const am = num(v('f_amt')); if (am>0) SH.d.amount = am; SH.d.inst = !SH.d.inst; drawSheet(); break; }
+    case 'shinst': { SH.more = true; const am = fAmt(); if (am>0) SH.d.amount = am; SH.d.inst = !SH.d.inst; drawSheet(); break; }
     case 'shinstn': { SH.d.instN = +val; const f = document.getElementById('f_n'); if (f) f.value = val; drawSheet(); break; }
     case 'shdate': { SH.d.date = val; const f = document.getElementById('f_date'); if (f) f.value = val; drawSheet(); break; }
     case 'shfreq': SH.d.freq = val; drawSheet(); break;
@@ -4583,9 +4692,21 @@ document.addEventListener('click', async e => {
     case 'shside': SH.side = val; drawSheet(); break;
     case 'iptog': SH.ipOpen = !SH.ipOpen; drawSheet(); break;
     case 'savetx': saveTx(); break;
-    case 'shsplit': spRead(); { const am = num(v('f_amt')); SH.d.split = SH.d.split && SH.d.split.on ? { ...SH.d.split, on:false } : { on:true, who:(SH.d.split||{}).who || (SH.d.by==='k1' ? PEOPLE.k2.n : PEOPLE.k1.n), amount:(SH.d.split||{}).amount ?? (am>0 ? r2(am/2) : null) }; } drawSheet(); break;
+    case 'qsave': { const M = quickModel(SH.q || ''); quickSync(M); if (!(M.cat && M.amount > 0)) { toast('Tutar ve kategori gerekli.'); break; } await saveTx(); break; }
+    case 'qsugamt': { (SH.qo ||= {}).amount = +val; quickRedraw(); break; }
+    case 'qdet': { const M = quickModel(SH.q || ''); quickSync(M); SH.quick = false; SH.more = undefined; if (M.cat) SH.step = 2; else { SH.step = 1; SH.q = quickParse(SH.q || '').text || ''; } drawSheet(); break; }
+    case 'qdate': { const T0 = today(), Y0 = ds(new Date(Date.now() - 864e5)); (SH.qo ||= {}).date = SH.d.date === T0 ? Y0 : T0; quickRedraw(); break; }
+    case 'qwho': { const o = (SH.qo ||= {}), cur = SH.d.shared ? 'ortak' : SH.d.by, ord = ['k1', 'k2', 'ortak'], nx = ord[(ord.indexOf(cur) + 1) % 3]; if (nx === 'ortak') o.shared = true; else { o.shared = false; o.by = nx; } quickRedraw(); break; }
+    case 'qpay': { const ks = Object.keys(PAY); (SH.qo ||= {}).pay = ks[(ks.indexOf(SH.d.pay) + 1) % ks.length]; quickRedraw(); break; }
+    case 'qtype': { SH.d.type = SH.d.type === 'gider' ? 'gelir' : 'gider'; SH.qfix = null; SH.qo = {}; drawSheet(); break; }
+    case 'qfreq': { const t = (SH._qf || [])[+val]; if (!t) break; SH.q = t.note; SH.qfix = { cat:t.cat, sub:t.sub || '', note:t.note, amount:+t.amount, pay:t.pay || '', shared:t.shared }; const i = document.getElementById('q_in'); if (i) i.value = t.note; quickRedraw(); break; }
+    case 'kp': kpPress(val); break;
+    case 'shmore': SH.more = !(SH.more != null ? SH.more : document.querySelector('.moreb') && !document.querySelector('.moreb').hidden); { const mb = document.querySelector('.moreb'); if (mb) mb.hidden = !SH.more; b.setAttribute('aria-expanded', String(SH.more)); } break;
+    case 'warnok': SH.warnOk = SH.warnKey; SH.warn = null; drawSheet(); await saveTx(); break;
+    case 'warnx': SH.warn = null; drawSheet(); break;
+    case 'shsplit': spRead(); SH.more = true; { const am = fAmt(); SH.d.split = SH.d.split && SH.d.split.on ? { ...SH.d.split, on:false } : { on:true, who:(SH.d.split||{}).who || (SH.d.by==='k1' ? PEOPLE.k2.n : PEOPLE.k1.n), amount:(SH.d.split||{}).amount ?? (am>0 ? r2(am/2) : null) }; } drawSheet(); break;
     case 'spwho': spRead(); SH.d.split.who = val; { const i = document.getElementById('f_spwho'); if (i) i.value = val; } drawSheet(); break;
-    case 'sphalf': case 'spall': { spRead(); const am = num(v('f_amt')); if (!(am>0)) { toast('Önce tutarı yaz.'); break; } SH.d.split.amount = a==='sphalf' ? r2(am/2) : r2(am); const i = document.getElementById('f_spamt'); if (i) i.value = fmtN(SH.d.split.amount); break; }
+    case 'sphalf': case 'spall': { spRead(); const am = fAmt(); if (!(am>0)) { toast('Önce tutarı yaz.'); break; } SH.d.split.amount = a==='sphalf' ? r2(am/2) : r2(am); const i = document.getElementById('f_spamt'); if (i) i.value = fmtN(SH.d.split.amount); break; }
     case 'sppaid': { const id0 = SH.id; closeSheet(); await splitPaid(id0, today()); break; }
     case 'donem': openSheet({ kind:'donem' }); setTimeout(()=>countUps(document.querySelector('.d2hero')||document.body), 60); break;
     case 'dtog': if (S.canWrite) dTog(id); break;
@@ -4619,8 +4740,8 @@ document.addEventListener('click', async e => {
     case 'setokdim': lsSet('kasa.okdim', val); renderMain(); break;
     case 'setinstv': lsSet('kasa.instv', val); S.lastList = null; renderMain(); break;
     case 'setsv': lsSet('kasa.startv', val); renderMain(); break;
-    case 'sgdel': { const t = S.tx.find(x=>x.id===id); if (!t) return; const { id:_i, ...data } = t;
-      await deleteRecords([{ ...t }], 'Fazla kayıt silindi'); break; }
+    case 'sgdel': { const t = S.tx.find(x=>x.id===id); if (!t) return; if (!armSure(b)) break;
+      await deleteRecords([{ ...t }], delLabel(t)); break; }
     case 'sgcat': { const [tid, cat] = val.split('|'), t = S.tx.find(x=>x.id===tid); if (!t) return; const old = { cat:t.cat, sub:t.sub||'' };
       await guard(async()=>{ await S.db.doc('tx/'+tid).update({ cat, sub:'' }); logAct('edit', [t], [{ ...t, cat, sub:'' }]); toast(`${CAT[cat]?.n||cat} kategorisine taşındı`, 'Geri al', () => guard(async()=>{ await S.db.doc('tx/'+tid).update(old); })); }); break; }
     case 'sgright': { const [tid, cut, ...k] = val.split('|'), t = S.tx.find(x=>x.id===tid);
@@ -4738,18 +4859,17 @@ document.addEventListener('click', async e => {
       toast(`${t.note || subName(t.cat,t.sub) || CAT[t.cat]?.n || 'Kayıt'} bugüne eklendi`, 'Geri al', async () => { await guard(async()=>{ await S.db.doc('tx/'+ref.id).delete(); }); });
       if (S.y!==new Date().getFullYear() || S.m!==new Date().getMonth()) { const T = new Date(); S.y=T.getFullYear(); S.m=T.getMonth(); render(); }
       setTimeout(() => { if (S.view==='kayit') goToday(); }, 250); break; }
-    case 'swdel': { const t = S.tx.find(x=>x.id===id); if (!t) return; const sw = b.closest('.sw'); openSw = null;
+    case 'swdel': { const t = S.tx.find(x=>x.id===id); if (!t) return; if (!armSure(b)) break; const sw = b.closest('.sw'); openSw = null;
       sw.style.height = sw.offsetHeight+'px'; sw.classList.add('gone'); requestAnimationFrame(()=>requestAnimationFrame(()=>{ sw.style.height='0px'; }));
       lsSet('kasa.swiped','1');
       const { id:_i, ...data } = t;
       await new Promise(r=>setTimeout(r,280));
-      const lbl = data.note || subName(data.cat,data.sub) || CAT[data.cat]?.n || 'Kayıt';
-      const r = await deleteRecords([t], `“${lbl}” silindi`); if (!r.done.length) renderMain();
+      const r = await deleteRecords([t], delLabel(t)); if (!r.done.length) renderMain();
       break; }
     case 'deltx': if (b.dataset.sure) { const mode = val||'one';
         const L = mode==='one' ? [SH.orig] : groupOf(SH.orig).filter(x => mode==='all' || x.inst.i>=SH.orig.inst.i);
-        { const r = await deleteRecords(L.map(x => ({ ...x })), L.length>1 ? `${L.length} taksit silindi` : 'Silindi'); if (r.done.length) closeSheet(); } }
-      else { document.querySelectorAll('[data-act="deltx"]').forEach(x=>{ if (x!==b && x.dataset.sure){ delete x.dataset.sure; } }); b.dataset.sure='1'; b.textContent='Emin misin?'; } break;
+        { const r = await deleteRecords(L.map(x => ({ ...x })), L.length>1 ? `${L.length} taksit silindi` : delLabel(L[0])); if (r.done.length) closeSheet(); } }
+      else armSure(b); break;
     case 'saveinst': SH.d.applyAll = val==='rest'; SH.askDone = true; SH.askApply = false; await saveTx(); if (SH) SH.askDone = false; break;
     case 'saveinstx': SH.askApply = false; drawSheet(); break;
     case 'undolog': if (b.dataset.sure) await undoLog(id); else { document.querySelectorAll('[data-act="undolog"]').forEach(x=>{ if (x.dataset.sure){ delete x.dataset.sure; x.textContent='Geri al'; } }); b.dataset.sure='1'; b.textContent='Emin misin?'; } break;
@@ -4761,7 +4881,7 @@ document.addEventListener('click', async e => {
     case 'editrec': { const r = S.rec.find(x=>x.id===id); if (!r || !S.canWrite) return;
       openSheet({ kind:'rec', id, orig:r, d:{ type:r.type, cat:r.cat, sub:r.sub||'', by:r.by, freq:r.freq, day:r.day, weekday:r.weekday, amount:r.amount, note:r.note, commit:!!r.commit } }); break; }
     case 'saverec': saveRec(); break;
-    case 'shrcommit': { const a0 = document.getElementById('f_amt'), n0 = document.getElementById('f_note'); if (a0 && a0.value) SH.d.amount = num(a0.value); if (n0) SH.d.note = n0.value; SH.d.commit = !SH.d.commit; drawSheet(); break; }
+    case 'shrcommit': { const a0 = document.getElementById('f_amt'), n0 = document.getElementById('f_note'); if (a0 && a0.value) { const x = fAmt(); if (x > 0) SH.d.amount = x; } if (n0) SH.d.note = n0.value; SH.d.commit = !SH.d.commit; drawSheet(); break; }
     case 'delrec': if (b.dataset.sure) { await guard(async()=>{ await S.db.doc('rec/'+SH.id).delete(); toast('Silindi'); closeSheet(); }); }
       else { b.dataset.sure='1'; b.textContent='Emin misin?'; } break;
     case 'togrec': { const r = S.rec.find(x=>x.id===id); if (!r) return;
@@ -4857,7 +4977,7 @@ function drawSearch(){ let el = document.getElementById('srov');
     <div class="srty">${[['all','Tümü'],['gider','Gider'],['gelir','Gelir'],['yat','Yatırım']].map(([k,l])=>`<button data-act="srty" data-v="${k}" aria-pressed="${ty===k}">${l}</button>`).join('')}</div>
     <div class="srbody" id="srbody">${srBody()}</div>`;
 }
-document.addEventListener('input', e => { if (e.target && e.target.id === 'f_amt' && SH && SH.kind === 'tx') { const x = document.getElementById('pubw'); if (x) x.outerHTML = puanBtn(SH.d); } });
+document.addEventListener('input', e => { if (e.target && e.target.id === 'f_amt' && SH && (SH.kind === 'tx' || SH.kind === 'rec')) { amtUpdate(); const x = document.getElementById('pubw'); if (x) x.outerHTML = puanBtn(SH.d); } });
 document.addEventListener('input', e => { if (e.target.id==='q') { S.q = e.target.value; clearTimeout(drawSrBody.t); drawSrBody.t = setTimeout(drawSrBody, 110); } });
 document.addEventListener('keydown', e => { if (e.target.id==='f_q' && e.key==='Enter' && SH && SH.kind==='tx' && e.target.value.trim()) { e.preventDefault(); quickApply(e.target.value.trim()); } });
 document.addEventListener('keydown', e => { if (e.target.id==='q' && e.key==='Enter') { srSave(S.q); e.target.blur(); } });
@@ -4885,23 +5005,20 @@ function closeSw(sw){ sw.classList.remove('open'); const r = sw.querySelector('.
 document.addEventListener('pointerdown', e => {
   const sw = e.target.closest('.sw');
   if (openSw && openSw!==sw) closeSw(openSw);
-  if (!sw || !S.canWrite || S.sel || e.target.closest('.swdel,.swdup') || (e.pointerType==='mouse' && e.button!==0)) return;
+  if (!sw || !S.canWrite || e.target.closest('.swdel,.swdup') || (e.pointerType==='mouse' && e.button!==0)) return;
   SW = { sw, row: sw.querySelector('.row'), x:e.clientX, y:e.clientY, base: sw.classList.contains('open') ? (sw.classList.contains('sr') ? SWW : -SWW) : 0, t:0, mode:null, pid:e.pointerId };
-  { const rid = SW.row && SW.row.dataset.act === 'edittx' ? SW.row.dataset.id : null, cur = SW; if (rid && !SW.base && sw.closest('#main')) cur.lp = setTimeout(() => { if (SW !== cur || cur.mode) return; cur.lpd = true; sw.dataset.swiped = '1'; selSet(new Set([rid])); buzz(); }, 460); }
 });
 document.addEventListener('pointermove', e => {
   if (!SW || e.pointerId!==SW.pid) return;
   const dx = e.clientX-SW.x, dy = e.clientY-SW.y;
-  if (!SW.mode) { if (Math.abs(dx)<8 && Math.abs(dy)<8) return; clearTimeout(SW.lp); if (SW.lpd) return;
-    SW.mode = Math.abs(dx) > Math.abs(dy) ? 'h' : 'v';
+  if (!SW.mode) { if (Math.abs(dx)<8 && Math.abs(dy)<8) return;     SW.mode = Math.abs(dx) > Math.abs(dy) ? 'h' : 'v';
     if (SW.mode==='h') { SW.sw.classList.add('drag'); try { SW.row.setPointerCapture(e.pointerId); } catch(_){} } }
   if (SW.mode!=='h') return;
   let t = SW.base + dx; if (t < -SWW) t = -SWW + (t + SWW) * 0.35; if (t > SWW) t = SWW + (t - SWW) * 0.35;
   SW.sw.classList.toggle('sr', t > 0); SW.t = t; SW.row.style.transform = `translateX(${t}px)`;
 });
 function endSwipe(e){
-  if (!SW || (e && e.pointerId!==SW.pid)) return; const s = SW; SW = null; clearTimeout(s.lp);
-  if (s.lpd) { setTimeout(() => { delete s.sw.dataset.swiped; }, 350); return; }
+  if (!SW || (e && e.pointerId!==SW.pid)) return; const s = SW; SW = null;
   if (s.mode!=='h') return;
   s.sw.classList.remove('drag'); s.sw.dataset.swiped = '1'; setTimeout(()=>{ delete s.sw.dataset.swiped; }, 60);
   if (s.t < -SWW/2) openSwipe(s.sw, false); else if (s.t > SWW/2) openSwipe(s.sw, true); else closeSw(s.sw);
@@ -4966,6 +5083,8 @@ function taFit(t){ t.style.height='auto'; t.style.height = t.scrollHeight + 2 + 
 document.addEventListener('focusin', e => { if (!SH || SH.kind !== 'dedit') return; const r = e.target.closest && e.target.closest('.der2'); if (!r) return; const i = +r.dataset.i; if (SH.dopen === i) return; SH.dopen = i; document.querySelectorAll('.der2.dopen').forEach(x => x.classList.remove('dopen')); r.classList.add('dopen'); });
 document.addEventListener('input', e => { if (SH && SH.kind === 'savedit' && e.target.id === 'sv_a') { const x = num(e.target.value); SH.a = x >= 0 ? x : 0; svLive(); } });
 document.addEventListener('input', e => { if (!SH || SH.kind !== 'ledpay' || e.target.id !== 'lp_amt') return; const x = num(e.target.value); SH.amt = x > 0 ? x : null; const L = (S.led||[]).find(z => z.id === SH.id), b = document.getElementById('lp_diff'); if (L && b) b.innerHTML = lpDiff(L); });
+document.addEventListener('input', e => { if (SH && SH.kind === 'tx' && SH.quick && e.target.id === 'q_in') { SH.q = e.target.value; if (SH.qfix && SH.q !== SH.qfix.note) SH.qfix = null; if (SH.qo) delete SH.qo.amount; quickRedraw(); } });
+document.addEventListener('keydown', e => { if (e.target.id === 'q_in' && e.key === 'Enter' && SH && SH.quick) { e.preventDefault(); document.querySelector('[data-act="qsave"]')?.click(); } });
 document.addEventListener('input', e => { if (!SH || SH.kind !== 'tx') return; const id = e.target.id;
   if (id === 'f_q') { SH.q = e.target.value; const b = document.getElementById('qsug'); if (b) b.innerHTML = sugHtml(SH.q, SH.d.type, null, 'qs'); const g = document.getElementById('qsgo'); if (g) g.hidden = !/\d|yüz|bin|elli|otuz|kırk|yirmi|on\b/i.test(SH.q); }
   else if (id === 'f_note') { const b = document.getElementById('nsug'); if (b) { const q = e.target.value; b.innerHTML = q && !SH.id ? sugHtml(q, SH.d.type, SH.d.cat, 'ns') : ''; } } });
